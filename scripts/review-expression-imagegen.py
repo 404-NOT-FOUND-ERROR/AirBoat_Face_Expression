@@ -144,8 +144,15 @@ def main():
     write_gallery(roles)
     sheet(roles)
     sheet(roles,selected=True)
-    (OUT/"manifest.json").write_text(json.dumps({"project":"AirBoat","base":"1.29.0","png":len(meta),"gif":len(meta),
-                                               "entries":meta},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    manifest = {"project":"AirBoat","base":"1.29.0","png":len(meta),"gif":len(meta),"entries":meta}
+    transitions = OUT/"transitions/manifest.json"
+    if transitions.exists():
+        manifest["transitions"] = "transitions/manifest.json"
+        table = load(transitions)["entries"]
+        for row in meta:
+            row["entry_animation"] = table[row["semantic"]]["entry"]["file"]
+            row["exit_animation"] = table[row["semantic"]]["exit"]["file"]
+    (OUT/"manifest.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Verified {len(meta)} PNG, {len(meta)} GIF, {len(meta)*16} animation frames")
     print("Highest loop-boundary changes:",[(r["semantic"],r["last_first_change"]) for r in
           sorted(meta,key=lambda r:r["last_first_change"],reverse=True)[:6]])

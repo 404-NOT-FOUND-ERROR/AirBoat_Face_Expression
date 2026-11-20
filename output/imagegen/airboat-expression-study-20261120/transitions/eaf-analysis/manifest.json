@@ -1,0 +1,659 @@
+{
+  "canvas": 240,
+  "period_ms": 50,
+  "total_bytes": 3934326,
+  "candidate_assets": [
+    {
+      "semantic": "neutral",
+      "file": "neutral.eaf",
+      "bytes": 123960,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "097d59f4493d1be071133ded225235c49416a7ff3f4165aa80611306c8ed24d5"
+    },
+    {
+      "semantic": "idle",
+      "file": "idle.eaf",
+      "bytes": 90790,
+      "frames": 55,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        47
+      ],
+      "exit_frames": [
+        47,
+        55
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "77f69e6b4c1d6b15e8cdf5608fdfdeb857f61b661e4a6950bc2c7c727d0d0ed9"
+    },
+    {
+      "semantic": "listening",
+      "file": "listening.eaf",
+      "bytes": 165858,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "355b3f4cddd0258c65a5c1c258c20998f16b55899223b2dc96762de6bdd62ce7"
+    },
+    {
+      "semantic": "thinking",
+      "file": "thinking.eaf",
+      "bytes": 136938,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "4c5c0e14a14b466a45abd7b03a1180d5d2160902741ee2c119f7dfe6304883fd"
+    },
+    {
+      "semantic": "happy",
+      "file": "happy.eaf",
+      "bytes": 135048,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "6485632f20b6cb3d767a4b1992c0f696dd89be9835c490a67a3fd0c6d2544f4f"
+    },
+    {
+      "semantic": "surprised",
+      "file": "surprised.eaf",
+      "bytes": 129760,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "63411cf6f40e3744994f395cc204baa8d61cbe57113ddbba9fe24d1a0baf0fc6"
+    },
+    {
+      "semantic": "shocked",
+      "file": "shocked.eaf",
+      "bytes": 132598,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "295ea8402763e9c7d3bd457068a998f96bbc2de62f864b8a31260d5c9c854434"
+    },
+    {
+      "semantic": "question",
+      "file": "question.eaf",
+      "bytes": 134624,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "f5640d0689ab00d1b3bd6da5c407e1de72c698ab8c4794e9abc03a96b5116786"
+    },
+    {
+      "semantic": "look_around",
+      "file": "look_around.eaf",
+      "bytes": 126576,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "bda02f6c2f24ee56193757d72d3f02b38dffca9e13cb971240237241d904e02a"
+    },
+    {
+      "semantic": "winking",
+      "file": "winking.eaf",
+      "bytes": 129094,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "7255fe6fa594e2ba327ca9338aae184f98f76f78c25a79ce07a589cd032ae739"
+    },
+    {
+      "semantic": "beat_swing",
+      "file": "beat_swing.eaf",
+      "bytes": 137638,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "8e032f05971fdc6b2bb9a77ee01676f4f5166ea3d552ee26b39964f8dbaa458e"
+    },
+    {
+      "semantic": "confused",
+      "file": "confused.eaf",
+      "bytes": 148626,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "ae55033317b5d31ff1df228187def319306abd36ce9214d227e83e23e290fb1a"
+    },
+    {
+      "semantic": "relaxed",
+      "file": "relaxed.eaf",
+      "bytes": 154578,
+      "frames": 55,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        47
+      ],
+      "exit_frames": [
+        47,
+        55
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "e580d69b7f0753ec03e09e62b6388db7c1acbb3ea0e435fa84a5a065de79dc1f"
+    },
+    {
+      "semantic": "sleepy",
+      "file": "sleepy.eaf",
+      "bytes": 128438,
+      "frames": 55,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        47
+      ],
+      "exit_frames": [
+        47,
+        55
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "6080c110b1d2a2d638408ea53054a77c3d58e2d31d862b385a9c17a9db9b1ab9"
+    },
+    {
+      "semantic": "laughing",
+      "file": "laughing.eaf",
+      "bytes": 118308,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "31e9ba2b3f4d1444806eb73c208d03c4b56592d7606ec0b39159a798f928491b"
+    },
+    {
+      "semantic": "funny",
+      "file": "funny.eaf",
+      "bytes": 136280,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "db1fee5e8c1e724554232b5d3fffee34eb079b515d39040292b89d82b86fb720"
+    },
+    {
+      "semantic": "loving",
+      "file": "loving.eaf",
+      "bytes": 128672,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "0a2846aee993541dcc0b488d00560dd54cbec8f7e91e948e1b618bb1f36e90ef"
+    },
+    {
+      "semantic": "embarrassed",
+      "file": "embarrassed.eaf",
+      "bytes": 114612,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "1715e60857f74e2f656cf729cad6fbc9dad5e1e54c187a575d60762c20844002"
+    },
+    {
+      "semantic": "confident",
+      "file": "confident.eaf",
+      "bytes": 126362,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "abfc759350de391445a5b96442dccfcf4bbcbb671d570072b6fbc3bc615feba6"
+    },
+    {
+      "semantic": "delicious",
+      "file": "delicious.eaf",
+      "bytes": 121664,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "2c273da1b66b4042e1d0f8993ede64a45d0bb9e9eba30579eb53b3cf2fdaab9e"
+    },
+    {
+      "semantic": "sad",
+      "file": "sad.eaf",
+      "bytes": 164146,
+      "frames": 55,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        47
+      ],
+      "exit_frames": [
+        47,
+        55
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "9b02d49a4c4a0e284354549ed19021bcd69017278dcef8e0a75f3582b18c8fa0"
+    },
+    {
+      "semantic": "crying",
+      "file": "crying.eaf",
+      "bytes": 202660,
+      "frames": 55,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        47
+      ],
+      "exit_frames": [
+        47,
+        55
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "12a6e630a112326fae44144d614823894d0e2641bed46a69f9653fff255fb27a"
+    },
+    {
+      "semantic": "silly",
+      "file": "silly.eaf",
+      "bytes": 127800,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "568aa0292b394f0509d44ce1a3db01cbafb0dd0fe7d693144500b47d26a3aaa3"
+    },
+    {
+      "semantic": "angry",
+      "file": "angry.eaf",
+      "bytes": 127892,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "76d501b5d5cba8ab4127654ef3989eb1f5d8c901509e70dd61b18cdc28ee2a12"
+    },
+    {
+      "semantic": "insert",
+      "file": "insert.eaf",
+      "bytes": 145778,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "c4e5db158d00efea1c346986134e1f537e4e654a6da0afcb8597636939d9592d"
+    },
+    {
+      "semantic": "look_left",
+      "file": "look_left.eaf",
+      "bytes": 127332,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "0940fa0c88b50f5697586d4ee3cedbd4ff910b0677b533e8656591e2af7584b0"
+    },
+    {
+      "semantic": "look_right",
+      "file": "look_right.eaf",
+      "bytes": 137322,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "07d7382f38f8dfdffbfbf0245409f361ba4d74bcb1555b9c634a636b939ce382"
+    },
+    {
+      "semantic": "eat",
+      "file": "eat.eaf",
+      "bytes": 135060,
+      "frames": 45,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        37
+      ],
+      "exit_frames": [
+        37,
+        45
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "a45184e31936740ee4912112f8f5b60bf1e9a73fbd24158c3f5f679db9a293cf"
+    },
+    {
+      "semantic": "tried",
+      "file": "tried.eaf",
+      "bytes": 145912,
+      "frames": 55,
+      "entry_frames": [
+        0,
+        8
+      ],
+      "loop_frames": [
+        8,
+        47
+      ],
+      "exit_frames": [
+        47,
+        55
+      ],
+      "period_ms": 50,
+      "fill_square": true,
+      "mirror": false,
+      "sha256": "25a026257898a88273dfa90983284a41b49939ca1791acf29c26526d7538606d"
+    }
+  ],
+  "status": "offline-format-and-budget-probe",
+  "firmware_budget_reference": {
+    "version": "1.29.1",
+    "remaining_bytes": 175424
+  },
+  "runtime_note": "Intro/loop/outro table only; graceful-exit state machine still required in firmware.",
+  "replacement_estimate": {
+    "current_unique_eaf_bytes": 5355198,
+    "candidate_eaf_bytes": 3934326,
+    "resource_bytes_released": 1420872,
+    "estimate_only": true,
+    "reference_catalog": "AirBoat 1.29.0 expression trial catalog",
+    "note": "Candidate includes full-face listening. Linker/code costs and on-device performance need a build."
+  }
+}

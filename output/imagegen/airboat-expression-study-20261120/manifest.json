@@ -15,7 +15,9 @@
       "gif_call": "calls/gif-neutral.json",
       "adjacent_frame_change_p50": 5.52,
       "last_first_change": 3.77,
-      "preview_last_first_change": 0.0
+      "preview_last_first_change": 0.0,
+      "entry_animation": "transitions/entry/neutral.gif",
+      "exit_animation": "transitions/exit/neutral.gif"
     },
     {
       "semantic": "idle",
@@ -28,7 +30,9 @@
       "gif_call": "calls/gif-idle.json",
       "adjacent_frame_change_p50": 2.4,
       "last_first_change": 2.42,
-      "preview_last_first_change": 0.19
+      "preview_last_first_change": 0.19,
+      "entry_animation": "transitions/entry/idle.gif",
+      "exit_animation": "transitions/exit/idle.gif"
     },
     {
       "semantic": "listening",
@@ -41,7 +45,9 @@
       "gif_call": "calls/gif-listening.json",
       "adjacent_frame_change_p50": 1.93,
       "last_first_change": 2.55,
-      "preview_last_first_change": 0.07
+      "preview_last_first_change": 0.07,
+      "entry_animation": "transitions/entry/listening.gif",
+      "exit_animation": "transitions/exit/listening.gif"
     },
     {
       "semantic": "thinking",
@@ -54,7 +60,9 @@
       "gif_call": "calls/gif-thinking.json",
       "adjacent_frame_change_p50": 2.22,
       "last_first_change": 0.46,
-      "preview_last_first_change": 0.07
+      "preview_last_first_change": 0.07,
+      "entry_animation": "transitions/entry/thinking.gif",
+      "exit_animation": "transitions/exit/thinking.gif"
     },
     {
       "semantic": "happy",
@@ -67,7 +75,9 @@
       "gif_call": "calls/gif-happy.json",
       "adjacent_frame_change_p50": 7.53,
       "last_first_change": 13.74,
-      "preview_last_first_change": 1.37
+      "preview_last_first_change": 1.37,
+      "entry_animation": "transitions/entry/happy.gif",
+      "exit_animation": "transitions/exit/happy.gif"
     },
     {
       "semantic": "surprised",
@@ -80,7 +90,9 @@
       "gif_call": "calls/gif-surprised.json",
       "adjacent_frame_change_p50": 5.53,
       "last_first_change": 4.46,
-      "preview_last_first_change": 0.09
+      "preview_last_first_change": 0.09,
+      "entry_animation": "transitions/entry/surprised.gif",
+      "exit_animation": "transitions/exit/surprised.gif"
     },
     {
       "semantic": "shocked",
@@ -93,7 +105,9 @@
       "gif_call": "calls/gif-shocked.json",
       "adjacent_frame_change_p50": 3.71,
       "last_first_change": 4.81,
-      "preview_last_first_change": 0.55
+      "preview_last_first_change": 0.55,
+      "entry_animation": "transitions/entry/shocked.gif",
+      "exit_animation": "transitions/exit/shocked.gif"
     },
     {
       "semantic": "question",
@@ -106,7 +120,9 @@
       "gif_call": "calls/gif-question.json",
       "adjacent_frame_change_p50": 4.95,
       "last_first_change": 6.24,
-      "preview_last_first_change": 1.07
+      "preview_last_first_change": 1.07,
+      "entry_animation": "transitions/entry/question.gif",
+      "exit_animation": "transitions/exit/question.gif"
     },
     {
       "semantic": "look_around",
@@ -119,7 +135,9 @@
       "gif_call": "calls/gif-look_around.json",
       "adjacent_frame_change_p50": 5.84,
       "last_first_change": 1.32,
-      "preview_last_first_change": 0.13
+      "preview_last_first_change": 0.13,
+      "entry_animation": "transitions/entry/look_around.gif",
+      "exit_animation": "transitions/exit/look_around.gif"
     },
     {
       "semantic": "winking",
@@ -132,7 +150,9 @@
       "gif_call": "calls/gif-winking.json",
       "adjacent_frame_change_p50": 4.81,
       "last_first_change": 16.32,
-      "preview_last_first_change": 2.69
+      "preview_last_first_change": 2.69,
+      "entry_animation": "transitions/entry/winking.gif",
+      "exit_animation": "transitions/exit/winking.gif"
     },
     {
       "semantic": "beat_swing",
@@ -145,7 +165,9 @@
       "gif_call": "calls/gif-beat_swing.json",
       "adjacent_frame_change_p50": 5.99,
       "last_first_change": 5.71,
-      "preview_last_first_change": 3.07
+      "preview_last_first_change": 3.07,
+      "entry_animation": "transitions/entry/beat_swing.gif",
+      "exit_animation": "transitions/exit/beat_swing.gif"
     },
     {
       "semantic": "confused",
@@ -158,7 +180,9 @@
       "gif_call": "calls/gif-confused.json",
       "adjacent_frame_change_p50": 3.37,
       "last_first_change": 3.6,
-      "preview_last_first_change": 0.36
+      "preview_last_first_change": 0.36,
+      "entry_animation": "transitions/entry/confused.gif",
+      "exit_animation": "transitions/exit/confused.gif"
     },
     {
       "semantic": "relaxed",
@@ -171,7 +195,9 @@
       "gif_call": "calls/gif-relaxed.json",
       "adjacent_frame_change_p50": 6.89,
       "last_first_change": 2.19,
-      "preview_last_first_change": 0.88
+      "preview_last_first_change": 0.88,
+      "entry_animation": "transitions/entry/relaxed.gif",
+      "exit_animation": "transitions/exit/relaxed.gif"
     },
     {
       "semantic": "sleepy",
@@ -184,7 +210,9 @@
       "gif_call": "calls/gif-sleepy.json",
       "adjacent_frame_change_p50": 7.49,
       "last_first_change": 11.71,
-      "preview_last_first_change": 1.53
+      "preview_last_first_change": 1.53,
+      "entry_animation": "transitions/entry/sleepy.gif",
+      "exit_animation": "transitions/exit/sleepy.gif"
     },
     {
       "semantic": "laughing",
@@ -197,7 +225,9 @@
       "gif_call": "calls/gif-laughing.json",
       "adjacent_frame_change_p50": 16.68,
       "last_first_change": 12.69,
-      "preview_last_first_change": 0.26
+      "preview_last_first_change": 0.26,
+      "entry_animation": "transitions/entry/laughing.gif",
+      "exit_animation": "transitions/exit/laughing.gif"
     },
     {
       "semantic": "funny",
@@ -210,7 +240,9 @@
       "gif_call": "calls/gif-funny.json",
       "adjacent_frame_change_p50": 9.25,
       "last_first_change": 0.74,
-      "preview_last_first_change": 0.09
+      "preview_last_first_change": 0.09,
+      "entry_animation": "transitions/entry/funny.gif",
+      "exit_animation": "transitions/exit/funny.gif"
     },
     {
       "semantic": "loving",
@@ -223,7 +255,9 @@
       "gif_call": "calls/gif-loving.json",
       "adjacent_frame_change_p50": 3.04,
       "last_first_change": 5.41,
-      "preview_last_first_change": 0.93
+      "preview_last_first_change": 0.93,
+      "entry_animation": "transitions/entry/loving.gif",
+      "exit_animation": "transitions/exit/loving.gif"
     },
     {
       "semantic": "embarrassed",
@@ -236,7 +270,9 @@
       "gif_call": "calls/gif-embarrassed.json",
       "adjacent_frame_change_p50": 3.59,
       "last_first_change": 3.37,
-      "preview_last_first_change": 0.51
+      "preview_last_first_change": 0.51,
+      "entry_animation": "transitions/entry/embarrassed.gif",
+      "exit_animation": "transitions/exit/embarrassed.gif"
     },
     {
       "semantic": "confident",
@@ -249,7 +285,9 @@
       "gif_call": "calls/gif-confident.json",
       "adjacent_frame_change_p50": 3.23,
       "last_first_change": 8.19,
-      "preview_last_first_change": 3.11
+      "preview_last_first_change": 3.11,
+      "entry_animation": "transitions/entry/confident.gif",
+      "exit_animation": "transitions/exit/confident.gif"
     },
     {
       "semantic": "delicious",
@@ -262,7 +300,9 @@
       "gif_call": "calls/gif-delicious.json",
       "adjacent_frame_change_p50": 20.43,
       "last_first_change": 58.94,
-      "preview_last_first_change": 0.05
+      "preview_last_first_change": 0.05,
+      "entry_animation": "transitions/entry/delicious.gif",
+      "exit_animation": "transitions/exit/delicious.gif"
     },
     {
       "semantic": "sad",
@@ -275,7 +315,9 @@
       "gif_call": "calls/gif-sad.json",
       "adjacent_frame_change_p50": 4.68,
       "last_first_change": 0.87,
-      "preview_last_first_change": 0.47
+      "preview_last_first_change": 0.47,
+      "entry_animation": "transitions/entry/sad.gif",
+      "exit_animation": "transitions/exit/sad.gif"
     },
     {
       "semantic": "crying",
@@ -288,7 +330,9 @@
       "gif_call": "calls/gif-crying.json",
       "adjacent_frame_change_p50": 1.43,
       "last_first_change": 2.87,
-      "preview_last_first_change": 0.08
+      "preview_last_first_change": 0.08,
+      "entry_animation": "transitions/entry/crying.gif",
+      "exit_animation": "transitions/exit/crying.gif"
     },
     {
       "semantic": "silly",
@@ -301,7 +345,9 @@
       "gif_call": "calls/gif-silly.json",
       "adjacent_frame_change_p50": 2.54,
       "last_first_change": 9.22,
-      "preview_last_first_change": 0.0
+      "preview_last_first_change": 0.0,
+      "entry_animation": "transitions/entry/silly.gif",
+      "exit_animation": "transitions/exit/silly.gif"
     },
     {
       "semantic": "angry",
@@ -314,7 +360,9 @@
       "gif_call": "calls/gif-angry.json",
       "adjacent_frame_change_p50": 17.4,
       "last_first_change": 25.66,
-      "preview_last_first_change": 0.93
+      "preview_last_first_change": 0.93,
+      "entry_animation": "transitions/entry/angry.gif",
+      "exit_animation": "transitions/exit/angry.gif"
     },
     {
       "semantic": "insert",
@@ -327,7 +375,9 @@
       "gif_call": "calls/gif-insert.json",
       "adjacent_frame_change_p50": 8.48,
       "last_first_change": 5.89,
-      "preview_last_first_change": 0.45
+      "preview_last_first_change": 0.45,
+      "entry_animation": "transitions/entry/insert.gif",
+      "exit_animation": "transitions/exit/insert.gif"
     },
     {
       "semantic": "look_left",
@@ -340,7 +390,9 @@
       "gif_call": "calls/gif-look_left.json",
       "adjacent_frame_change_p50": 4.01,
       "last_first_change": 9.8,
-      "preview_last_first_change": 3.55
+      "preview_last_first_change": 3.55,
+      "entry_animation": "transitions/entry/look_left.gif",
+      "exit_animation": "transitions/exit/look_left.gif"
     },
     {
       "semantic": "look_right",
@@ -353,7 +405,9 @@
       "gif_call": "calls/gif-look_right.json",
       "adjacent_frame_change_p50": 3.75,
       "last_first_change": 6.57,
-      "preview_last_first_change": 2.38
+      "preview_last_first_change": 2.38,
+      "entry_animation": "transitions/entry/look_right.gif",
+      "exit_animation": "transitions/exit/look_right.gif"
     },
     {
       "semantic": "eat",
@@ -366,7 +420,9 @@
       "gif_call": "calls/gif-eat.json",
       "adjacent_frame_change_p50": 8.58,
       "last_first_change": 4.28,
-      "preview_last_first_change": 0.7
+      "preview_last_first_change": 0.7,
+      "entry_animation": "transitions/entry/eat.gif",
+      "exit_animation": "transitions/exit/eat.gif"
     },
     {
       "semantic": "tried",
@@ -379,7 +435,10 @@
       "gif_call": "calls/gif-tried.json",
       "adjacent_frame_change_p50": 10.06,
       "last_first_change": 8.76,
-      "preview_last_first_change": 2.5
+      "preview_last_first_change": 2.5,
+      "entry_animation": "transitions/entry/tried.gif",
+      "exit_animation": "transitions/exit/tried.gif"
     }
-  ]
+  ],
+  "transitions": "transitions/manifest.json"
 }

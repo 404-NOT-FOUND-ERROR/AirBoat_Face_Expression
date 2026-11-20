@@ -10,6 +10,7 @@ Colorful animated eyes for a playful floating companion. Explore expressive timi
 
 - [Animated gallery](output/imagegen/airboat-expression-study-20261120/gallery.html): original animation, reference art, and new GIFs side by side.
 - [Expression workbench](docs/product/expression-workbench.html): pan, zoom, play, mirror, trace triggers, and export replacement drafts.
+- [Expression transition studio](docs/product/expression-transition-studio.html): preview the shared green anchor, emotion entry, loop, and return.
 - [Motion keyframes](output/imagegen/airboat-expression-study-20261120/motion-frames.png): anticipation, gaze shifts, rebounds, and settling.
 - [Asset manifest](output/imagegen/airboat-expression-study-20261120/manifest.json): models, inputs, prompts, and generation records.
 
@@ -23,6 +24,7 @@ Colorful animated eyes for a playful floating companion. Explore expressive timi
 | --- | --- |
 | New expression studies | 29 reference images and 29 native animated GIFs, covering 28 firmware semantics plus listening |
 | Refined motion previews | 29 looping GIFs sampled at 25 fps, with fixed backgrounds and separate eye/pupil interpolation |
+| Transition delivery | 29 review EAF candidates; the firmware adapter uses 28 EAF files for 29 semantics, sharing idle and neutral |
 | Original library | 18 EAF assets and their decoded previews |
 | Current firmware trials | Three EAF animations used in the AirBoat 1.29.0 baseline |
 | Original artwork pack | Nine 480 × 480 source GIFs, EAF files, and conversion metadata |
@@ -70,7 +72,17 @@ python scripts/review-expression-imagegen.py
 
 Static artwork uses **gpt-image-2.5-sunburst** through the official ImageGen CLI. Native GIFs use **gpt-image-2.6-sunburst** through the official Images API. Each API GIF contains 16 frames at 480 × 480. Refined previews retain the generated motion and use local palette cleanup, eye/pupil interpolation, and loop closure.
 
-The generation script accepts a local credential file, proxy URL, and ImageGen CLI path. See the [production workflow](docs/production.en.md). The catalog records the AirBoat 1.29.0 mapping and partition budget; the next production step is selecting artwork, converting it to EAF, and reviewing the result on Mosaico.
+The generation script accepts a local credential file, proxy URL, and ImageGen CLI path. See the [production workflow](docs/production.en.md). The original catalog records the AirBoat 1.29.0 mapping and its measured partition budget. The transition delivery has a separate integration candidate and validation record.
+
+## Transitions
+
+Transitions use one green idle anchor, authored emotion entry/return clips, and a separate loopable performance. See the [transition specification](docs/product/transition-spec.en.md) and local preview studio.
+
+![Happy expression returning to green idle](output/imagegen/airboat-expression-study-20261120/transitions/demos/happy-return.gif)
+
+Continuous responses flow from the visible pose into the next emotion. Preview [listening → thinking → happy](output/imagegen/airboat-expression-study-20261120/transitions/demos/listen-think-happy.gif) and [happy → surprised](output/imagegen/airboat-expression-study-20261120/transitions/demos/happy-surprised.gif). The 29 review EAF candidates include explicit entry/loop/exit ranges.
+
+The AirBoat **1.32.0 integration candidate** is prepared in the companion firmware workspace. Host checks cover all 841 semantic pairs, interruption, cancellation, clock wrap, the original player, and all 1,365 frames in the review EAF set. Desktop/mobile browser checks pass. The S31 build and physical display/audio review are the next steps. Follow the [firmware handoff](docs/device-integration.en.md).
 
 ## Source and license
 

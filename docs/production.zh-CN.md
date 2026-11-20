@@ -41,6 +41,8 @@
 
 每项 API 原生 GIF 有 16 帧。本地修整版分别处理眼形和瞳孔，使用固定配色，以 25 fps 采样，并保存原生 GIF 供对照。
 
+全套表情的进入、循环、回归接口与颜色/眼神时序见[表情过渡规范](product/transition-spec.zh-CN.md)，可在[过渡实验室](product/expression-transition-studio.html)逐项和按场景预演。
+
 ## 生图
 
 安装依赖：
@@ -64,6 +66,8 @@ python scripts/run-expression-imagegen.py gif --env-file /path/to/imagegen.env -
 ~~~sh
 python scripts/build-expression-workbench.py --check
 python scripts/review-expression-imagegen.py
+python scripts/polish-expression-gifs.py
+python scripts/build-transition-runtime.py
 python tests/validate_release.py
 ~~~
 

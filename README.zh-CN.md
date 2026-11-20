@@ -10,6 +10,7 @@
 
 - [表情动效库](output/imagegen/airboat-expression-study-20261120/gallery.html)：原版动画、参考图与新 GIF 并排看。
 - [表情工作台](docs/product/expression-workbench.html)：平移、缩放、播放、镜像、追踪触发链路并导出替换清单。
+- [表情过渡实验室](docs/product/expression-transition-studio.html)：预演共同绿色起始帧、情绪进入、循环表演和自然回归。
 - [动作关键帧](output/imagegen/airboat-expression-study-20261120/motion-frames.png)：查看预动、视线、回弹与回稳。
 - [素材清单](output/imagegen/airboat-expression-study-20261120/manifest.json)：查看模型、输入、提示词与生成记录。
 
@@ -23,6 +24,7 @@
 | --- | --- |
 | 新表情研究 | 29 张参考图、29 个原生 GIF，覆盖 28 个固件语义与聆听合成 |
 | 动效修整版 | 29 个按 25 fps 采样的循环 GIF，统一背景，分别处理眼白和瞳孔 |
+| 过渡交付 | 29 份评审 EAF；固件适配使用 28 个 EAF 文件映射 29 个语义，待机与中性共用 |
 | 原版表情库 | 18 份 EAF 资源及解码预览 |
 | 当前固件小样 | AirBoat 1.29.0 使用的三份试换 EAF |
 | 原画素材包 | 九份 480×480 GIF、EAF 和转换记录 |
@@ -70,7 +72,17 @@ python scripts/review-expression-imagegen.py
 
 静态图通过官方 ImageGen CLI 使用 **gpt-image-2.5-sunburst**；原生 GIF 通过官方 Images API 使用 **gpt-image-2.6-sunburst**。每项原生动画为 480×480、16 帧。修整版保留生成的动作，统一背景、分别插值眼白与瞳孔，并处理循环接缝。
 
-生图脚本通过参数接收本地凭据文件、代理地址和 ImageGen CLI 路径，详见[制作流程](docs/production.zh-CN.md)。工作台保留 AirBoat 1.29.0 的映射与分区预算。后续按评审结果选稿，转成 EAF，再在 Mosaico 实屏确认节拍和构图。
+生图脚本通过参数接收本地凭据文件、代理地址和 ImageGen CLI 路径，详见[制作流程](docs/production.zh-CN.md)。原工作台保留 AirBoat 1.29.0 的映射及当时实测的分区预算；表情过渡单独记录接入候选与验证结果。
+
+## 表情衔接
+
+转场采用统一绿色待机基准、独立情绪进入/回归片段和可循环表演段。详细规范与本地预演见[表情过渡说明](docs/product/transition-spec.zh-CN.md)。
+
+![开心后自然回到绿色待机](output/imagegen/airboat-expression-study-20261120/transitions/demos/happy-return.gif)
+
+连续回应顺着当前眼神转向下一个情绪。可查看[聆听 → 思考 → 开心](output/imagegen/airboat-expression-study-20261120/transitions/demos/listen-think-happy.gif)和[开心 → 惊喜](output/imagegen/airboat-expression-study-20261120/transitions/demos/happy-surprised.gif)。29 份评审 EAF 附进入／循环／退出帧范围。
+
+AirBoat **1.32.0 接入候选**已准备在配套固件工作目录。电脑检查覆盖 841 组语义切换、途中改选、取消、时钟回绕、原播放器，以及评审 EAF 的全部 1,365 帧；桌面和手机浏览器检查通过。下一步完成 S31 构建与实屏、语音共存体验，详见[固件交接说明](docs/device-integration.zh-CN.md)。
 
 ## 来源与许可
 

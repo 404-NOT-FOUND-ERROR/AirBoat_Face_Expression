@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AirBoat · 表情过渡实验室</title>
+  <link rel="stylesheet" href="expression-transition-studio.css">
+  <script defer src="../../output/imagegen/airboat-expression-study-20261120/transitions/manifest.js"></script>
+  <script defer src="../../output/imagegen/airboat-expression-study-20261120/transitions/runtime-data.js"></script>
+  <script defer src="expression-motion-player.js"></script>
+  <script defer src="expression-transition-studio.js"></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="../../README.zh-CN.md"><span class="mark"><i></i><i></i></span><span><small>AIRBOAT / EXPRESSION LAB</small><strong>表情过渡</strong></span></a>
+    <a class="back" href="expression-workbench.html">表情工作台 <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="screen-column">
+      <div class="screen" id="screen">
+        <canvas id="face" width="480" height="480" role="img" aria-label="AirBoat 表情过渡预览"></canvas>
+        <span class="screen-label">480 × 480</span>
+      </div>
+      <div class="transport">
+        <button id="play" class="primary" type="button" disabled><span aria-hidden="true">▶</span> 播放表情</button>
+        <button id="stop" type="button" title="回到绿色待机" disabled><span aria-hidden="true">■</span> 回到待机</button>
+        <output id="status" aria-live="polite">正在准备表情…</output>
+      </div>
+      <div class="display-options"><label><input id="mirror" type="checkbox" disabled> 镜像</label><label><input id="guides" type="checkbox" disabled> 字幕留位</label><button id="pause" type="button" disabled>暂停</button></div>
+    </section>
+    <section class="controls">
+      <div class="section-head"><small>ONE EXPRESSION</small><h1>从本色，到情绪，再回到本色</h1></div>
+      <label for="expression">选择表情</label>
+      <select id="expression" disabled></select>
+      <div class="stage-flow" aria-label="表情播放阶段">
+        <div class="stage active" data-stage="base"><i></i><span>绿色待机</span></div>
+        <div class="stage" data-stage="entry"><i></i><span>情绪进入</span></div>
+        <div class="stage" data-stage="loop"><i></i><span>灵动表演</span></div>
+        <div class="stage" data-stage="exit"><i></i><span>自然回归</span></div>
+      </div>
+      <div class="divider"></div>
+      <div class="section-head"><small>CHOREOGRAPHY</small><h2>连续回应</h2></div>
+      <div class="sequences">
+        <button type="button" data-sequence="happy-return" disabled><span class="swatches"><i></i><i></i><i></i></span><span><strong>开心，再回待机</strong><small>绿 → 开心 → 绿</small></span><b aria-hidden="true">▶</b></button>
+        <button type="button" data-sequence="listen-think-happy" disabled><span class="swatches"><i></i><i></i><i></i></span><span><strong>听见，再想，再开心</strong><small>聆听 → 思考 → 开心</small></span><b aria-hidden="true">▶</b></button>
+        <button type="button" data-sequence="happy-surprised" disabled><span class="swatches"><i></i><i></i><i></i></span><span><strong>开心中发现新事物</strong><small>开心 → 惊喜</small></span><b aria-hidden="true">▶</b></button>
+      </div>
+      <p class="micro">播放中直接换一个表情，看看它如何顺着当前眼神接下去。</p>
+      <a class="spec-link" href="transition-spec.zh-CN.md">查看节奏与制作规范 <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+</body>
+</html>

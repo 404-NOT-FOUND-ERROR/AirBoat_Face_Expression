@@ -1,0 +1,757 @@
+window.AIRBOAT_TRANSITIONS = {
+  "version": 1,
+  "fps": 25,
+  "transition_frames": 9,
+  "transition_duration_ms": 360,
+  "base": {
+    "semantic": "idle",
+    "color": "#28cf60",
+    "image": "preview/idle.png",
+    "sha256": "7f3c10d3c847062511ccdd2b3f91ef4e5aaf2ba933b3f8ac2deccf0bade76178"
+  },
+  "motion": {
+    "color": "short-arc HSV hue; eased saturation and value",
+    "pupil": "starts first; 35 ms left/right stagger",
+    "eye_shape": "starts after gaze; 25 ms left/right stagger",
+    "loop": "expression loop only; shared base is never inserted at loop seam",
+    "return": "authored inverse endpoint back to shared idle pose"
+  },
+  "entries": {
+    "neutral": {
+      "entry": {
+        "file": "transitions/entry/neutral.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "neutral"
+      },
+      "loop": {
+        "file": "preview/neutral.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/neutral.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "neutral",
+        "to": "idle"
+      }
+    },
+    "idle": {
+      "entry": {
+        "file": "transitions/entry/idle.gif",
+        "frames": 1,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "idle"
+      },
+      "loop": {
+        "file": "preview/idle.gif",
+        "frames": 48,
+        "fps": 25,
+        "duration_ms": 1920
+      },
+      "exit": {
+        "file": "transitions/exit/idle.gif",
+        "frames": 1,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "idle"
+      }
+    },
+    "listening": {
+      "entry": {
+        "file": "transitions/entry/listening.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "listening"
+      },
+      "loop": {
+        "file": "preview/listening.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/listening.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "listening",
+        "to": "idle"
+      }
+    },
+    "thinking": {
+      "entry": {
+        "file": "transitions/entry/thinking.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "thinking"
+      },
+      "loop": {
+        "file": "preview/thinking.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/thinking.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "thinking",
+        "to": "idle"
+      }
+    },
+    "happy": {
+      "entry": {
+        "file": "transitions/entry/happy.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "happy"
+      },
+      "loop": {
+        "file": "preview/happy.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/happy.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "happy",
+        "to": "idle"
+      }
+    },
+    "surprised": {
+      "entry": {
+        "file": "transitions/entry/surprised.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "surprised"
+      },
+      "loop": {
+        "file": "preview/surprised.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/surprised.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "surprised",
+        "to": "idle"
+      }
+    },
+    "shocked": {
+      "entry": {
+        "file": "transitions/entry/shocked.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "shocked"
+      },
+      "loop": {
+        "file": "preview/shocked.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/shocked.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "shocked",
+        "to": "idle"
+      }
+    },
+    "question": {
+      "entry": {
+        "file": "transitions/entry/question.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "question"
+      },
+      "loop": {
+        "file": "preview/question.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/question.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "question",
+        "to": "idle"
+      }
+    },
+    "look_around": {
+      "entry": {
+        "file": "transitions/entry/look_around.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "look_around"
+      },
+      "loop": {
+        "file": "preview/look_around.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/look_around.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "look_around",
+        "to": "idle"
+      }
+    },
+    "winking": {
+      "entry": {
+        "file": "transitions/entry/winking.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "winking"
+      },
+      "loop": {
+        "file": "preview/winking.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/winking.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "winking",
+        "to": "idle"
+      }
+    },
+    "beat_swing": {
+      "entry": {
+        "file": "transitions/entry/beat_swing.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "beat_swing"
+      },
+      "loop": {
+        "file": "preview/beat_swing.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/beat_swing.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "beat_swing",
+        "to": "idle"
+      }
+    },
+    "confused": {
+      "entry": {
+        "file": "transitions/entry/confused.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "confused"
+      },
+      "loop": {
+        "file": "preview/confused.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/confused.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "confused",
+        "to": "idle"
+      }
+    },
+    "relaxed": {
+      "entry": {
+        "file": "transitions/entry/relaxed.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "relaxed"
+      },
+      "loop": {
+        "file": "preview/relaxed.gif",
+        "frames": 48,
+        "fps": 25,
+        "duration_ms": 1920
+      },
+      "exit": {
+        "file": "transitions/exit/relaxed.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "relaxed",
+        "to": "idle"
+      }
+    },
+    "sleepy": {
+      "entry": {
+        "file": "transitions/entry/sleepy.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "sleepy"
+      },
+      "loop": {
+        "file": "preview/sleepy.gif",
+        "frames": 48,
+        "fps": 25,
+        "duration_ms": 1920
+      },
+      "exit": {
+        "file": "transitions/exit/sleepy.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "sleepy",
+        "to": "idle"
+      }
+    },
+    "laughing": {
+      "entry": {
+        "file": "transitions/entry/laughing.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "laughing"
+      },
+      "loop": {
+        "file": "preview/laughing.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/laughing.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "laughing",
+        "to": "idle"
+      }
+    },
+    "funny": {
+      "entry": {
+        "file": "transitions/entry/funny.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "funny"
+      },
+      "loop": {
+        "file": "preview/funny.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/funny.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "funny",
+        "to": "idle"
+      }
+    },
+    "loving": {
+      "entry": {
+        "file": "transitions/entry/loving.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "loving"
+      },
+      "loop": {
+        "file": "preview/loving.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/loving.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "loving",
+        "to": "idle"
+      }
+    },
+    "embarrassed": {
+      "entry": {
+        "file": "transitions/entry/embarrassed.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "embarrassed"
+      },
+      "loop": {
+        "file": "preview/embarrassed.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/embarrassed.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "embarrassed",
+        "to": "idle"
+      }
+    },
+    "confident": {
+      "entry": {
+        "file": "transitions/entry/confident.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "confident"
+      },
+      "loop": {
+        "file": "preview/confident.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/confident.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "confident",
+        "to": "idle"
+      }
+    },
+    "delicious": {
+      "entry": {
+        "file": "transitions/entry/delicious.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "delicious"
+      },
+      "loop": {
+        "file": "preview/delicious.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/delicious.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "delicious",
+        "to": "idle"
+      }
+    },
+    "sad": {
+      "entry": {
+        "file": "transitions/entry/sad.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "sad"
+      },
+      "loop": {
+        "file": "preview/sad.gif",
+        "frames": 48,
+        "fps": 25,
+        "duration_ms": 1920
+      },
+      "exit": {
+        "file": "transitions/exit/sad.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "sad",
+        "to": "idle"
+      }
+    },
+    "crying": {
+      "entry": {
+        "file": "transitions/entry/crying.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "crying"
+      },
+      "loop": {
+        "file": "preview/crying.gif",
+        "frames": 48,
+        "fps": 25,
+        "duration_ms": 1920
+      },
+      "exit": {
+        "file": "transitions/exit/crying.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "crying",
+        "to": "idle"
+      }
+    },
+    "silly": {
+      "entry": {
+        "file": "transitions/entry/silly.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "silly"
+      },
+      "loop": {
+        "file": "preview/silly.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/silly.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "silly",
+        "to": "idle"
+      }
+    },
+    "angry": {
+      "entry": {
+        "file": "transitions/entry/angry.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "angry"
+      },
+      "loop": {
+        "file": "preview/angry.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/angry.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "angry",
+        "to": "idle"
+      }
+    },
+    "insert": {
+      "entry": {
+        "file": "transitions/entry/insert.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "insert"
+      },
+      "loop": {
+        "file": "preview/insert.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/insert.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "insert",
+        "to": "idle"
+      }
+    },
+    "look_left": {
+      "entry": {
+        "file": "transitions/entry/look_left.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "look_left"
+      },
+      "loop": {
+        "file": "preview/look_left.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/look_left.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "look_left",
+        "to": "idle"
+      }
+    },
+    "look_right": {
+      "entry": {
+        "file": "transitions/entry/look_right.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "look_right"
+      },
+      "loop": {
+        "file": "preview/look_right.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/look_right.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "look_right",
+        "to": "idle"
+      }
+    },
+    "eat": {
+      "entry": {
+        "file": "transitions/entry/eat.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "eat"
+      },
+      "loop": {
+        "file": "preview/eat.gif",
+        "frames": 36,
+        "fps": 25,
+        "duration_ms": 1440
+      },
+      "exit": {
+        "file": "transitions/exit/eat.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "eat",
+        "to": "idle"
+      }
+    },
+    "tried": {
+      "entry": {
+        "file": "transitions/entry/tried.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "idle",
+        "to": "tried"
+      },
+      "loop": {
+        "file": "preview/tried.gif",
+        "frames": 48,
+        "fps": 25,
+        "duration_ms": 1920
+      },
+      "exit": {
+        "file": "transitions/exit/tried.gif",
+        "frames": 9,
+        "fps": 25,
+        "duration_ms": 360,
+        "from": "tried",
+        "to": "idle"
+      }
+    }
+  },
+  "bridges": {
+    "listening>thinking": {
+      "file": "transitions/bridge/listening-to-thinking.gif",
+      "frames": 9,
+      "fps": 25,
+      "duration_ms": 360,
+      "from": "listening",
+      "to": "thinking"
+    },
+    "thinking>happy": {
+      "file": "transitions/bridge/thinking-to-happy.gif",
+      "frames": 9,
+      "fps": 25,
+      "duration_ms": 360,
+      "from": "thinking",
+      "to": "happy"
+    },
+    "happy>surprised": {
+      "file": "transitions/bridge/happy-to-surprised.gif",
+      "frames": 9,
+      "fps": 25,
+      "duration_ms": 360,
+      "from": "happy",
+      "to": "surprised"
+    }
+  },
+  "sequences": {
+    "listen-think-happy": [
+      "listening",
+      "thinking",
+      "happy"
+    ],
+    "happy-surprised": [
+      "happy",
+      "surprised"
+    ],
+    "happy-return": [
+      "happy"
+    ]
+  }
+};

@@ -41,6 +41,8 @@ The workbench's guide overlays mark suggested space for top status and bottom ca
 
 The study uses 16 native frames per API GIF. Its local review pass interpolates eye shapes and pupils separately onto a fixed palette and samples the motion at 25 fps. The native GIF and the processed preview are saved together.
 
+Transitions use a common green anchor, separate performance loops, and a continuous current-pose handoff. See the [transition specification](product/transition-spec.en.md) and [preview studio](product/expression-transition-studio.html).
+
 ## Generation
 
 Install dependencies:
@@ -64,7 +66,11 @@ The local file uses DESKBOT_IMAGE_API_KEY and DESKBOT_IMAGE_BASE_URL, with the o
 ~~~sh
 python scripts/build-expression-workbench.py --check
 python scripts/review-expression-imagegen.py
+python scripts/polish-expression-gifs.py
+python scripts/build-transition-runtime.py
+python scripts/measure-transition-eaf.py
 python tests/validate_release.py
+node tests/transition-motion.cjs
 ~~~
 
 For the browser interaction checks, install Playwright in your development environment and run:
