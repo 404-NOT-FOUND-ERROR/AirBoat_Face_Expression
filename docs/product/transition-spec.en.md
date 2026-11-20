@@ -31,7 +31,7 @@ The review package contains 29 EAF candidates at 240 × 240 and 20 fps, with exp
 
 The separate AirBoat 1.32.0 firmware candidate preserves `app_response → app_expression_player` and uses 28 EAF files for 29 semantics; `neutral` and `idle` share one resource. It captures the visible pose and target pose, morphs eye/pupil masks, and resumes the target EAF loop. A new request retargets the visible intermediate pose. Listening keeps its public API and uses a full-face clip.
 
-The implementation reserves three compact mask poses, bounded source indices and two RGB565 buffers. Total player memory is about 0.6 MB, pending S31 measurement. Host semantic-pair, retargeting, cancellation and legacy checks pass. The S31 build, measured partition size, native UI and device display/audio acceptance are the next steps. Continue with the [firmware handoff](../device-integration.en.md).
+The implementation reserves three compact mask poses, bounded source indices and two RGB565 buffers, about 0.6 MB per player. Host semantic-pair, retargeting, cancellation and legacy checks pass. The pinned S31 candidate build passed: the app is 11,951,904 B, with 1,614,048 B partition headroom; the offline update package matches the build images. The merged mainline still needs heap/frame-time measurements, native UI, camera/audio coexistence and device acceptance. Continue with the [firmware handoff](../device-integration.en.md).
 
 ## Rebuild
 

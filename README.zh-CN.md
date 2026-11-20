@@ -82,7 +82,7 @@ python scripts/review-expression-imagegen.py
 
 连续回应顺着当前眼神转向下一个情绪。可查看[聆听 → 思考 → 开心](output/imagegen/airboat-expression-study-20261120/transitions/demos/listen-think-happy.gif)和[开心 → 惊喜](output/imagegen/airboat-expression-study-20261120/transitions/demos/happy-surprised.gif)。29 份评审 EAF 附进入／循环／退出帧范围。
 
-AirBoat **1.32.0 接入候选**已准备在配套固件工作目录。电脑检查覆盖 841 组语义切换、途中改选、取消、时钟回绕、原播放器，以及评审 EAF 的全部 1,365 帧；桌面和手机浏览器检查通过。下一步完成 S31 构建与实屏、语音共存体验，详见[固件交接说明](docs/device-integration.zh-CN.md)。
+AirBoat **1.32.0 接入候选**已准备在配套固件工作目录。电脑检查覆盖 841 组语义切换、途中改选、取消、时钟回绕、原播放器，以及评审 EAF 的全部 1,365 帧；桌面和手机浏览器检查、固定 SDK 的 S31 候选构建均通过。主应用为 11,951,904 B，应用分区余 1,614,048 B；离线更新包与构建镜像哈希一致。后续由主开发合入当前工作分支，再做原生界面、S31 内存与帧耗时、相机/语音共存和实机验收。详见[固件交接说明](docs/device-integration.zh-CN.md)。
 
 ## 来源与许可
 

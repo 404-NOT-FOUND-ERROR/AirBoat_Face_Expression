@@ -1,0 +1,48 @@
+{
+  "version": "1.32.0",
+  "build_run": "20261121-021301-build-34376",
+  "build_status": "ok",
+  "sdk_revision": "7b9cc1ac79f865983f59bb8ff3ff43eb74ff1dbe",
+  "main_app_capacity": 13565952,
+  "main_app_remaining": 1614048,
+  "ui_apps_remaining": 190128,
+  "device_operation": false,
+  "integration_followup": [
+    "Merge expression changes onto current primary branch",
+    "Retain current primary camera patch: isolated candidate SC101IOT PCLK patch warning remains",
+    "Run native UI and measure S31 heap/frame-time/audio coexistence"
+  ],
+  "schema_version": 1,
+  "target": "esp32s31",
+  "source_commit": "0d087e8dfe2925c96374a5bc07c3cebf9ae5a258",
+  "source_base": "011b56510277fd813bb5f5528533010cb02dab30",
+  "source_note": "Candidate source committed after the successful build; the build was not repeated after committing.",
+  "scope": "Isolated candidate build and offline package validation",
+  "artifacts": [
+    {
+      "file": "airboat_baseline.bin",
+      "bytes": 11951904,
+      "sha256": "c8044e7c110e074ebb55c4a8246260bc48f6766838eff30ace26f12fc14fa1ea"
+    },
+    {
+      "file": "airboat_baseline.elf",
+      "bytes": 53994268,
+      "sha256": "8b6e8478eb4107fd8edbd56275ba811893134b2a485093c324cabc815db468a8"
+    },
+    {
+      "file": "airboat-linked-ui.bin",
+      "bytes": 858448,
+      "sha256": "a024ea8809fc40d1d9569ab3b8c67eac42141e2a1c34b8452b24ee1df70843c4"
+    },
+    {
+      "file": "partition-table.bin",
+      "bytes": 3072,
+      "sha256": "a0487289dac25f3b5046f94b3501f2191d2cdde213fb10b6ca9f210dd9430eaf"
+    },
+    {
+      "file": "airboat_baseline-system-update.irisfw",
+      "bytes": 5048265,
+      "sha256": "e11cc201c2474d4551463a67d8c9211b99fd37108d17ef226be2991f37c3fedb"
+    }
+  ]
+}

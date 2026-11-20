@@ -82,7 +82,7 @@ Transitions use one green idle anchor, authored emotion entry/return clips, and 
 
 Continuous responses flow from the visible pose into the next emotion. Preview [listening → thinking → happy](output/imagegen/airboat-expression-study-20261120/transitions/demos/listen-think-happy.gif) and [happy → surprised](output/imagegen/airboat-expression-study-20261120/transitions/demos/happy-surprised.gif). The 29 review EAF candidates include explicit entry/loop/exit ranges.
 
-The AirBoat **1.32.0 integration candidate** is prepared in the companion firmware workspace. Host checks cover all 841 semantic pairs, interruption, cancellation, clock wrap, the original player, and all 1,365 frames in the review EAF set. Desktop/mobile browser checks pass. The S31 build and physical display/audio review are the next steps. Follow the [firmware handoff](docs/device-integration.en.md).
+The AirBoat **1.32.0 integration candidate** is prepared in the companion firmware workspace. Host checks cover all 841 semantic pairs, interruption, cancellation, clock wrap, the original player, and all 1,365 frames in the review EAF set. Desktop/mobile browser checks and the pinned S31 candidate build pass. The application is 11,951,904 B, with 1,614,048 B remaining in its partition; the offline update bundle matches its build images. Mainline integration, native UI checks, S31 heap/frame-time measurements, camera/audio coexistence, and device acceptance remain. Follow the [firmware handoff](docs/device-integration.en.md).
 
 ## Source and license
 
