@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AirBoat · 表情工作台</title>
+  <link rel="stylesheet" href="expression-workbench.css">
+  <script defer src="expression-workbench-data.js"></script>
+  <script defer src="expression-workbench-player.js"></script>
+  <script defer src="expression-workbench.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="expression-workbench.html" aria-label="AirBoat 表情工作台"><span class="mark" aria-hidden="true"><i></i><i></i></span><span><small>AIRBOAT / EXPRESSION LAB</small><strong>表情工作台</strong></span></a>
+    <div class="mast-actions">
+      <button id="rules-open">制作规范</button>
+      <button id="plan-open">替换清单 <span class="count" id="plan-count">0</span></button>
+    </div>
+  </header>
+  <noscript>请启用 JavaScript 打开表情工作台。</noscript>
+  <main class="studio">
+    <section class="board" aria-label="表情节点画布">
+      <div class="toolbar">
+        <div class="segmented" id="versions" aria-label="素材版本">
+          <button data-version="original" aria-pressed="true">原版</button>
+          <button data-version="current" aria-pressed="false">现用 <span id="fw-version"></span></button>
+        </div>
+        <div class="search-wrap">
+          <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><input id="search" placeholder="搜索语义、触发或素材" aria-label="搜索节点" autocomplete="off" aria-controls="search-results" aria-expanded="false"></label>
+          <div class="search-results" id="search-results" hidden></div>
+        </div>
+      </div>
+      <div class="viewport" id="viewport" tabindex="0" aria-label="节点画布，可拖动和缩放">
+        <div id="world" class="world">
+          <svg id="edges" aria-hidden="true"></svg>
+          <div id="nodes"></div>
+        </div>
+      </div>
+      <div class="board-footer">
+        <div class="legend"><span class="trigger-color">触发</span><span class="recipe-color">编排</span><span class="semantic-color">语义</span><span class="asset-color">素材</span></div>
+        <div class="zoom-tools" aria-label="视图操作">
+          <button id="focus-node" title="定位选中节点" aria-label="定位选中节点"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg></button>
+          <button id="fit" title="适应全部节点" aria-label="适应全部节点"><svg viewBox="0 0 24 24"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/></svg></button>
+          <button id="zoom-out" title="缩小" aria-label="缩小"><svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button>
+          <output id="zoom-value">100%</output>
+          <button id="zoom-in" title="放大" aria-label="放大"><svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7v14"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <aside class="inspect" aria-label="节点预览和替换">
+      <div id="node-detail" class="detail" aria-live="polite"></div>
+      <section id="player" class="player" aria-label="动画预览">
+        <div class="screen">
+          <canvas id="face" width="480" height="480" role="img" aria-label="表情动画"></canvas>
+          <div id="screen-guides" hidden><span>顶部提示</span><span>字幕区</span></div>
+          <span class="screen-tag">480 × 480</span>
+        </div>
+        <div class="timeline">
+          <button id="play" title="播放或暂停" aria-label="暂停"><svg viewBox="0 0 24 24"><path d="M9 5v14m6-14v14"/></svg></button>
+          <button id="replay" title="从头播放" aria-label="从头播放"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 1 2 6m-2-6V5m0 7h7"/></svg></button>
+          <input type="range" id="frames" min="0" max="0" value="0" aria-label="动画帧">
+          <output id="frame-number"></output>
+        </div>
+        <div class="preview-controls"><label>镜像 <select id="mirror"><option value="device">设备状态</option><option value="off">关闭镜像</option><option value="on">开启镜像</option></select></label><label class="check"><input id="guides" type="checkbox"> 字幕留位</label></div>
+      </section>
+      <div id="metadata"></div>
+      <section class="replace" id="replace" hidden>
+        <h3>指定新素材</h3>
+        <label for="candidate">素材包 <span>mosaico-eaf-480</span></label>
+        <select id="candidate" aria-label="选择新表情素材"></select>
+        <div id="comparison" class="comparison" hidden><img id="candidate-gif" alt=""><div id="candidate-meta"></div></div>
+        <label for="scope">替换范围</label>
+        <select id="scope" aria-label="替换范围"><option value="one">仅此语义</option><option value="shared">替换此版本的共用语义</option></select>
+        <p id="scope-info" class="micro"></p>
+        <label for="note">备注</label>
+        <input id="note" placeholder="例如：只在确实惊讶时使用" maxlength="180">
+        <button class="primary" id="save-plan" type="button">加到替换清单</button>
+        <p class="micro" id="save-status" role="status"></p>
+      </section>
+    </aside>
+  </main>
+  <dialog id="rules" aria-labelledby="rules-title">
+    <div class="dialog-head"><div><small>PRODUCTION / Mosaico</small><h2 id="rules-title">制作规范</h2></div><button data-close="rules" aria-label="关闭制作规范">×</button></div>
+    <div class="rule-body">
+      <div id="budgets" class="budgets"></div>
+      <dl class="specs">
+        <dt>01 · 构图</dt><dd>交稿用 480 × 480 的 GIF 或帧图，黑底，按「字幕留位」检查。整脸素材做方形；想复用双眼布局可只画左眼。已画好两只眼睛的图用整脸布局。</dd>
+        <dt>02 · 节奏</dt><dd>保留原稿帧率，注明循环的起止帧与收尾。现用新素材按 240 × 240、10 fps 落地；原版眼神大多为 20 fps，独立聆听条为 15 fps。区间用 [起始, 结束)，结束帧不纳入循环。</dd>
+        <dt>03 · 格式</dt><dd>EAF 是固件的动画包。现用解码器支持 8 位索引色 RLE，最长边 360 px，最多 256 个容器条目（含元数据），每包最多 4 MiB。480 px 原稿与 MMAP 合集先离线转码。固件空间还须看分区预算。</dd>
+        <dt>04 · 复用</dt><dd>同一份动画可对应多个语义，固件只存一份。给一个语义单独换图时，原文件若还有别的语义使用，就仍占空间。</dd>
+        <dt>05 · 编排</dt><dd id="priority-text"></dd>
+        <dt>06 · 播放</dt><dd id="timing-text"></dd>
+      </dl>
+      <details><summary>原版素材授权与来源</summary><p id="source-revision" class="micro"></p><pre id="license"></pre></details>
+    </div>
+  </dialog>
+  <dialog id="plan" aria-labelledby="plan-title">
+    <div class="dialog-head"><div><small>ART DIRECTION / DRAFT</small><h2 id="plan-title">替换清单</h2></div><button data-close="plan" aria-label="关闭替换清单">×</button></div>
+    <div id="plan-list"></div>
+    <div class="dialog-actions"><span id="storage-state" class="micro"></span><button class="primary" id="export">导出 JSON</button></div>
+  </dialog>
+</body>
+</html>

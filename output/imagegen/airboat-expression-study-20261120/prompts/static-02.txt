@@ -1,0 +1,7 @@
+AirBoat, a fictional tiny floating companion, shown only as its two eyes inside a square digital face. Match the first local reference for mascot identity, two oversized white shapes with black pupils, no outline or texture. Use flat bold chromatic electric fields and crisp motion graphics, mildly asymmetric but friendly. Black or one uniform saturated field, accent details confined to the eyes. Keep each field's upper 16% and lower 22% empty for actual device overlays. Use comparable overall eye size across all shots and keep the pair spatially centered around x=50%, y=49%, about 52% total width. No lettering, labels, borders, gradients, 3D, glasses, eyebrows, mouth, body, grid rules, device or photo.
+
+Generate a 2 by 2 expression atlas, four exact edge-to-edge equally sized square tiles, split at EXACTLY 50% width and 50% height. No gutters or dividers. Each tile is a separate complete centered face; all geometry and margins above are relative to that tile. Render strictly in this reading order, one pair of eyes per tile:
+top-left: wide eyes curve into cheerful upward crescents; electric lime solid field.
+top-right: very round white eyes and small pupils; one lime spark between eyes; acid yellow solid field.
+bottom-left: rigid tall whites, pin-point pupils, squashed gap; hot coral solid field.
+bottom-right: white eyes lean together diagonally, near eye a bit larger; ion cyan solid field.

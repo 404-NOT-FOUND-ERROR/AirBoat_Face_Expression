@@ -1,0 +1,139 @@
+{
+  "version": "1.29.0",
+  "passed": true,
+  "method": "offline_system_update_candidate",
+  "device_operations": false,
+  "installation": "pending",
+  "physical_acceptance": "pending",
+  "main_app_bytes": 13389472,
+  "main_app_remaining": 176480,
+  "ui_apps_bytes": 858768,
+  "ui_apps_remaining": 189808,
+  "partition_table_identical": true,
+  "target_layout_sha256": "3c26b245870110b955f490e07fe047309b44b098c5adce18a449b1010bb2fd12",
+  "ui_source": "build/airboat-linked-ui.bin",
+  "components_match_final_build": true,
+  "package_sha256": "7aa39872744c7b6a9bc9ce718f29f3c3de0a4638b1f684f55febb4c10fa7db71",
+  "elf_sha256": "90b8c83adce529f407a0c994e9555dcedd3678cb357ecd79da3a139b8396ea5e",
+  "app_sha256": "ae716e058d1ca026f2ed9850ef652012159b1f64a4659877ae005426c6e1e658",
+  "priorities": {
+    "quiet": 0,
+    "idle": 10,
+    "walking": 20,
+    "posture": 30,
+    "touch": 40,
+    "preview": 50,
+    "dialogue": 70,
+    "user": 90,
+    "safety": 100,
+    "hidden": 110
+  },
+  "timing": {
+    "event_max_age_ms": 500,
+    "preview_ms": 30000
+  },
+  "recipes": {
+    "happy": {
+      "gesture": "tail_wag",
+      "clip": "tail_wag"
+    },
+    "laughing": {
+      "gesture": "tail_wag",
+      "clip": "tail_wag"
+    },
+    "funny": {
+      "gesture": "tail_wag",
+      "clip": "tail_wag"
+    },
+    "loving": {
+      "gesture": "tail_wag",
+      "clip": "tail_wag"
+    },
+    "confident": {
+      "gesture": "tail_wag",
+      "clip": "tail_wag"
+    },
+    "delicious": {
+      "gesture": "tail_wag",
+      "clip": "tail_wag"
+    },
+    "thinking": {
+      "gesture": "tail_wag",
+      "clip": "tail_wag"
+    },
+    "relaxed": {
+      "gesture": "look",
+      "clip": "look_around"
+    },
+    "confused": {
+      "gesture": "look",
+      "clip": "look_around"
+    },
+    "question": {
+      "gesture": "look",
+      "clip": "look_around"
+    },
+    "surprised": {
+      "gesture": "look",
+      "clip": "look_around"
+    },
+    "shocked": {
+      "gesture": "look",
+      "clip": "look_around"
+    },
+    "silly": {
+      "gesture": "look",
+      "clip": "look_around"
+    },
+    "look_left": {
+      "gesture": "look",
+      "clip": "look_around"
+    },
+    "look_right": {
+      "gesture": "look",
+      "clip": "look_around"
+    },
+    "look_around": {
+      "gesture": "look",
+      "clip": "look_around"
+    },
+    "embarrassed": {
+      "gesture": "sway",
+      "clip": "quiet"
+    },
+    "winking": {
+      "gesture": "sway",
+      "clip": "quiet"
+    },
+    "beat_swing": {
+      "gesture": "sway",
+      "clip": "quiet"
+    },
+    "angry": {
+      "gesture": "sway",
+      "clip": "quiet"
+    },
+    "sad": {
+      "gesture": "settle",
+      "clip": "quiet"
+    },
+    "crying": {
+      "gesture": "settle",
+      "clip": "quiet"
+    },
+    "sleepy": {
+      "gesture": "settle",
+      "clip": "quiet"
+    },
+    "tried": {
+      "gesture": "settle",
+      "clip": "quiet"
+    }
+  },
+  "source_project": "404-NOT-FOUND-ERROR/ESP-Airship-based-on-Mosaico",
+  "source_paths": [
+    "components/app_response/app_response.c",
+    "components/app_response/include/app_response.h",
+    "components/app_expression_player/app_expression_player.c"
+  ]
+}

@@ -1,0 +1,11 @@
+--- a/src/widget/anim/gfx_anim.c
++++ b/src/widget/anim/gfx_anim.c
+@@ -39,7 +39,7 @@
+ 
+ #define GFX_ANIM_EVENT_PLAN_DONE                BIT0
+ #define GFX_ANIM_EVENT_SEGMENT_PAUSED           BIT1
+-#define GFX_ANIM_DRAIN_FRAME_STEP               2U
++#define GFX_ANIM_DRAIN_FRAME_STEP               1U
+ 
+ /**********************
+  *      TYPEDEFS

@@ -1,0 +1,55 @@
+{
+  "canvas": 240,
+  "assets": [
+    {
+      "file": "trial-idle.eaf",
+      "source": "idle.gif",
+      "source_sha256": "93fdd971ac7fbdbd953126575b0bb616f9f52d02be3fceea901e17e935cbf8b4",
+      "sha256": "2ac318f6ac7d96c9de5f68a8bbe09af302c70068618463ad8a2ae6123f0138d6",
+      "bytes": 409226,
+      "frames": 104,
+      "period_ms": 100,
+      "loop_frames": [
+        0,
+        104
+      ],
+      "semantics": [
+        "neutral",
+        "idle"
+      ]
+    },
+    {
+      "file": "trial-happy.eaf",
+      "source": "happy[16,224].gif",
+      "source_sha256": "9711bbc17803edf79147c76c87fa188ed20a0c03f67c0a191fbf1d77d08c7203",
+      "sha256": "ae560f292385689a3b80c16671d4b5a6c0596d1175f84cc986dce1375901505d",
+      "bytes": 372130,
+      "frames": 120,
+      "period_ms": 100,
+      "loop_frames": [
+        8,
+        112
+      ],
+      "semantics": [
+        "happy"
+      ]
+    },
+    {
+      "file": "trial-surprised.eaf",
+      "source": "surprised[16,224].gif",
+      "source_sha256": "e7830db2a92c7244c9f33c000a414ffb6ab636837bfbb48afab712846ef563b1",
+      "sha256": "db6b93c80cea3fdcc1d73c0dc8a6976fd09f6cb4134fac20d955f4dabe0b58a0",
+      "bytes": 340166,
+      "frames": 120,
+      "period_ms": 100,
+      "loop_frames": [
+        8,
+        112
+      ],
+      "semantics": [
+        "shocked",
+        "surprised"
+      ]
+    }
+  ]
+}

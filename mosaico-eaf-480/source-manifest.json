@@ -1,0 +1,110 @@
+[
+  {
+    "name": "idle",
+    "label": "待机",
+    "width": 480,
+    "height": 480,
+    "fps": 20,
+    "frames": 208,
+    "duration_ms": 10400,
+    "loop_start": 0,
+    "loop_end": 208,
+    "source_file": "idle.gif"
+  },
+  {
+    "name": "waiting",
+    "label": "等待",
+    "width": 480,
+    "height": 480,
+    "fps": 20,
+    "frames": 228,
+    "duration_ms": 11400,
+    "loop_start": 10,
+    "loop_end": 218,
+    "source_file": "waiting[10,218].gif"
+  },
+  {
+    "name": "confused",
+    "label": "困惑",
+    "width": 480,
+    "height": 480,
+    "fps": 20,
+    "frames": 240,
+    "duration_ms": 12000,
+    "loop_start": 16,
+    "loop_end": 224,
+    "source_file": "confused[16,224].gif"
+  },
+  {
+    "name": "happy",
+    "label": "开心",
+    "width": 480,
+    "height": 480,
+    "fps": 20,
+    "frames": 240,
+    "duration_ms": 12000,
+    "loop_start": 16,
+    "loop_end": 224,
+    "source_file": "happy[16,224].gif"
+  },
+  {
+    "name": "surprised",
+    "label": "惊讶",
+    "width": 480,
+    "height": 480,
+    "fps": 20,
+    "frames": 240,
+    "duration_ms": 12000,
+    "loop_start": 16,
+    "loop_end": 224,
+    "source_file": "surprised[16,224].gif"
+  },
+  {
+    "name": "angry",
+    "label": "生气",
+    "width": 480,
+    "height": 480,
+    "fps": 20,
+    "frames": 240,
+    "duration_ms": 12000,
+    "loop_start": 16,
+    "loop_end": 224,
+    "source_file": "angry[16,224].gif"
+  },
+  {
+    "name": "sad",
+    "label": "伤心",
+    "width": 480,
+    "height": 480,
+    "fps": 20,
+    "frames": 240,
+    "duration_ms": 12000,
+    "loop_start": 16,
+    "loop_end": 224,
+    "source_file": "sad[16,224].gif"
+  },
+  {
+    "name": "bored",
+    "label": "无聊",
+    "width": 480,
+    "height": 480,
+    "fps": 20,
+    "frames": 240,
+    "duration_ms": 12000,
+    "loop_start": 16,
+    "loop_end": 224,
+    "source_file": "bored[16,224].gif"
+  },
+  {
+    "name": "drowsy",
+    "label": "困了",
+    "width": 480,
+    "height": 480,
+    "fps": 20,
+    "frames": 240,
+    "duration_ms": 12000,
+    "loop_start": 16,
+    "loop_end": 224,
+    "source_file": "drowsy[16,224].gif"
+  }
+]

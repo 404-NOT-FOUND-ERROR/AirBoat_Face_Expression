@@ -1,0 +1,22 @@
+{
+  "endpoint": "https://api.openai.com/v1/images/edits",
+  "proxy": "http://127.0.0.1:7897",
+  "fields": {
+    "model": "gpt-image-2.5-sunburst",
+    "size": "1024x1024",
+    "quality": "medium",
+    "output_format": "png",
+    "n": 1
+  },
+  "prompt": "prompts/static-07.txt",
+  "inputs": [
+    {
+      "path": "inputs/airboat-idle-reference.png",
+      "sha256": "1e8a062ec14b0aef1c50686adddd38a6511c664bb891a8030a397ba2daff933b"
+    }
+  ],
+  "status": "ok",
+  "duration_s": 20.74,
+  "output": "raw/static-07.png",
+  "output_sha256": "4c48173ed38a408ba87cba37fc6c2dcd1b298c459c2852063b120a4b5641ffee"
+}

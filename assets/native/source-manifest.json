@@ -1,0 +1,99 @@
+{
+  "source_revision": "46d427255756fe2a148777ea3f256b615b52e160",
+  "source_prefix": "examples/xiaozhi-esp32/main/boards/esp_vocat/assets/",
+  "assets": [
+    {
+      "file": "Happy.eaf",
+      "bytes": 81645,
+      "sha256": "2ed3a64ecdb7a78e2c9959bfc3758c2742d5447d4a2bcdc6d2bf072763deba5c"
+    },
+    {
+      "file": "Sad.eaf",
+      "bytes": 177137,
+      "sha256": "b9e0e2fb4e73e96edc331c3736f9d952de2507a711da34a5587c4426dcbca7e8"
+    },
+    {
+      "file": "angry.eaf",
+      "bytes": 98391,
+      "sha256": "63f6fa85175ad53f9c0c1fde0a5c19210257ec69f4cb45660d3db1fabdf9743a"
+    },
+    {
+      "file": "beat_swing.eaf",
+      "bytes": 233112,
+      "sha256": "ac4f95293cdefb8107013816383de89d7dcad49c7cde8d97dc13046bf5bd8537"
+    },
+    {
+      "file": "confused.eaf",
+      "bytes": 211666,
+      "sha256": "dafcdbe72939d7ef1061466caa30eb83517e953f284b53d9f6d708ac4319a05d"
+    },
+    {
+      "file": "cry.eaf",
+      "bytes": 89412,
+      "sha256": "d09e4eb5ca10ff7040af3ff0b6ce3ad06db0a5902935bf4b02d50b09dcf9e2c2"
+    },
+    {
+      "file": "eat.eaf",
+      "bytes": 461337,
+      "sha256": "df8d5e00c5e5dd9abd618162d19a9bffbb50d6769c4cc09f88c6977b9d8485da"
+    },
+    {
+      "file": "insert.eaf",
+      "bytes": 1272846,
+      "sha256": "1d3d2babc0770594f8fdf0701614638e3e03647b18c32674beae3fc3d6459ef1"
+    },
+    {
+      "file": "listen.eaf",
+      "bytes": 100609,
+      "sha256": "e7a000326797b73c87387e27dfdd5c2941ece32568080d1c6ef6947fd01c7f28"
+    },
+    {
+      "file": "look_around.eaf",
+      "bytes": 378540,
+      "sha256": "d9ef28bf399736b7a007863f5e13757d665874447d820b339a8ef2218aef674c"
+    },
+    {
+      "file": "look_left.eaf",
+      "bytes": 49148,
+      "sha256": "6f09e3da89d452cc1bd0dd80da63dbc5e960a4ca4baa4c5466bfb57d4a6ec83f"
+    },
+    {
+      "file": "look_right.eaf",
+      "bytes": 49150,
+      "sha256": "30e0a4eacb0f55ab45c20acc0572919a19f6155ab5248b6aadecad014737441e"
+    },
+    {
+      "file": "neutral.eaf",
+      "bytes": 161063,
+      "sha256": "21280165824bbf806dc75d76f8ef0b0cdf73ce43c9ce9eda762f93a2da5dac87"
+    },
+    {
+      "file": "question.eaf",
+      "bytes": 363158,
+      "sha256": "57484fa147c53ce0ac9e70d42416c8650b1649d70e360bf65ec77121903ce5bc"
+    },
+    {
+      "file": "shocked.eaf",
+      "bytes": 64963,
+      "sha256": "bf97df5acdb7b64a34bb1f32ee2d5fd98a1117c6f06daad4a30e99ec44b47cf8"
+    },
+    {
+      "file": "sleep.eaf",
+      "bytes": 184689,
+      "sha256": "efa178f2d486c1143bff99f3304847fc73909e9ba60bcc52182fd818fe9ce680"
+    },
+    {
+      "file": "tried.eaf",
+      "bytes": 321773,
+      "sha256": "fff2d5d0a09e51143108ffbd5ddc881f878115e5f9103e9c89208266652e47cb"
+    },
+    {
+      "file": "winking.eaf",
+      "bytes": 12698,
+      "sha256": "0969d76cd6dff1add4a140b4614025bf11703baa038b4b6190d0a22ea31eebd4"
+    }
+  ],
+  "total_bytes": 4311337,
+  "catalog_sha256": "6f10faad244a4b03db243cfa9c170153e5ceb0fae567274a6dddb616ce792861",
+  "layout_sha256": "a5e6c3260e60f0cfcaced911d9056d57448996bf6257622d4cd135fb33efe9be"
+}

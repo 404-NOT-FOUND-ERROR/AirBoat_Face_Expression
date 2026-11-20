@@ -1,0 +1,205 @@
+{
+  "neutral": {
+    "native": "gif/neutral.gif",
+    "preview": "preview/neutral.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "idle": {
+    "native": "gif/idle.gif",
+    "preview": "preview/idle.gif",
+    "fps": 25,
+    "frames": 48,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "listening": {
+    "native": "gif/listening.gif",
+    "preview": "preview/listening.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "thinking": {
+    "native": "gif/thinking.gif",
+    "preview": "preview/thinking.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "happy": {
+    "native": "gif/happy.gif",
+    "preview": "preview/happy.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "surprised": {
+    "native": "gif/surprised.gif",
+    "preview": "preview/surprised.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "shocked": {
+    "native": "gif/shocked.gif",
+    "preview": "preview/shocked.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "question": {
+    "native": "gif/question.gif",
+    "preview": "preview/question.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "look_around": {
+    "native": "gif/look_around.gif",
+    "preview": "preview/look_around.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "winking": {
+    "native": "gif/winking.gif",
+    "preview": "preview/winking.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "beat_swing": {
+    "native": "gif/beat_swing.gif",
+    "preview": "preview/beat_swing.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "confused": {
+    "native": "gif/confused.gif",
+    "preview": "preview/confused.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "relaxed": {
+    "native": "gif/relaxed.gif",
+    "preview": "preview/relaxed.gif",
+    "fps": 25,
+    "frames": 48,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "sleepy": {
+    "native": "gif/sleepy.gif",
+    "preview": "preview/sleepy.gif",
+    "fps": 25,
+    "frames": 48,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "laughing": {
+    "native": "gif/laughing.gif",
+    "preview": "preview/laughing.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "funny": {
+    "native": "gif/funny.gif",
+    "preview": "preview/funny.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "loving": {
+    "native": "gif/loving.gif",
+    "preview": "preview/loving.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "embarrassed": {
+    "native": "gif/embarrassed.gif",
+    "preview": "preview/embarrassed.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "confident": {
+    "native": "gif/confident.gif",
+    "preview": "preview/confident.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "delicious": {
+    "native": "gif/delicious.gif",
+    "preview": "preview/delicious.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "sad": {
+    "native": "gif/sad.gif",
+    "preview": "preview/sad.gif",
+    "fps": 25,
+    "frames": 48,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "crying": {
+    "native": "gif/crying.gif",
+    "preview": "preview/crying.gif",
+    "fps": 25,
+    "frames": 48,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "silly": {
+    "native": "gif/silly.gif",
+    "preview": "preview/silly.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "angry": {
+    "native": "gif/angry.gif",
+    "preview": "preview/angry.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "insert": {
+    "native": "gif/insert.gif",
+    "preview": "preview/insert.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "look_left": {
+    "native": "gif/look_left.gif",
+    "preview": "preview/look_left.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "look_right": {
+    "native": "gif/look_right.gif",
+    "preview": "preview/look_right.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "eat": {
+    "native": "gif/eat.gif",
+    "preview": "preview/eat.gif",
+    "fps": 25,
+    "frames": 36,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  },
+  "tried": {
+    "native": "gif/tried.gif",
+    "preview": "preview/tried.gif",
+    "fps": 25,
+    "frames": 48,
+    "processing": "fixed backdrop; per-eye and pupil affine interpolation; loop closure"
+  }
+}

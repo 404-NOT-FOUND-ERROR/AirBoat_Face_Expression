@@ -1,0 +1,98 @@
+[
+  {
+    "name": "idle",
+    "file": "idle.eaf",
+    "x": 0,
+    "y": 0,
+    "loop": [],
+    "fps": 20
+  },
+  {
+    "name": "waiting",
+    "file": "waiting.eaf",
+    "x": 0,
+    "y": 0,
+    "loop": [
+      10,
+      218
+    ],
+    "fps": 20
+  },
+  {
+    "name": "confused",
+    "file": "confused.eaf",
+    "x": 0,
+    "y": 0,
+    "loop": [
+      16,
+      224
+    ],
+    "fps": 20
+  },
+  {
+    "name": "happy",
+    "file": "happy.eaf",
+    "x": 0,
+    "y": 0,
+    "loop": [
+      16,
+      224
+    ],
+    "fps": 20
+  },
+  {
+    "name": "surprised",
+    "file": "surprised.eaf",
+    "x": 0,
+    "y": 0,
+    "loop": [
+      16,
+      224
+    ],
+    "fps": 20
+  },
+  {
+    "name": "angry",
+    "file": "angry.eaf",
+    "x": 0,
+    "y": 0,
+    "loop": [
+      16,
+      224
+    ],
+    "fps": 20
+  },
+  {
+    "name": "sad",
+    "file": "sad.eaf",
+    "x": 0,
+    "y": 0,
+    "loop": [
+      16,
+      224
+    ],
+    "fps": 20
+  },
+  {
+    "name": "bored",
+    "file": "bored.eaf",
+    "x": 0,
+    "y": 0,
+    "loop": [
+      16,
+      224
+    ],
+    "fps": 20
+  },
+  {
+    "name": "drowsy",
+    "file": "drowsy.eaf",
+    "x": 0,
+    "y": 0,
+    "loop": [
+      16,
+      224
+    ],
+    "fps": 20
+  }
+]

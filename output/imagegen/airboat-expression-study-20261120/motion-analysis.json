@@ -1,0 +1,448 @@
+{
+  "sources": {
+    "happy": {
+      "source": "Happy.eaf",
+      "slug": "happy",
+      "frames": 42,
+      "fps": 20,
+      "peak": 1900,
+      "change_peaks_ms": [
+        1550,
+        1600,
+        1850,
+        1900,
+        1950
+      ],
+      "native_loop": true
+    },
+    "laughing": {
+      "source": "Happy.eaf",
+      "slug": "happy",
+      "frames": 42,
+      "fps": 20,
+      "peak": 1900,
+      "change_peaks_ms": [
+        1550,
+        1600,
+        1850,
+        1900,
+        1950
+      ],
+      "native_loop": true
+    },
+    "funny": {
+      "source": "Happy.eaf",
+      "slug": "happy",
+      "frames": 42,
+      "fps": 20,
+      "peak": 1900,
+      "change_peaks_ms": [
+        1550,
+        1600,
+        1850,
+        1900,
+        1950
+      ],
+      "native_loop": true
+    },
+    "loving": {
+      "source": "Happy.eaf",
+      "slug": "happy",
+      "frames": 42,
+      "fps": 20,
+      "peak": 1900,
+      "change_peaks_ms": [
+        1550,
+        1600,
+        1850,
+        1900,
+        1950
+      ],
+      "native_loop": true
+    },
+    "embarrassed": {
+      "source": "Happy.eaf",
+      "slug": "happy",
+      "frames": 42,
+      "fps": 20,
+      "peak": 1900,
+      "change_peaks_ms": [
+        1550,
+        1600,
+        1850,
+        1900,
+        1950
+      ],
+      "native_loop": true
+    },
+    "confident": {
+      "source": "Happy.eaf",
+      "slug": "happy",
+      "frames": 42,
+      "fps": 20,
+      "peak": 1900,
+      "change_peaks_ms": [
+        1550,
+        1600,
+        1850,
+        1900,
+        1950
+      ],
+      "native_loop": true
+    },
+    "delicious": {
+      "source": "Happy.eaf",
+      "slug": "happy",
+      "frames": 42,
+      "fps": 20,
+      "peak": 1900,
+      "change_peaks_ms": [
+        1550,
+        1600,
+        1850,
+        1900,
+        1950
+      ],
+      "native_loop": true
+    },
+    "sad": {
+      "source": "Sad.eaf",
+      "slug": "sad",
+      "frames": 96,
+      "fps": 20,
+      "peak": 250,
+      "change_peaks_ms": [
+        250,
+        300,
+        500,
+        550,
+        600
+      ],
+      "native_loop": true
+    },
+    "crying": {
+      "source": "cry.eaf",
+      "slug": "cry",
+      "frames": 43,
+      "fps": 20,
+      "peak": 400,
+      "change_peaks_ms": [
+        200,
+        350,
+        400,
+        450,
+        650
+      ],
+      "native_loop": true
+    },
+    "sleepy": {
+      "source": "sleep.eaf",
+      "slug": "sleep",
+      "frames": 118,
+      "fps": 20,
+      "peak": 5650,
+      "change_peaks_ms": [
+        50,
+        5400,
+        5450,
+        5500,
+        5550
+      ],
+      "native_loop": true
+    },
+    "silly": {
+      "source": "Happy.eaf",
+      "slug": "happy",
+      "frames": 42,
+      "fps": 20,
+      "peak": 1900,
+      "change_peaks_ms": [
+        1550,
+        1600,
+        1850,
+        1900,
+        1950
+      ],
+      "native_loop": true
+    },
+    "angry": {
+      "source": "angry.eaf",
+      "slug": "angry",
+      "frames": 50,
+      "fps": 20,
+      "peak": 150,
+      "change_peaks_ms": [
+        300,
+        350,
+        400,
+        450,
+        500
+      ],
+      "native_loop": true
+    },
+    "surprised": {
+      "source": "Happy.eaf",
+      "slug": "happy",
+      "frames": 42,
+      "fps": 20,
+      "peak": 1900,
+      "change_peaks_ms": [
+        1550,
+        1600,
+        1850,
+        1900,
+        1950
+      ],
+      "native_loop": true
+    },
+    "shocked": {
+      "source": "shocked.eaf",
+      "slug": "shocked",
+      "frames": 34,
+      "fps": 20,
+      "peak": 50,
+      "change_peaks_ms": [
+        50,
+        1450,
+        1500,
+        1550,
+        1600
+      ],
+      "native_loop": true
+    },
+    "thinking": {
+      "source": "confused.eaf",
+      "slug": "confused",
+      "frames": 77,
+      "fps": 20,
+      "peak": 3800,
+      "change_peaks_ms": [
+        100,
+        350,
+        3500,
+        3750,
+        3800
+      ],
+      "native_loop": true
+    },
+    "winking": {
+      "source": "neutral.eaf",
+      "slug": "neutral",
+      "frames": 88,
+      "fps": 20,
+      "peak": 400,
+      "change_peaks_ms": [
+        100,
+        400,
+        1750,
+        1800,
+        2950
+      ],
+      "native_loop": true
+    },
+    "relaxed": {
+      "source": "Happy.eaf",
+      "slug": "happy",
+      "frames": 42,
+      "fps": 20,
+      "peak": 1900,
+      "change_peaks_ms": [
+        1550,
+        1600,
+        1850,
+        1900,
+        1950
+      ],
+      "native_loop": true
+    },
+    "confused": {
+      "source": "confused.eaf",
+      "slug": "confused",
+      "frames": 77,
+      "fps": 20,
+      "peak": 3800,
+      "change_peaks_ms": [
+        100,
+        350,
+        3500,
+        3750,
+        3800
+      ],
+      "native_loop": true
+    },
+    "neutral": {
+      "source": "winking.eaf",
+      "slug": "winking",
+      "frames": 14,
+      "fps": 20,
+      "peak": 300,
+      "change_peaks_ms": [
+        100,
+        150,
+        300,
+        400,
+        600
+      ],
+      "native_loop": false
+    },
+    "idle": {
+      "source": "neutral.eaf",
+      "slug": "neutral",
+      "frames": 88,
+      "fps": 20,
+      "peak": 400,
+      "change_peaks_ms": [
+        100,
+        400,
+        1750,
+        1800,
+        2950
+      ],
+      "native_loop": false
+    },
+    "insert": {
+      "source": "insert.eaf",
+      "slug": "insert",
+      "frames": 50,
+      "fps": 20,
+      "peak": 200,
+      "change_peaks_ms": [
+        150,
+        200,
+        250,
+        300,
+        2400
+      ],
+      "native_loop": false
+    },
+    "look_left": {
+      "source": "look_left.eaf",
+      "slug": "look_left",
+      "frames": 75,
+      "fps": 20,
+      "peak": 450,
+      "change_peaks_ms": [
+        250,
+        400,
+        450,
+        650,
+        850
+      ],
+      "native_loop": false
+    },
+    "look_right": {
+      "source": "look_right.eaf",
+      "slug": "look_right",
+      "frames": 75,
+      "fps": 20,
+      "peak": 450,
+      "change_peaks_ms": [
+        250,
+        400,
+        450,
+        650,
+        850
+      ],
+      "native_loop": false
+    },
+    "look_around": {
+      "source": "look_around.eaf",
+      "slug": "look_around",
+      "frames": 125,
+      "fps": 20,
+      "peak": 4700,
+      "change_peaks_ms": [
+        1050,
+        1100,
+        1800,
+        3550,
+        4300
+      ],
+      "native_loop": false
+    },
+    "question": {
+      "source": "question.eaf",
+      "slug": "question",
+      "frames": 100,
+      "fps": 20,
+      "peak": 4250,
+      "change_peaks_ms": [
+        250,
+        650,
+        3850,
+        4200,
+        4250
+      ],
+      "native_loop": false
+    },
+    "beat_swing": {
+      "source": "beat_swing.eaf",
+      "slug": "beat_swing",
+      "frames": 60,
+      "fps": 20,
+      "peak": 1250,
+      "change_peaks_ms": [
+        1150,
+        1200,
+        1250,
+        1300,
+        1350
+      ],
+      "native_loop": true
+    },
+    "eat": {
+      "source": "eat.eaf",
+      "slug": "eat",
+      "frames": 75,
+      "fps": 20,
+      "peak": 700,
+      "change_peaks_ms": [
+        500,
+        650,
+        2050,
+        2100,
+        2150
+      ],
+      "native_loop": false
+    },
+    "tried": {
+      "source": "tried.eaf",
+      "slug": "tried",
+      "frames": 75,
+      "fps": 20,
+      "peak": 700,
+      "change_peaks_ms": [
+        500,
+        650,
+        2050,
+        2100,
+        2150
+      ],
+      "native_loop": false
+    },
+    "listening": {
+      "source": "listen.eaf",
+      "slug": "listen",
+      "frames": 50,
+      "fps": 15,
+      "peak": 3067,
+      "change_peaks_ms": [
+        933,
+        1600,
+        1667,
+        2067,
+        2133
+      ],
+      "native_loop": true
+    }
+  },
+  "motion_studies": {
+    "idle": "长停顿 → 一次快速眨眼 → 慢慢归位",
+    "happy": "先压低 → 弹起 → 落下 → 两次小幅回弹",
+    "shocked": "突然拉高 → 盯住 → 极短横抖 → 放松",
+    "confused": "左右交替 → 振幅变小 → 完全站稳",
+    "look_around": "瞳孔先左看 → 停住 → 右看 → 回中"
+  },
+  "gif_sampling_hz": 25,
+  "motion_study_source": "Local transforms of user artwork. No remote generation."
+}

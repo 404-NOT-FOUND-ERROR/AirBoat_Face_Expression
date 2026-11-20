@@ -1,0 +1,255 @@
+{
+  "project": "AirBoat",
+  "firmware_catalog": "1.29.0",
+  "groups": [
+    {
+      "id": "01",
+      "roles": [
+        {
+          "key": "neutral",
+          "label": "默认",
+          "pose": "two fully open round eyes, centered pupils",
+          "motion": "small anticipatory uplift, one soft blink, settle",
+          "palette": "electric lime"
+        },
+        {
+          "key": "idle",
+          "label": "待机",
+          "pose": "relaxed open eyes with slightly low pupils",
+          "motion": "slow float down, lazy double blink, settle",
+          "palette": "electric lime"
+        },
+        {
+          "key": "listening",
+          "label": "聆听",
+          "pose": "attentive open eyes looking ahead; small cyan three-bar listening pulse in the top band",
+          "motion": "pulse the three cyan bars in sequence while eyes stay calm",
+          "palette": "ion cyan on electric lime"
+        },
+        {
+          "key": "thinking",
+          "label": "思考",
+          "pose": "uneven eyes, both pupils look up to one side",
+          "motion": "gaze up-left, thoughtful pause, one eye narrows, return",
+          "palette": "digital periwinkle"
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "roles": [
+        {
+          "key": "happy",
+          "label": "开心",
+          "pose": "wide eyes curve into cheerful upward crescents",
+          "motion": "notice, brighten, rebound in a small buoyant bounce, settle",
+          "palette": "electric lime"
+        },
+        {
+          "key": "surprised",
+          "label": "突然发现",
+          "pose": "very round white eyes and small pupils; one lime spark between eyes",
+          "motion": "fast delighted widening, small rise, gentle settle",
+          "palette": "acid yellow"
+        },
+        {
+          "key": "shocked",
+          "label": "受惊",
+          "pose": "rigid tall whites, pin-point pupils, squashed gap",
+          "motion": "sharp recoil, hold very still for a beat, cautious recovery",
+          "palette": "hot coral"
+        },
+        {
+          "key": "question",
+          "label": "好奇歪头",
+          "pose": "white eyes lean together diagonally, near eye a bit larger",
+          "motion": "ease into a diagonal tilt, hold two beats, straighten",
+          "palette": "ion cyan"
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "roles": [
+        {
+          "key": "look_around",
+          "label": "张望",
+          "pose": "balanced open whites with pupils turned outward to explore",
+          "motion": "hold a left glance, sweep to right, center",
+          "palette": "electric lime"
+        },
+        {
+          "key": "winking",
+          "label": "眨眼",
+          "pose": "left eye closed as a clean white crescent; right eye wide",
+          "motion": "one distinct left wink, playful hold, reopen both",
+          "palette": "hot pink"
+        },
+        {
+          "key": "beat_swing",
+          "label": "摇摆",
+          "pose": "two open rounded eyes offset in height",
+          "motion": "two rhythmic side-to-side leaning beats, mirror timing not the art",
+          "palette": "punchy violet"
+        },
+        {
+          "key": "confused",
+          "label": "晕乎乎",
+          "pose": "wonky eye sizes, offset pupils, two tiny coral orbit marks at eye level",
+          "motion": "small off-balance left then right wobble; damp quickly",
+          "palette": "digital periwinkle with coral"
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "roles": [
+        {
+          "key": "relaxed",
+          "label": "放松",
+          "pose": "gently half-closed eyes, broad horizontal white shapes",
+          "motion": "exhale-like slow lowering of lids and float back up",
+          "palette": "mint green"
+        },
+        {
+          "key": "sleepy",
+          "label": "困倦",
+          "pose": "almost closed white eyelids, a sliver of black pupil",
+          "motion": "two sleepy dips, briefly almost shut, lift halfway",
+          "palette": "soft periwinkle"
+        },
+        {
+          "key": "laughing",
+          "label": "大笑",
+          "pose": "two tightly happy clamped white curves, compressed shapes",
+          "motion": "two elastic laughing pulses and a held smile-shaped eye pose",
+          "palette": "acid yellow"
+        },
+        {
+          "key": "funny",
+          "label": "搞怪",
+          "pose": "one large stretched eye, one tiny round eye, crossed pupils",
+          "motion": "small left-right switch in eye scale, freeze on the silly pose",
+          "palette": "punchy violet"
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "roles": [
+        {
+          "key": "loving",
+          "label": "喜欢",
+          "pose": "two rounded soft white eyes with dark heart-shaped pupils",
+          "motion": "dark pupils round into hearts and gently pulse once",
+          "palette": "hot pink"
+        },
+        {
+          "key": "embarrassed",
+          "label": "害羞",
+          "pose": "two lowered white eyes looking down sideways, tiny hot pink cheek dashes",
+          "motion": "quick glance away, pink dashes briefly light up, slow peek back",
+          "palette": "hot pink"
+        },
+        {
+          "key": "confident",
+          "label": "得意",
+          "pose": "two forward-looking white half lids, one lid slightly raised",
+          "motion": "brief diagonal lifting of one eye, hold the confident look",
+          "palette": "ion cyan"
+        },
+        {
+          "key": "delicious",
+          "label": "好吃",
+          "pose": "two small delighted white crescents with a tiny yellow sparkle between them",
+          "motion": "small anticipatory squish, open into pleased crescents, two compact beats",
+          "palette": "acid yellow"
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "roles": [
+        {
+          "key": "sad",
+          "label": "难过",
+          "pose": "downturned eye pairs and low gaze, gently sagging outer corners",
+          "motion": "slow downward droop, linger, slow partial lift",
+          "palette": "blue-violet"
+        },
+        {
+          "key": "crying",
+          "label": "哭泣",
+          "pose": "downturned eyes with one discrete cyan tear beside one eye",
+          "motion": "one clear tear slips and vanishes above subtitle margin, slight tremble",
+          "palette": "ion cyan"
+        },
+        {
+          "key": "silly",
+          "label": "俏皮",
+          "pose": "close-set eyes with both pupils pointing inward",
+          "motion": "pupils converge, hold, pop back apart",
+          "palette": "electric lime"
+        },
+        {
+          "key": "angry",
+          "label": "生气",
+          "pose": "bold angled white upper lids narrow toward the center",
+          "motion": "fast narrowing, brief huff-like compression, release halfway",
+          "palette": "hot coral"
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "roles": [
+        {
+          "key": "insert",
+          "label": "插入动画",
+          "pose": "two white eyes with crisp square-corner scan highlights",
+          "motion": "short modular scan alignment, briefly hold, dissolve accents",
+          "palette": "ion cyan"
+        },
+        {
+          "key": "look_left",
+          "label": "看左边",
+          "pose": "both pupils clearly on the viewer's left",
+          "motion": "move both pupils from center to the viewer's left; hold; return",
+          "palette": "electric lime"
+        },
+        {
+          "key": "look_right",
+          "label": "看右边",
+          "pose": "both pupils clearly on the viewer's right",
+          "motion": "move both pupils from center to the viewer's right; hold; return",
+          "palette": "electric lime"
+        },
+        {
+          "key": "eat",
+          "label": "吃东西",
+          "pose": "alternately squashed rounded white eyes, a single tiny acid sparkle",
+          "motion": "two distinct chew-like squash beats using eye shapes alone",
+          "palette": "acid yellow"
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "roles": [
+        {
+          "key": "tried",
+          "label": "疲惫",
+          "pose": "low, uneven drooping half-lids, centered gaze",
+          "motion": "heavy slow sink, hold, one effortful partial lift",
+          "palette": "muted periwinkle"
+        }
+      ]
+    }
+  ],
+  "identity_reference": {
+    "source": "mosaico-eaf-480/source-gif/idle.gif",
+    "frame": 0,
+    "sha256": "93fdd971ac7fbdbd953126575b0bb616f9f52d02be3fceea901e17e935cbf8b4"
+  },
+  "coverage": "28 firmware semantics plus the synthetic listening composite"
+}

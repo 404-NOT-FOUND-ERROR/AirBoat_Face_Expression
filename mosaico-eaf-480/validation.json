@@ -1,0 +1,451 @@
+{
+  "format": "MMAP / EAF",
+  "canvas": [
+    480,
+    480
+  ],
+  "fps": 20,
+  "assets": 9,
+  "bytes": 7500826,
+  "sha256": "4bb9a4924a09d442ad8c8b7d1158fbce16a3878ed52d51b195d3bc41c21807f0",
+  "checks": [
+    "all EAF checksums, frame tables, dimensions and block bounds",
+    "loop ranges",
+    "MMAP checksum and complete pack/unpack round trip",
+    "decoded EAF samples differ from GIF by mean <1/255 per channel and <3% pixels; shared idle and loop seams identical"
+  ],
+  "hardware_tested": false,
+  "resources": [
+    {
+      "name": "idle",
+      "bytes": 1167921,
+      "frames": 208,
+      "frame_formats": {
+        "_S": 208
+      },
+      "sha256": "091e3efdd4329c0efbffb673f047e082f6f91b4fb8ce0ed0dddfaef2ac91f5e0"
+    },
+    {
+      "name": "waiting",
+      "bytes": 418995,
+      "frames": 228,
+      "frame_formats": {
+        "_S": 228
+      },
+      "sha256": "dfb6997635791ddc36313afc0f2d32785a29963387fb074b52fa6863d53938bb"
+    },
+    {
+      "name": "confused",
+      "bytes": 843844,
+      "frames": 240,
+      "frame_formats": {
+        "_S": 240
+      },
+      "sha256": "c24bcf91608094297623881be4bb4d9b2fa130bb6abcf4e1e297f03dc846e791"
+    },
+    {
+      "name": "happy",
+      "bytes": 1093112,
+      "frames": 240,
+      "frame_formats": {
+        "_S": 240
+      },
+      "sha256": "3b817e13b98a53f06549908fad36ea10b5c76829968f876a8ffe937f1012c8e3"
+    },
+    {
+      "name": "surprised",
+      "bytes": 1029890,
+      "frames": 240,
+      "frame_formats": {
+        "_S": 240
+      },
+      "sha256": "f68fb3b341ca45d9a2f99b27b79a5bbc2cc22f1d694ac6e77f79b529847f443c"
+    },
+    {
+      "name": "angry",
+      "bytes": 811243,
+      "frames": 240,
+      "frame_formats": {
+        "_S": 240
+      },
+      "sha256": "68c747885bbdb36da4b0c897a065a6b37c7898c3a67c75b500064310a8beeb75"
+    },
+    {
+      "name": "sad",
+      "bytes": 833848,
+      "frames": 240,
+      "frame_formats": {
+        "_S": 240
+      },
+      "sha256": "d134becc67a68711bccc5380e4e433f94c8b8f25b71d5de472e5d9fcf32315e4"
+    },
+    {
+      "name": "bored",
+      "bytes": 646498,
+      "frames": 240,
+      "frame_formats": {
+        "_S": 240
+      },
+      "sha256": "173f53bfeadbc25ed0f9bdf9cac56067dd2308a16c834a274631fa469e905379"
+    },
+    {
+      "name": "drowsy",
+      "bytes": 653945,
+      "frames": 240,
+      "frame_formats": {
+        "_S": 240
+      },
+      "sha256": "b75e5ac4155714b5e01d82b140ec872eb8acd07e56eedd59dee194c882ee27fa"
+    }
+  ],
+  "pixel_validation": [
+    {
+      "name": "idle",
+      "sampled_frames": [
+        0,
+        104,
+        207
+      ],
+      "palette_conversion_within_tolerance": true,
+      "comparisons": [
+        {
+          "frame": 0,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        },
+        {
+          "frame": 104,
+          "mean_absolute_channel_error": 0.026755,
+          "changed_pixels": 1307
+        },
+        {
+          "frame": 207,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        }
+      ],
+      "clip_seam_identical": true,
+      "loop_seam_identical": true
+    },
+    {
+      "name": "waiting",
+      "sampled_frames": [
+        0,
+        10,
+        114,
+        217,
+        227
+      ],
+      "palette_conversion_within_tolerance": true,
+      "comparisons": [
+        {
+          "frame": 0,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        },
+        {
+          "frame": 10,
+          "mean_absolute_channel_error": 0.002038,
+          "changed_pixels": 344
+        },
+        {
+          "frame": 114,
+          "mean_absolute_channel_error": 0.00057,
+          "changed_pixels": 224
+        },
+        {
+          "frame": 217,
+          "mean_absolute_channel_error": 0.002038,
+          "changed_pixels": 344
+        },
+        {
+          "frame": 227,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        }
+      ],
+      "clip_seam_identical": true,
+      "loop_seam_identical": true
+    },
+    {
+      "name": "confused",
+      "sampled_frames": [
+        0,
+        16,
+        120,
+        223,
+        239
+      ],
+      "palette_conversion_within_tolerance": true,
+      "comparisons": [
+        {
+          "frame": 0,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        },
+        {
+          "frame": 16,
+          "mean_absolute_channel_error": 0.023545,
+          "changed_pixels": 1074
+        },
+        {
+          "frame": 120,
+          "mean_absolute_channel_error": 0.031082,
+          "changed_pixels": 999
+        },
+        {
+          "frame": 223,
+          "mean_absolute_channel_error": 0.023545,
+          "changed_pixels": 1074
+        },
+        {
+          "frame": 239,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        }
+      ],
+      "clip_seam_identical": true,
+      "loop_seam_identical": true
+    },
+    {
+      "name": "happy",
+      "sampled_frames": [
+        0,
+        16,
+        120,
+        223,
+        239
+      ],
+      "palette_conversion_within_tolerance": true,
+      "comparisons": [
+        {
+          "frame": 0,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        },
+        {
+          "frame": 16,
+          "mean_absolute_channel_error": 0.018414,
+          "changed_pixels": 1082
+        },
+        {
+          "frame": 120,
+          "mean_absolute_channel_error": 0.034987,
+          "changed_pixels": 1513
+        },
+        {
+          "frame": 223,
+          "mean_absolute_channel_error": 0.018414,
+          "changed_pixels": 1082
+        },
+        {
+          "frame": 239,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        }
+      ],
+      "clip_seam_identical": true,
+      "loop_seam_identical": true
+    },
+    {
+      "name": "surprised",
+      "sampled_frames": [
+        0,
+        16,
+        120,
+        223,
+        239
+      ],
+      "palette_conversion_within_tolerance": true,
+      "comparisons": [
+        {
+          "frame": 0,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        },
+        {
+          "frame": 16,
+          "mean_absolute_channel_error": 0.049965,
+          "changed_pixels": 771
+        },
+        {
+          "frame": 120,
+          "mean_absolute_channel_error": 0.000527,
+          "changed_pixels": 9
+        },
+        {
+          "frame": 223,
+          "mean_absolute_channel_error": 0.049965,
+          "changed_pixels": 771
+        },
+        {
+          "frame": 239,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        }
+      ],
+      "clip_seam_identical": true,
+      "loop_seam_identical": true
+    },
+    {
+      "name": "angry",
+      "sampled_frames": [
+        0,
+        16,
+        120,
+        223,
+        239
+      ],
+      "palette_conversion_within_tolerance": true,
+      "comparisons": [
+        {
+          "frame": 0,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        },
+        {
+          "frame": 16,
+          "mean_absolute_channel_error": 0.025742,
+          "changed_pixels": 866
+        },
+        {
+          "frame": 120,
+          "mean_absolute_channel_error": 0.025444,
+          "changed_pixels": 646
+        },
+        {
+          "frame": 223,
+          "mean_absolute_channel_error": 0.025742,
+          "changed_pixels": 866
+        },
+        {
+          "frame": 239,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        }
+      ],
+      "clip_seam_identical": true,
+      "loop_seam_identical": true
+    },
+    {
+      "name": "sad",
+      "sampled_frames": [
+        0,
+        16,
+        120,
+        223,
+        239
+      ],
+      "palette_conversion_within_tolerance": true,
+      "comparisons": [
+        {
+          "frame": 0,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        },
+        {
+          "frame": 16,
+          "mean_absolute_channel_error": 0.023887,
+          "changed_pixels": 958
+        },
+        {
+          "frame": 120,
+          "mean_absolute_channel_error": 0.029196,
+          "changed_pixels": 769
+        },
+        {
+          "frame": 223,
+          "mean_absolute_channel_error": 0.023887,
+          "changed_pixels": 958
+        },
+        {
+          "frame": 239,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        }
+      ],
+      "clip_seam_identical": true,
+      "loop_seam_identical": true
+    },
+    {
+      "name": "bored",
+      "sampled_frames": [
+        0,
+        16,
+        120,
+        223,
+        239
+      ],
+      "palette_conversion_within_tolerance": true,
+      "comparisons": [
+        {
+          "frame": 0,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        },
+        {
+          "frame": 16,
+          "mean_absolute_channel_error": 0.012151,
+          "changed_pixels": 558
+        },
+        {
+          "frame": 120,
+          "mean_absolute_channel_error": 0.022138,
+          "changed_pixels": 778
+        },
+        {
+          "frame": 223,
+          "mean_absolute_channel_error": 0.012151,
+          "changed_pixels": 558
+        },
+        {
+          "frame": 239,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        }
+      ],
+      "clip_seam_identical": true,
+      "loop_seam_identical": true
+    },
+    {
+      "name": "drowsy",
+      "sampled_frames": [
+        0,
+        16,
+        120,
+        223,
+        239
+      ],
+      "palette_conversion_within_tolerance": true,
+      "comparisons": [
+        {
+          "frame": 0,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        },
+        {
+          "frame": 16,
+          "mean_absolute_channel_error": 0.012092,
+          "changed_pixels": 408
+        },
+        {
+          "frame": 120,
+          "mean_absolute_channel_error": 0.020295,
+          "changed_pixels": 755
+        },
+        {
+          "frame": 223,
+          "mean_absolute_channel_error": 0.012092,
+          "changed_pixels": 408
+        },
+        {
+          "frame": 239,
+          "mean_absolute_channel_error": 0.01413,
+          "changed_pixels": 1121
+        }
+      ],
+      "clip_seam_identical": true,
+      "loop_seam_identical": true
+    }
+  ]
+}

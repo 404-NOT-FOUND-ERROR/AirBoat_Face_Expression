@@ -1,0 +1,48 @@
+{
+  "endpoint": "https://api.openai.com/v1/images/edits",
+  "proxy": "http://127.0.0.1:7897",
+  "fields": {
+    "model": "gpt-image-2.6-sunburst",
+    "size": "480x480",
+    "quality": "medium",
+    "complexity": "medium",
+    "output_format": "gif",
+    "frame_count": 16,
+    "frame_duration_ms": 90,
+    "n": 1
+  },
+  "prompt": "prompts/gif-laughing.txt",
+  "inputs": [
+    {
+      "path": "png/laughing.png",
+      "sha256": "f24f5b32a18a08b0af60d474dd8a169f2b64e5a18921befa53bef540ba966caf"
+    }
+  ],
+  "width": 480,
+  "height": 480,
+  "frames": 16,
+  "loop": 0,
+  "delays_ms": [
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90
+  ],
+  "status": "ok",
+  "duration_s": 22.41,
+  "request_id": "req_59591b8c6464436b9e74af7612387b5f",
+  "output": "gif/laughing.gif",
+  "output_sha256": "21365f54a98f7ed2c626a20028687c3de2b61e3a5b370cb4e7cb9a127f932fe1"
+}

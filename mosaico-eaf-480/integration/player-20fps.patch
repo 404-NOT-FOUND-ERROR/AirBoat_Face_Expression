@@ -1,0 +1,11 @@
+--- a/src/emote_gen_player.c
++++ b/src/emote_gen_player.c
+@@ -21,7 +21,7 @@
+ LV_FONT_DECLARE(font_puhui_basic_20_4);
+ 
+ static const char *TAG = "emote_gen_player";
+-static const uint32_t EMOTE_GEN_PLAYER_DEFAULT_FPS = 25;
++static const uint32_t EMOTE_GEN_PLAYER_DEFAULT_FPS = 20;
+ /** Tip strip height (px), same order of magnitude as expression emote_init. */
+ static const int32_t EMOTE_GEN_PLAYER_DEF_LABEL_H = 40;
+ static const uint32_t EMOTE_GEN_PLAYER_DEF_LABEL_SCROLL_SPEED = 50;
