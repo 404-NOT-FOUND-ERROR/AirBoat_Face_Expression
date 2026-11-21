@@ -7,18 +7,20 @@
   const phaseNames = {entry:"进入",performance:"完整表演",exit:"收尾",done:"整段播完 · 回到绿色",held:"单次播完 · 保持末帧","entry-held":"进入段结束"};
   const decoders = new Map(), stamps = new Map();
   let selected = "happy", clock = 0, running = false, last = null;
-  const original = key => key === "listening" ? {...data.original.neutral,overlay:"listen.eaf"} : data.original[key];
+  const original = key => $("compare-reference").value === "complete" ? data.complete[key] :
+    key === "listening" ? {...data.original.neutral,overlay:"listen.eaf"} : data.original[key];
+  const candidate = key => data[$("compare-variant").value][key];
   const decoder = file => {
     if (!decoders.has(file)) decoders.set(file,new Eaf(data.assets[file]));
     return decoders.get(file);
   };
   const mode = () => $("compare-mode").value;
   const duration = () => {
-    const a = original(selected), b = data.complete[selected];
+    const a = original(selected), b = candidate(selected);
     return Math.max(data.assets[a.file].frames*1000/a.fps,data.assets[b.file].frames*1000/b.fps);
   };
   function draw(which,p,at) {
-    const a = data.assets[p.file], state = Eaf.previewAt(p,a,at,which === "complete" ? mode() : undefined);
+    const a = data.assets[p.file], state = Eaf.previewAt(p,a,at,p.segments ? mode() : undefined);
     const overlay = p.overlay ? Math.floor(at*15/1000)%data.assets[p.overlay].frames : -1;
     const stamp = p.file+":"+state.frame+":"+overlay;
     if (stamps.get(which) !== stamp) {
@@ -37,8 +39,16 @@
     return state;
   }
   function paint() {
-    draw("original",original(selected),clock);
-    const state = draw("complete",data.complete[selected],clock);
+    const a=original(selected),b=candidate(selected),asset=data.assets[b.file];
+    const state = draw("complete",b,clock);
+    let referenceClock=clock;
+    if (a.segments && b.segments && $("compare-align").checked) {
+      const part=state.phase in b.segments ? state.phase : state.phase === "entry-held" ? "entry" : "exit";
+      const [start,end]=b.segments[part],[leftStart,leftEnd]=a.segments[part];
+      const progress=Math.min(1,Math.max(0,(state.frame-start)/Math.max(1,end-start-1)));
+      referenceClock=(leftStart+progress*(leftEnd-leftStart-1))*1000/a.fps;
+    }
+    draw("original",a,referenceClock);
     $("compare-time").value = Math.min(clock,Number($("compare-time").max));
     $("compare-clock").value = (clock/1000).toFixed(2)+" s";
     if (running && mode() !== "loop" && clock >= (mode() === "entry" ? state.duration : duration())) running = false;
@@ -47,10 +57,15 @@
   function reset(play = true) {
     selected = $("compare-semantic").value;
     clock = 0; last = null; running = play; stamps.clear();
-    const a = original(selected), b = data.complete[selected], asset = data.assets[b.file];
-    $("compare-title").textContent = names[selected]+" · 原版与新表情";
+    const a = original(selected), b = candidate(selected), asset = data.assets[b.file], optimized = asset.kind === "optimized";
+    $("compare-title").textContent = names[selected]+" · 画质与动作对比";
+    $("compare-left-title").textContent = $("compare-reference").value === "complete" ? "新表情 · 240" : "原版";
+    $("compare-right-title").textContent = optimized ? "高清优化 · 480" : "新表情 · 240";
+    $("compare-right-caption").textContent = optimized ? "分层绘制 · 按轮廓复用" : "交付 EAF · 逐帧播放";
+    $("compare-align-label").hidden=!a.segments;
     $("compare-original-meta").textContent = `${a.file} · ${a.fps} fps · ${a.loop ? "整段循环" : "播一遍后保持末帧"}`+(a.overlay ? " · 独立聆听条" : "");
-    $("compare-complete-meta").textContent = `${b.file} · ${b.fps} fps · ${(asset.frames/b.fps).toFixed(2)} s`;
+    $("compare-complete-meta").textContent = `${asset.width}×${asset.height} · ${b.fps} fps · ${(asset.frames/b.fps).toFixed(2)} s`+
+      (optimized ? ` · 整库含目录 ${(AirboatOptimized.statistics.totalBytes/1048576).toFixed(2)} MiB` : ` · ${(asset.bytes/1024).toFixed(1)} KiB`);
     const stages = $("compare-stages"); stages.replaceChildren();
     for (const [part,range] of Object.entries(b.segments)) {
       const button = document.createElement("button");
@@ -70,7 +85,12 @@
   }
   for (const key of Object.keys(data.complete)) $("compare-semantic").append(new Option(names[key]+" · "+key,key));
   $("compare-semantic").value = selected;
-  $("compare-open").onclick = () => open(selected);
+  $("compare-open").onclick = () => {
+    if (document.querySelector('[data-version="optimized"]').getAttribute("aria-pressed") === "true") {
+      $("compare-reference").value="complete";$("compare-variant").value="optimized";
+    }
+    open(selected);
+  };
   $("compare-close").onclick = () => dialog.close();
   dialog.addEventListener("close",() => {
     running = false; last = null;
@@ -86,6 +106,9 @@
   });
   $("compare-semantic").onchange = () => reset();
   $("compare-mode").onchange = () => reset();
+  $("compare-reference").onchange = () => reset();
+  $("compare-variant").onchange = () => reset();
+  $("compare-align").onchange = () => {stamps.clear();paint();};
   $("compare-replay").onclick = () => reset();
   $("compare-play").onclick = () => {
     if (!running && clock >= Number($("compare-time").max)) clock = 0;
@@ -103,6 +126,7 @@
   }
   requestAnimationFrame(tick);
   window.AirboatCompletePreview = {open};
-  const requested = new URLSearchParams(location.search).get("compare");
+  const params = new URLSearchParams(location.search), requested = params.get("quality") || params.get("compare");
+  if (params.has("quality")) { $("compare-reference").value="complete";$("compare-variant").value="optimized"; }
   if (requested) open(requested);
 })();

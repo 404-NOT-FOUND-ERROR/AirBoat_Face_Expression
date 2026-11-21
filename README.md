@@ -11,6 +11,7 @@ Colorful animated eyes for a playful floating companion. Explore expressive timi
 - [Animated gallery](output/imagegen/airboat-expression-study-20261120/gallery.html): original animation, reference art, and new GIFs side by side.
 - [Expression workbench](docs/product/expression-workbench.html): pan, zoom, play, mirror, trace triggers, and export replacement drafts.
 - [Full clip comparison](docs/product/expression-workbench.html?compare=happy): original and delivered EAF animations side by side, with entry, complete performance, and return markers.
+- [480 px quality comparison](docs/product/expression-workbench.html?quality=happy): native-size layered motion, independent eyes and procedural transitions; [format and measurements](docs/product/layered-expressions.en.md).
 - [Expression transition studio](docs/product/expression-transition-studio.html): preview the shared green anchor, emotion entry, loop, and return.
 - [Motion keyframes](output/imagegen/airboat-expression-study-20261120/motion-frames.png): anticipation, gaze shifts, rebounds, and settling.
 - [Asset manifest](output/imagegen/airboat-expression-study-20261120/manifest.json): models, inputs, prompts, and generation records.
@@ -26,6 +27,7 @@ Colorful animated eyes for a playful floating companion. Explore expressive timi
 | New expression studies | 29 reference images and 29 native animated GIFs, covering 28 firmware semantics plus listening |
 | Refined motion previews | 29 looping GIFs sampled at 25 fps, with fixed backgrounds and separate eye/pupil interpolation |
 | Transition delivery | 29 review EAF candidates; the firmware adapter uses 28 EAF files for 29 semantics, sharing idle and neutral |
+| Native layered candidate | 480×480, 29 semantics, procedural backgrounds/transitions and exact reflected-sprite sharing; 1.99 MiB including catalog |
 | Original library | 18 EAF assets and their decoded previews |
 | Current firmware trials | Three EAF animations used in the AirBoat 1.29.0 baseline |
 | Original artwork pack | Nine 480 × 480 source GIFs, EAF files, and conversion metadata |
@@ -39,7 +41,7 @@ Clone or download the repository, then open **docs/product/expression-workbench.
 1. Drag empty canvas space to pan; use the wheel or view controls to zoom.
 2. Select a semantic node to trace its trigger, response, and animation.
 3. Play, pause, scrub frames, or compare mirror modes. The default matches the device layout.
-4. Switch between the original catalog and the current 1.29.0 trial mappings.
+4. Switch between original, early trials, complete 240 px EAFs and the native 480 px layered candidate.
 5. Choose candidate artwork, select one semantic or a shared group, and export the replacement JSON.
 
 ![Expression workbench](docs/images/workbench.png)
@@ -51,6 +53,7 @@ Clone or download the repository, then open **docs/product/expression-workbench.
 | [docs/product/](docs/product/) | Offline canvas, EAF decoder, and bundled animation data |
 | [output/imagegen/airboat-expression-study-20261120/](output/imagegen/airboat-expression-study-20261120/) | Reference PNGs, native GIFs, refined previews, prompts, and API records |
 | [assets/native/](assets/native/) | Original and trial EAF catalogs |
+| [assets/optimized/](assets/optimized/) | Native layered candidate and source/hash catalog |
 | [mosaico-eaf-480/](mosaico-eaf-480/) | Original nine-expression artwork pack |
 | [scripts/](scripts/) | Catalog generation, image generation, motion processing, and review |
 | [docs/production.en.md](docs/production.en.md) | Format, timing, integration, and reusable workflow |

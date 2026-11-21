@@ -36,7 +36,7 @@
   let storage = true, plan = [];
   try { plan = JSON.parse(localStorage.getItem(storageKey) || "[]"); if (!Array.isArray(plan)) plan = []; }
   catch { storage = false; }
-  let version = "complete", selected = "semantic:happy", nodes = new Map(), edges = [];
+  let version = "optimized", selected = "semantic:happy", nodes = new Map(), edges = [];
   let scale = 1, x = 0, y = 0, initialized = false, slideTimer;
   let active, elapsed = 0, lastTick = null, stamp = "", fault = false;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -70,7 +70,7 @@
     Array.isArray(row.targets) && row.targets.every(k => menu.includes(k));
   plan = plan.filter(safeSaved);
   function profile(key) {
-    if (version === "complete") return {...catalog()[key],previewMode:$("complete-mode").value};
+    if (version === "complete" || version === "optimized") return {...catalog()[key],previewMode:$("complete-mode").value};
     return key === "listening" ? {...catalog().neutral, overlay:"listen.eaf"} : catalog()[key];
   }
   function references(file, source = catalog()) {
@@ -213,6 +213,11 @@
     const loop = p.loop ? p.range ? `循环 [${p.range.join(", ")})` : "整段循环" : "播一遍 · 保持最后帧";
     for (const label of [p.file,`${a.width}×${a.height}`,`${a.frames} 帧 · ${p.fps} fps`,size(a.bytes),layout,loop])
       box.append(el("span",null,label));
+    if (a.kind === "optimized") {
+      box.append(el("span",null,"图层按需镜像 · 16 级边缘覆盖"),
+        el("span",null,`本片段引用精灵 ${size(a.bytes)} · 可跨表情共享`),
+        el("span",null,`整库含目录 ${size(AirboatOptimized.statistics.totalBytes)} · 预览候选`));
+    }
     if (p.segments) for (const [part,range] of Object.entries(p.segments))
       box.append(el("span",null,`${{entry:"进入",performance:"表演",exit:"收尾"}[part]} ${(range[1]-range[0])/p.fps} s · [${range.join(", ")})`));
     if (p.overlay) {

@@ -2,6 +2,7 @@
 "use strict";
 window.AirboatEaf = class {
   constructor(asset) {
+    if (asset.kind === "optimized") return new window.AirboatOptimized(asset);
     this.asset = asset;
     this.cache = new Map();
     this.entries = [];

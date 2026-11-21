@@ -11,6 +11,7 @@
 - [表情动效库](output/imagegen/airboat-expression-study-20261120/gallery.html)：原版动画、参考图与新 GIF 并排看。
 - [表情工作台](docs/product/expression-workbench.html)：平移、缩放、播放、镜像、追踪触发链路并导出替换清单。
 - [完整动画对比](docs/product/expression-workbench.html?compare=happy)：原版与新交付 EAF 并排播放，标出进入、完整表演和收尾，支持暂停与拖帧。
+- [480 高清对比](docs/product/expression-workbench.html?quality=happy)：原尺寸轮廓、双眼独立时序与分层过渡；[格式与占用结果](docs/product/layered-expressions.zh-CN.md)。
 - [表情过渡实验室](docs/product/expression-transition-studio.html)：预演共同绿色起始帧、情绪进入、循环表演和自然回归。
 - [动作关键帧](output/imagegen/airboat-expression-study-20261120/motion-frames.png)：查看预动、视线、回弹与回稳。
 - [素材清单](output/imagegen/airboat-expression-study-20261120/manifest.json)：查看模型、输入、提示词与生成记录。
@@ -26,6 +27,7 @@
 | 新表情研究 | 29 张参考图、29 个原生 GIF，覆盖 28 个固件语义与聆听合成 |
 | 动效修整版 | 29 个按 25 fps 采样的循环 GIF，统一背景，分别处理眼白和瞳孔 |
 | 过渡交付 | 29 份评审 EAF；固件适配使用 28 个 EAF 文件映射 29 个语义，待机与中性共用 |
+| 高清分层候选 | 480×480、29 语义，背景／过渡按图层绘制，精确匹配的镜像精灵可共用；含目录 1.99 MiB |
 | 原版表情库 | 18 份 EAF 资源及解码预览 |
 | 当前固件小样 | AirBoat 1.29.0 使用的三份试换 EAF |
 | 原画素材包 | 九份 480×480 GIF、EAF 和转换记录 |
@@ -39,7 +41,7 @@
 1. 拖动画布空白处平移，用滚轮或视图按钮缩放。
 2. 点一个语义节点，查看它从哪里触发、经过什么编排、使用哪份动画。
 3. 播放、暂停、拖动进度条并切换镜像；默认按设备实际布局显示。
-4. 在「原版」与「现用 1.29.0」之间切换，比较素材与共用关系。
+4. 在原版、早期小样、240 完整 EAF 和 480 高清候选之间切换。
 5. 选新素材，指定单个语义或共用组，最后导出 JSON 替换清单。
 
 ![表情工作台](docs/images/workbench.png)
@@ -51,6 +53,7 @@
 | [docs/product/](docs/product/) | 离线画布、EAF 解码器与内嵌动画数据 |
 | [output/imagegen/airboat-expression-study-20261120/](output/imagegen/airboat-expression-study-20261120/) | 参考图、原生 GIF、修整版、提示词与调用参数 |
 | [assets/native/](assets/native/) | 原版与试换 EAF 目录 |
+| [assets/optimized/](assets/optimized/) | 高清分层候选、来源与哈希目录 |
 | [mosaico-eaf-480/](mosaico-eaf-480/) | 九种原画素材包 |
 | [scripts/](scripts/) | 目录生成、生图、动作处理与评审脚本 |
 | [docs/production.zh-CN.md](docs/production.zh-CN.md) | 制作规格、节拍、接入流程与复用方法 |
