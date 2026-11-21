@@ -10,6 +10,7 @@ Colorful animated eyes for a playful floating companion. Explore expressive timi
 
 - [Animated gallery](output/imagegen/airboat-expression-study-20261120/gallery.html): original animation, reference art, and new GIFs side by side.
 - [Expression workbench](docs/product/expression-workbench.html): pan, zoom, play, mirror, trace triggers, and export replacement drafts.
+- [Full clip comparison](docs/product/expression-workbench.html?compare=happy): original and delivered EAF animations side by side, with entry, complete performance, and return markers.
 - [Expression transition studio](docs/product/expression-transition-studio.html): preview the shared green anchor, emotion entry, loop, and return.
 - [Motion keyframes](output/imagegen/airboat-expression-study-20261120/motion-frames.png): anticipation, gaze shifts, rebounds, and settling.
 - [Asset manifest](output/imagegen/airboat-expression-study-20261120/manifest.json): models, inputs, prompts, and generation records.

@@ -140,3 +140,34 @@ dialog::backdrop{background:#000b}
   .zoom-tools button{width:27px}.zoom-tools output{width:35px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+
+/* Complete clip review: colored phases stay visible beside the actual frames. */
+.compare-open{width:100%;margin:0 0 12px;background:var(--pink);color:#191217;border-color:var(--pink);font-weight:700}
+.complete-mode{display:grid;gap:4px;font-size:12px;color:var(--muted);margin-top:10px}
+.complete-mode select{width:100%;min-width:0;font-size:11px}
+.clip-stages{display:flex;gap:3px;align-items:center;margin:8px 0}
+.clip-stages button{flex:1;font-size:11px;padding:4px;min-height:30px}
+.clip-stages span{color:var(--muted)}
+.clip-stages button.active{border-color:var(--green);color:var(--green);background:#303b22}
+.playback-status{min-height:18px;color:var(--green)}
+.compare-dialog{width:min(1010px,calc(100% - 24px));max-height:calc(100dvh - 28px)}
+.compare-body{padding:16px 20px 20px}
+.compare-top{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:16px}
+.compare-top label{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--muted)}
+.compare-faces{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.compare-faces article{min-width:0}
+.compare-card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.compare-card-head strong{font-size:17px;color:var(--pink)}
+.compare-card-head span{font-size:11px;color:var(--muted)}
+.compare-faces canvas{display:block;aspect-ratio:1;width:100%;height:auto;background:#000;border:1px solid var(--line);border-radius:9px}
+.compare-stages{display:flex;gap:3px;margin:8px 0}
+.compare-stages button{flex-basis:0;min-width:56px;padding:6px 2px;font:10px/1.4 inherit;border-top:3px solid var(--blue);background:#24303c}
+.compare-stages button[data-phase=performance]{border-color:var(--pink);background:#392631}
+.compare-stages button[data-phase=exit]{border-color:var(--green);background:#2b3421}
+.compare-stages button.active{box-shadow:inset 0 0 0 1px currentColor;color:#fff}
+.compare-transport{display:flex;gap:9px;align-items:center;border-top:1px solid var(--line);padding-top:15px;margin-top:13px}
+.compare-transport output{min-width:60px;font:12px ui-monospace,Consolas,monospace;color:var(--green)}
+.compare-transport button{white-space:nowrap}
+.compare-explanation{font-size:12px;color:var(--muted);margin:12px 0 0;line-height:1.7}
+@media(max-width:1050px){.toolbar{flex-wrap:wrap}.search-wrap{width:min(100%,280px)}}
+@media(max-width:760px){.mast-actions>a{display:none}.segmented button{font-size:11px;padding-inline:6px}.compare-body{padding:12px}.compare-faces{gap:12px}.compare-card-head{align-items:flex-start;flex-direction:column;gap:2px}.compare-top{gap:8px}.compare-top label{flex:1;min-width:0}.compare-top select{min-width:0;max-width:100%;font-size:11px}.compare-stages button{min-width:0;font-size:9px;overflow-wrap:anywhere}.compare-transport{gap:6px}.compare-transport button{font-size:11px;padding-inline:7px}.compare-faces .micro{font-size:10px;overflow-wrap:anywhere}.compare-dialog .dialog-head h2{font-size:18px}}

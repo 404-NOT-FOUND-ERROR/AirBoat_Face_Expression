@@ -27,6 +27,7 @@ def check_hash(path, expected):
 
 def main():
     subprocess.run([sys.executable,str(ROOT/"scripts/build-expression-workbench.py"),"--check"],check=True)
+    subprocess.run([sys.executable,str(ROOT/"scripts/build-workbench-complete.py"),"--check"],check=True)
     manifest = load(STUDY/"manifest.json")
     assert manifest["png"] == manifest["gif"] == len(manifest["entries"]) == 29
     for row in manifest["entries"]:

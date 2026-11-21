@@ -71,11 +71,32 @@ window.AirboatEaf = class {
     return canvas;
   }
   static frameAt(profile, asset, elapsed) {
+    if (profile.segments) return this.previewAt(profile,asset,elapsed,profile.previewMode || "complete").frame;
     const step = Math.floor(elapsed * profile.fps / 1000);
     if (!profile.loop) return Math.min(asset.frames - 1, step);
     if (profile.range && step >= profile.range[1])
       return profile.range[0] + (step - profile.range[0]) % (profile.range[1] - profile.range[0]);
     return step % asset.frames;
+  }
+  static previewAt(profile, asset, elapsed, mode = "complete") {
+    const step = Math.max(0,Math.floor(elapsed * profile.fps / 1000));
+    const period = 1000/profile.fps, segments = profile.segments;
+    if (!segments) {
+      const frame = this.frameAt(profile,asset,elapsed);
+      return {frame,phase:!profile.loop && step >= asset.frames ? "held" : "performance",
+        finished:!profile.loop && !profile.overlay && step >= asset.frames,
+        duration:asset.frames*period,cycle:Math.floor(step/asset.frames)};
+    }
+    const end = mode === "entry" ? segments.entry[1] : asset.frames;
+    let frame = Math.min(end-1,step), cycle = 0;
+    if (mode === "loop" && step >= segments.performance[1]) {
+      const [a,b] = segments.performance;
+      frame = a+(step-a)%(b-a); cycle = Math.floor((step-a)/(b-a));
+    }
+    const finished = mode !== "loop" && step >= end;
+    const phase = finished ? (mode === "entry" ? "entry-held" : "done") :
+      frame < segments.entry[1] ? "entry" : frame < segments.performance[1] ? "performance" : "exit";
+    return {frame,phase,finished,duration:end*period,cycle};
   }
   static draw(ctx, frame, profile, mirror = "device") {
     const side = ctx.canvas.width, scale = side / 360;

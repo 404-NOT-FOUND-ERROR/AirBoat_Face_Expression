@@ -36,7 +36,7 @@
   let storage = true, plan = [];
   try { plan = JSON.parse(localStorage.getItem(storageKey) || "[]"); if (!Array.isArray(plan)) plan = []; }
   catch { storage = false; }
-  let version = "original", selected = "semantic:neutral", nodes = new Map(), edges = [];
+  let version = "complete", selected = "semantic:happy", nodes = new Map(), edges = [];
   let scale = 1, x = 0, y = 0, initialized = false, slideTimer;
   let active, elapsed = 0, lastTick = null, stamp = "", fault = false;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -70,6 +70,7 @@
     Array.isArray(row.targets) && row.targets.every(k => menu.includes(k));
   plan = plan.filter(safeSaved);
   function profile(key) {
+    if (version === "complete") return {...catalog()[key],previewMode:$("complete-mode").value};
     return key === "listening" ? {...catalog().neutral, overlay:"listen.eaf"} : catalog()[key];
   }
   function references(file, source = catalog()) {
@@ -94,7 +95,7 @@
     const lists = [
       lanes.map(([k,label,,detail,,p]) => [k,label,p ? `优先级 ${p}` : "人物检测",detail]),
       lanes.map(([k,,label,detail,outputs]) => [k,label,`${outputs.length} 项输出`,detail]),
-      menu.map(k => [k,names[k],k === "listening" ? "neutral + listen" : k,""]),
+      menu.map(k => [k,names[k],k === "listening" && version !== "complete" ? "neutral + listen" : k,""]),
       assets.map(file => {
         const a = data.assets[file], linked = references(file);
         return [file,file,`${a.width} × ${a.height} · ${a.frames} 帧`,linked.length ? "" : "此版本无直接绑定。"];
@@ -124,7 +125,7 @@
     }
     for (const key of menu) {
       addEdge(id("semantic",key),id("asset",profile(key).file));
-      if (key === "listening") addEdge(id("semantic",key),id("asset","listen.eaf"));
+      if (profile(key).overlay) addEdge(id("semantic",key),id("asset","listen.eaf"));
     }
     for (const node of nodes.values()) if (node.type === "asset") thumbnails.observe(node.button);
   }
@@ -176,7 +177,7 @@
     if (node.type === "semantic") {
       const p = profile(node.key);
       const refs = references(p.file).filter(k => k !== node.key);
-      title.append(el("p",null,node.key === "listening" ? "独立节拍叠在 neutral 上" :
+      title.append(el("p",null,p.overlay ? "独立节拍叠在 neutral 上" :
         refs.length ? "与 "+refs.length+" 个语义共用底层素材" : "当前版本独立素材"));
       setPlayer(p);
       meta.append(facts(p),jumpRow(outgoing),el("p","micro","触发与编排"),jumpRow(incoming));
@@ -203,6 +204,7 @@
       if (node.type === "trigger") meta.append(jumpRow(outgoing));
       else meta.append(jumpRow(incoming));
     }
+    document.dispatchEvent(new CustomEvent("airboat:expression-select",{detail:{semantic:active.semantic || (node.type === "semantic" ? node.key : references(active.file)[0]) || "neutral"}}));
     highlight();
   }
   function facts(p) {
@@ -211,6 +213,8 @@
     const loop = p.loop ? p.range ? `循环 [${p.range.join(", ")})` : "整段循环" : "播一遍 · 保持最后帧";
     for (const label of [p.file,`${a.width}×${a.height}`,`${a.frames} 帧 · ${p.fps} fps`,size(a.bytes),layout,loop])
       box.append(el("span",null,label));
+    if (p.segments) for (const [part,range] of Object.entries(p.segments))
+      box.append(el("span",null,`${{entry:"进入",performance:"表演",exit:"收尾"}[part]} ${(range[1]-range[0])/p.fps} s · [${range.join(", ")})`));
     if (p.overlay) {
       const overlay = data.assets[p.overlay];
       box.append(el("span",null,`${p.overlay} · ${overlay.width}×${overlay.height} · ${overlay.frames} 帧 · 15 fps · ${size(overlay.bytes)}`));
@@ -224,7 +228,11 @@
   function renderFrame() {
     if (!active || fault) return;
     const base = data.assets[active.file];
-    const frame = Eaf.frameAt(active,base,elapsed);
+    const state = Eaf.previewAt(active,base,elapsed,active.previewMode);
+    const frame = state.frame;
+    const phases = {entry:"进入",performance:"完整表演",exit:"收尾",done:"整段播完 · 回到绿色",held:"单次播完 · 保持末帧","entry-held":"进入段结束"};
+    $("expression-phase-label").textContent = phases[state.phase] + (active.segments ? ` · 第 ${frame+1}/${base.frames} 帧` : "");
+    document.querySelectorAll("[data-clip-stage]").forEach(b => b.classList.toggle("active",b.dataset.clipStage === state.phase));
     const overlayCount = active.overlay ? data.assets[active.overlay].frames : 0;
     const layer = overlayCount ? Math.floor(elapsed*15/1000)%overlayCount : -1;
     const mirror = $("mirror").value, next = `${frame}/${layer}/${mirror}`;
@@ -245,10 +253,12 @@
   }
   function setPlayer(p) {
     active = p; elapsed = 0; stamp = ""; fault = false;
+    $("complete-controls").hidden = !p.segments;
     playing = !reduced;
     $("frames").max = (p.overlay && !p.loop ? data.assets[p.overlay] : data.assets[p.file]).frames-1;
     syncPlay(); renderFrame();
   }
+  document.addEventListener("airboat:preview-compare",e => { if (e.detail.open) { playing = false; syncPlay(); } });
   function tick(time) {
     if (!document.hidden && time - thumbTick > 120) {
       thumbTick = time;
@@ -257,7 +267,7 @@
         const p = file === "listen.eaf" ? {file,fps:15,loop:true} :
           Object.values(catalog()).find(p => p.file === file) ||
           Object.values(data.original).find(p => p.file === file);
-        const f = reduced ? 0 : Eaf.frameAt(p,a,time);
+        const f = reduced ? 0 : Eaf.frameAt(p.segments ? {...p,previewMode:"loop"} : p,a,time);
         if (button.dataset.frame === String(f)) continue;
         button.dataset.frame = String(f);
         try { Eaf.draw(button.querySelector("canvas").getContext("2d"),decoder(file).frame(f),p); }
@@ -268,7 +278,7 @@
       if (lastTick !== null) elapsed += Math.min(100,time-lastTick);
       try { renderFrame(); }
       catch (error) { fault = true; playing = false; syncPlay(); console.error(error); }
-      if (!active.loop && !active.overlay && elapsed >= data.assets[active.file].frames*1000/active.fps) {
+      if (Eaf.previewAt(active,data.assets[active.file],elapsed,active.previewMode).finished) {
         playing = false; syncPlay();
       }
     }
@@ -338,12 +348,20 @@
   $("mirror").onchange = renderFrame;
   $("guides").onchange = e => { $("screen-guides").hidden = !e.target.checked; };
   $("play").onclick = () => {
-    if (!playing && !active.loop && !active.overlay && elapsed >= data.assets[active.file].frames*1000/active.fps)
+    if (!playing && Eaf.previewAt(active,data.assets[active.file],elapsed,active.previewMode).finished)
       elapsed = 0;
     playing = !playing; syncPlay();
   };
   $("replay").onclick = () => { elapsed = 0; playing = true; syncPlay(); renderFrame(); };
+  $("complete-mode").onchange = () => { setPlayer({...active,previewMode:$("complete-mode").value}); playing = true; syncPlay(); };
+  document.querySelectorAll("[data-clip-stage]").forEach(b => b.onclick = () => {
+    if (!active.segments) return;
+    active = {...active,previewMode:"complete"}; $("complete-mode").value = "complete";
+    elapsed = active.segments[b.dataset.clipStage][0]*1000/active.fps;
+    playing = true; syncPlay(); stamp = ""; renderFrame();
+  });
   $("frames").oninput = e => {
+    if (active.segments) { active = {...active,previewMode:"complete"}; $("complete-mode").value = "complete"; }
     playing = false; syncPlay();
     elapsed = (Number(e.target.value)+.0001)*1000/(active.overlay && !active.loop ? 15 : active.fps);
     renderFrame();
@@ -486,7 +504,7 @@
   const report = el("a",null,`构建预算记录 ${data.version}`); report.href = data.report;
   $("budgets").after(report);
   $("license").textContent = data.license;
-  $("source-revision").textContent = "原版素材修订 "+data.revision+"。两种预览显示现有固件的触发逻辑。";
+  $("source-revision").textContent = "原版素材修订 "+data.revision+"。原版、早期小样与新表情使用同一语义节点；新表情展示完整交付素材，设备状态另行核对。";
   $("fw-version").textContent = data.version;
   persist(); buildGraph(); select(selected); initialView(); requestAnimationFrame(tick);
   new ResizeObserver(() => { if (!initialized) { initialized = true; initialView(); } }).observe(viewport);

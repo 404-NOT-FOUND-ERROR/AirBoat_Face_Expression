@@ -10,6 +10,7 @@
 
 - [表情动效库](output/imagegen/airboat-expression-study-20261120/gallery.html)：原版动画、参考图与新 GIF 并排看。
 - [表情工作台](docs/product/expression-workbench.html)：平移、缩放、播放、镜像、追踪触发链路并导出替换清单。
+- [完整动画对比](docs/product/expression-workbench.html?compare=happy)：原版与新交付 EAF 并排播放，标出进入、完整表演和收尾，支持暂停与拖帧。
 - [表情过渡实验室](docs/product/expression-transition-studio.html)：预演共同绿色起始帧、情绪进入、循环表演和自然回归。
 - [动作关键帧](output/imagegen/airboat-expression-study-20261120/motion-frames.png)：查看预动、视线、回弹与回稳。
 - [素材清单](output/imagegen/airboat-expression-study-20261120/manifest.json)：查看模型、输入、提示词与生成记录。
