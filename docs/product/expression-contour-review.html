@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>AirBoat · 表情修订对比</title>
+  <link rel="stylesheet" href="expression-contour-review.css">
+  <script defer src="expression-workbench-data.js"></script>
+  <script defer src="expression-complete-data.js"></script>
+  <script defer src="expression-optimized-data.js"></script>
+  <script defer src="expression-optimized-player.js"></script>
+  <script defer src="expression-workbench-player.js"></script>
+  <script defer src="expression-contour-data.js"></script>
+  <script defer src="expression-contour-player.js"></script>
+  <script defer src="expression-contour-review.js"></script>
+</head>
+<body>
+  <header><a href="expression-workbench.html">← 返回节点工作台</a><span>AIRBOAT / EXPRESSION REVIEW</span></header>
+  <main>
+    <div class="intro">
+      <div><p class="eyebrow">SHAPE · TIMING</p><h1>表情与微动作</h1></div>
+      <nav class="modes" aria-label="选择表情">
+        <button data-mode="idle" aria-pressed="true">待机眨眼</button><button data-mode="shocked" aria-pressed="false">惊讶</button>
+        <button data-mode="happy" aria-pressed="false">开心</button><button data-mode="confused" aria-pressed="false">晕眩</button>
+        <button data-mode="look_around" aria-pressed="false">张望</button>
+        <select id="repertoire" aria-label="全部 29 个表情"></select>
+      </nav>
+    </div>
+    <section class="compare" aria-label="动画对比">
+      <article><div class="label"><strong id="old-title">当前素材</strong><span id="old-kind">高清优化 · 480</span><select id="reference" aria-label="左侧对比版本" hidden><option value="original">原版动作</option><option value="optimized">上一版彩色</option></select></div><canvas id="old-face" width="480" height="480"></canvas><p id="old-note"></p></article>
+      <div class="arrow" aria-hidden="true">→</div>
+      <article class="new"><div class="label"><strong>修订候选</strong><span>完整轮廓 · 抗锯齿边缘</span></div><canvas id="new-face" width="480" height="480"></canvas><p id="new-note"></p></article>
+    </section>
+    <section class="transport" aria-label="动画播放控制"><button id="play" type="button" aria-label="暂停动画" title="播放或暂停">Ⅱ</button><button id="restart" type="button" aria-label="从头播放" title="从头播放">↺</button><input id="time" type="range" min="0" max="100" step="10" value="0" aria-label="播放进度"><output id="clock">0.00 s</output><select id="speed" aria-label="播放速度"><option value="1">1×</option><option value=".5">0.5×</option></select></section>
+    <div id="beats" class="beats" aria-label="动作节拍"></div>
+  </main>
+</body>
+</html>

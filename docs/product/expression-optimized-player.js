@@ -2,7 +2,8 @@
    only exact matching cropped coverage sprites share storage (including flips). */
 "use strict";
 (() => {
-  const pack = window.AIRBOAT_OPTIMIZED_PACK, data = window.AIRBOAT_EXPRESSIONS;
+  const data = window.AIRBOAT_EXPRESSIONS;
+  function createPlayer(pack) {
   if (!pack || pack.canvas !== 480 || pack.alpha_levels !== 16) throw Error("高清图层包版本不匹配");
   const bytes = Uint8Array.from(atob(pack.payload), c => c.charCodeAt(0));
   const view = new DataView(bytes.buffer);
@@ -57,6 +58,7 @@
     constructor(asset) {
       this.asset=asset; this.clip=pack.clips[asset.semantic];
       this.output=canvas(); this.layer=canvas(); this.cache=new Map();
+      if (pack.clip_pupils) this.eyeMask=canvas();
       if (!this.clip) throw Error("高清表情不存在");
     }
     static decodeSprite(index) { return sprite(index); }
@@ -64,8 +66,9 @@
     pose(frame) {
       const c=this.clip, n=pack.transition_frames, body=c.body_frames, base=pack.clips.idle;
       if (frame<n) return {a:base.keyframes[0],b:c.keyframes[0],u:frame/(n-1),from:base.color,to:c.color,transition:true};
-      if (frame>=n+body) return {a:c.keyframes[0],b:base.keyframes[0],u:(frame-n-body)/(n-1),from:c.color,to:base.color,transition:true};
-      const t=(frame-n)*c.keyframes.length/body,i=Math.floor(t);
+      if (frame>=n+body) return {a:c.keyframes[pack.exit_from_last ? c.keyframes.length-1 : 0],b:base.keyframes[0],u:(frame-n-body)/(n-1),from:c.color,to:base.color,transition:true};
+      const t=pack.exit_from_last ? (frame-n)*(c.keyframes.length-1)/Math.max(1,body-1) : (frame-n)*c.keyframes.length/body;
+      const i=Math.floor(t);
       return {a:c.keyframes[i],b:c.keyframes[(i+1)%c.keyframes.length],u:t-i,from:c.color,to:c.color,transition:false};
     }
     drawSprite(ctx,ref,x,y,w,h,opacity) {
@@ -87,6 +90,13 @@
       lc.globalCompositeOperation="lighter";
       this.drawSprite(lc,b,x,y,w,h,u);
       lc.globalCompositeOperation="source-in";lc.fillStyle=color;lc.fillRect(0,0,480,480);
+      if (this.eyeMask) {
+        if (color === "#fff") {
+          this.eyeMask.getContext("2d").drawImage(this.layer,0,0);
+        } else {
+          lc.globalCompositeOperation="destination-in";lc.drawImage(this.eyeMask,0,0);
+        }
+      }
       lc.globalCompositeOperation="source-over";
       ctx.drawImage(this.layer,0,0);
     }
@@ -105,7 +115,11 @@
       lc.globalCompositeOperation="source-over";ctx.drawImage(this.layer,0,0);
       for (let i=0;i<4;++i) {
         const eye=Math.floor(i/2),pupil=i%2;
-        const u=p.transition ? ease((p.u-(pupil ? eye*35/360 : .12+eye*25/360))/(pupil ? .75 : .8)) : p.u;
+        if (this.eyeMask && !pupil) this.eyeMask.getContext("2d").clearRect(0,0,480,480);
+        const stagger=pack.clip_pupils && (this.asset.semantic === "look_left" || this.asset.semantic === "look_right") ? 0 : eye;
+        const delay=pupil ? stagger*35/360 : .12+stagger*25/360;
+        const span=pupil ? .75 : .8;
+        const u=p.transition ? ease((p.u-delay)/(pack.exit_from_last ? Math.min(span,1-delay) : span)) : p.u;
         this.layerBetween(ctx,p.a.layers[i],p.b.layers[i],u,pupil ? "#000" : "#fff");
       }
       // Compare both encodings through the same RGB565 display precision.
@@ -121,7 +135,11 @@
       return out;
     }
   }
-  window.AirboatOptimized=Optimized;
+  return Optimized;
+  }
+  window.AirboatLayeredPlayer = createPlayer;
+  const pack = window.AIRBOAT_OPTIMIZED_PACK;
+  window.AirboatOptimized=createPlayer(pack);
   data.optimized={};
   for (const key of [...Object.keys(pack.clips),"neutral"]) {
     const actual=key==="neutral" ? "idle" : key,c=pack.clips[actual],n=pack.transition_frames;

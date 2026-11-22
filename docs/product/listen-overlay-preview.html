@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>聆听条 · 透明合成</title>
+  <link rel="stylesheet" href="listen-overlay-preview.css">
+  <script defer src="expression-workbench-data.js"></script>
+  <script defer src="expression-optimized-data.js"></script>
+  <script defer src="expression-optimized-player.js"></script>
+  <script defer src="expression-workbench-player.js"></script>
+  <script defer src="listen-overlay-player.js"></script>
+  <script defer src="listen-overlay-preview.js"></script>
+</head>
+<body>
+  <header><a href="expression-workbench.html">← 表情工作台</a><span>AIRBOAT / LISTENING</span></header>
+  <main>
+    <div class="intro"><p class="eyebrow">ONE FACE · ONE SURFACE</p><h1>听见你，<br>也融进表情里。</h1><p>保留原来的波形与节拍，让底色自然透出来。</p></div>
+    <div class="controls"><label>表情 <select id="semantic"><option value="idle">默认 · 绿色</option><option value="happy">开心 · 彩色</option><option value="thinking">思考</option><option value="sad">难过</option></select></label><label>屏幕 <select id="side"><option value="360">DeskBot · 360</option><option value="480">Mosaico · 480</option></select></label><button id="play">暂停</button><button id="listening" aria-pressed="true">结束聆听</button></div>
+    <section class="comparison" aria-label="语音条前后对比">
+      <article><div class="caption"><span>01 / 原来</span><strong>黑底一起覆盖</strong></div><canvas id="before" width="360" height="360" aria-label="原来带黑框的聆听动画"></canvas></article>
+      <article class="corrected"><div class="caption"><span>02 / 调整后</span><strong>波形融入当前底色</strong></div><canvas id="after" width="360" height="360" aria-label="透明背景的聆听动画"></canvas></article>
+    </section>
+      <div class="timeline"><input id="time" aria-label="动画时间" type="range" min="0" max="3333" step="1" value="0"><output id="clock">0.00 s</output></div>
+    <footer><p>聆听结束时一并移除波形；表情、瞳孔、字幕沿用各自的播放逻辑。</p><a href="../../integrations/listen-overlay/README.zh-CN.md">本地接入说明 ↗</a></footer>
+  </main>
+</body>
+</html>

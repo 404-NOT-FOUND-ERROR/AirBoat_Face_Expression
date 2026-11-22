@@ -12,9 +12,13 @@
 - [表情工作台](docs/product/expression-workbench.html)：平移、缩放、播放、镜像、追踪触发链路并导出替换清单。
 - [完整动画对比](docs/product/expression-workbench.html?compare=happy)：原版与新交付 EAF 并排播放，标出进入、完整表演和收尾，支持暂停与拖帧。
 - [480 高清对比](docs/product/expression-workbench.html?quality=happy)：原尺寸轮廓、双眼独立时序与分层过渡；[格式与占用结果](docs/product/layered-expressions.zh-CN.md)。
+- [微动作全库](docs/product/expression-contour-review.html)：29 个语义共用绿色待机；可半速对比动作，按节拍跳转。[本地接入卡](docs/product/expression-micro-motion.zh-CN.md)。
 - [表情过渡实验室](docs/product/expression-transition-studio.html)：预演共同绿色起始帧、情绪进入、循环表演和自然回归。
+- [聆听条融合预览](docs/product/listen-overlay-preview.html)：对比旧黑底与透明波形，并预览 360 / 480 屏幕。
 - [动作关键帧](output/imagegen/airboat-expression-study-20261120/motion-frames.png)：查看预动、视线、回弹与回稳。
 - [素材清单](output/imagegen/airboat-expression-study-20261120/manifest.json)：查看模型、输入、提示词与生成记录。
+
+旧聆听素材是 100×46 的灰度动画，黑色背景原本也会被绘制。新的[透明聆听条预览](docs/product/listen-overlay-preview.html)与[本地接入说明](integrations/listen-overlay/README.zh-CN.md)展示了在 RGB565 合成阶段去掉黑底、保留波形的做法。
 
 <table>
 <tr><td align="center"><img src="output/imagegen/airboat-expression-study-20261120/preview/happy.gif" width="180" alt="开心"><br>开心 · 回弹</td><td align="center"><img src="output/imagegen/airboat-expression-study-20261120/preview/confused.gif" width="180" alt="晕乎乎"><br>晕乎乎 · 余震</td><td align="center"><img src="output/imagegen/airboat-expression-study-20261120/preview/look_around.gif" width="180" alt="张望"><br>张望 · 瞳孔先动</td></tr>

@@ -12,7 +12,9 @@ Colorful animated eyes for a playful floating companion. Explore expressive timi
 - [Expression workbench](docs/product/expression-workbench.html): pan, zoom, play, mirror, trace triggers, and export replacement drafts.
 - [Full clip comparison](docs/product/expression-workbench.html?compare=happy): original and delivered EAF animations side by side, with entry, complete performance, and return markers.
 - [480 px quality comparison](docs/product/expression-workbench.html?quality=happy): native-size layered motion, independent eyes and procedural transitions; [format and measurements](docs/product/layered-expressions.en.md).
+- [Micro-motion library](docs/product/expression-contour-review.html): all 29 expressions, with a shared green idle pose, individual timing, half-speed playback, and beat markers.
 - [Expression transition studio](docs/product/expression-transition-studio.html): preview the shared green anchor, emotion entry, loop, and return.
+- [Listening overlay preview](docs/product/listen-overlay-preview.html): compare the original black matte with the transparent waveform on both 360 and 480 displays.
 - [Motion keyframes](output/imagegen/airboat-expression-study-20261120/motion-frames.png): anticipation, gaze shifts, rebounds, and settling.
 - [Asset manifest](output/imagegen/airboat-expression-study-20261120/manifest.json): models, inputs, prompts, and generation records.
 
@@ -87,6 +89,8 @@ Transitions use one green idle anchor, authored emotion entry/return clips, and 
 Continuous responses flow from the visible pose into the next emotion. Preview [listening → thinking → happy](output/imagegen/airboat-expression-study-20261120/transitions/demos/listen-think-happy.gif) and [happy → surprised](output/imagegen/airboat-expression-study-20261120/transitions/demos/happy-surprised.gif). The 29 review EAF candidates include explicit entry/loop/exit ranges.
 
 The AirBoat **1.32.0 integration candidate** is prepared in the companion firmware workspace. Host checks cover all 841 semantic pairs, interruption, cancellation, clock wrap, the original player, and all 1,365 frames in the review EAF set. Desktop/mobile browser checks and the pinned S31 candidate build pass. The application is 11,951,904 B, with 1,614,048 B remaining in its partition; the offline update bundle matches its build images. Mainline integration, native UI checks, S31 heap/frame-time measurements, camera/audio coexistence, and device acceptance remain. Follow the [firmware handoff](docs/device-integration.en.md).
+
+The original listening asset is an opaque 100 × 46 grayscale mask. The local [transparent overlay preview](docs/product/listen-overlay-preview.html) and [integration notes](integrations/listen-overlay/README.en.md) show a bounded RGB565 matte blend that retains the waveform over the expression's current background.
 
 ## Source and license
 

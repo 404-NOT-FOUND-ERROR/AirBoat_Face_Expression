@@ -70,7 +70,7 @@
     Array.isArray(row.targets) && row.targets.every(k => menu.includes(k));
   plan = plan.filter(safeSaved);
   function profile(key) {
-    if (version === "complete" || version === "optimized") return {...catalog()[key],previewMode:$("complete-mode").value};
+    if (catalog()[key]?.segments) return {...catalog()[key],previewMode:$("complete-mode").value};
     return key === "listening" ? {...catalog().neutral, overlay:"listen.eaf"} : catalog()[key];
   }
   function references(file, source = catalog()) {
@@ -95,7 +95,7 @@
     const lists = [
       lanes.map(([k,label,,detail,,p]) => [k,label,p ? `优先级 ${p}` : "人物检测",detail]),
       lanes.map(([k,,label,detail,outputs]) => [k,label,`${outputs.length} 项输出`,detail]),
-      menu.map(k => [k,names[k],k === "listening" && version !== "complete" ? "neutral + listen" : k,""]),
+      menu.map(k => [k,names[k],profile(k).overlay ? "neutral + listen" : k,""]),
       assets.map(file => {
         const a = data.assets[file], linked = references(file);
         return [file,file,`${a.width} × ${a.height} · ${a.frames} 帧`,linked.length ? "" : "此版本无直接绑定。"];
@@ -213,11 +213,12 @@
     const loop = p.loop ? p.range ? `循环 [${p.range.join(", ")})` : "整段循环" : "播一遍 · 保持最后帧";
     for (const label of [p.file,`${a.width}×${a.height}`,`${a.frames} 帧 · ${p.fps} fps`,size(a.bytes),layout,loop])
       box.append(el("span",null,label));
-    if (a.kind === "optimized") {
+    if (a.kind === "optimized" || a.kind === "contour") {
       box.append(el("span",null,"图层按需镜像 · 16 级边缘覆盖"),
         el("span",null,`本片段引用精灵 ${size(a.bytes)} · 可跨表情共享`),
-        el("span",null,`整库含目录 ${size(AirboatOptimized.statistics.totalBytes)} · 预览候选`));
+        el("span",null,`整库含目录 ${size((a.kind === "contour" ? AirboatContour : AirboatOptimized).statistics.totalBytes)} · 预览候选`));
     }
+    if (p.beats?.length) box.append(el("span",null,"动作节拍："+p.beats.map(([ms,label]) => `${label} ${(ms/1000).toFixed(2)}s`).join(" → ")));
     if (p.segments) for (const [part,range] of Object.entries(p.segments))
       box.append(el("span",null,`${{entry:"进入",performance:"表演",exit:"收尾"}[part]} ${(range[1]-range[0])/p.fps} s · [${range.join(", ")})`));
     if (p.overlay) {
@@ -511,6 +512,12 @@
   $("license").textContent = data.license;
   $("source-revision").textContent = "原版素材修订 "+data.revision+"。原版、早期小样与新表情使用同一语义节点；新表情展示完整交付素材，设备状态另行核对。";
   $("fw-version").textContent = data.version;
+  const micro = new URLSearchParams(location.search).get("micro");
+  if (micro !== null) {
+    version = "contour";
+    if (menu.includes(micro)) selected = id("semantic",micro);
+    for (const b of $("versions").querySelectorAll("button")) b.setAttribute("aria-pressed",String(b.dataset.version === version));
+  }
   persist(); buildGraph(); select(selected); initialView(); requestAnimationFrame(tick);
   new ResizeObserver(() => { if (!initialized) { initialized = true; initialView(); } }).observe(viewport);
 })();

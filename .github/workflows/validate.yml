@@ -15,9 +15,14 @@ jobs:
           node-version: "22"
       - run: python -m pip install "Pillow>=11,<14" "numpy>=2,<3"
       - run: python tests/validate_release.py
+      - run: cc -std=c11 -Wall -Wextra -Werror tests/listen-overlay.c -o /tmp/listen-overlay-test && /tmp/listen-overlay-test > /tmp/listen-native.json
       - run: node tests/transition-motion.cjs
       - run: npm install --no-save --package-lock=false playwright@1.62.1
       - run: npx playwright install --with-deps chromium
       - run: node tests/transition-studio.cjs
       - run: node tests/complete-workbench.cjs
       - run: node tests/optimized-workbench.cjs
+      - run: node tests/contour-review.cjs
+      - run: node tests/listen-overlay-browser.cjs
+        env:
+          LISTEN_OVERLAY_NATIVE_JSON: /tmp/listen-native.json

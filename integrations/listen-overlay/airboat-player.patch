@@ -1,0 +1,47 @@
+--- a/components/app_expression_player/app_expression_player.c
++++ b/components/app_expression_player/app_expression_player.c
+@@ -4,6 +4,7 @@
+ #include <string.h>
+ #include "app_companion_assets.h"
+ #include "eaf_decoder.h"
++#include "listen_overlay_rgb565.h"
+ 
+ #define FACE_PIXELS (360U * 360U)
+ #define LISTEN_PIXELS (100U * 46U)
+@@ -254,7 +255,10 @@
+                 if (mirror) (void)sample_frame(&player->base, (int)LOGICAL_SIDE - base_x - 1 - logical_x,
+                                                 logical_y - base_y, &color);
+                 if (player->snapshot.listening) {
+-                    (void)sample_frame(&player->overlay, logical_x - 130, logical_y - 25, &color);
++                    uint16_t listen_mask = 0U;
++                    if (sample_frame(&player->overlay, logical_x - 130, logical_y - 25, &listen_mask)) {
++                        color = airboat_listen_over_rgb565(color, listen_mask);
++                    }
+                 }
+             }
+             dest[col] = color;
+--- /dev/null
++++ b/components/app_expression_player/private/listen_overlay_rgb565.h
+@@ -0,0 +1,22 @@
++/* SPDX-License-Identifier: MIT */
++#ifndef AIRBOAT_LISTEN_OVERLAY_RGB565_H
++#define AIRBOAT_LISTEN_OVERLAY_RGB565_H
++
++#include <stdint.h>
++
++/* Use only for the verified white-on-black listen.eaf mask, after drawing the
++ * current face. Both arguments are host-order RGB565, before panel byte swap.
++ * Its black matte becomes zero coverage; gray edges blend toward white.
++ * The existing display owner supplies/owns all pixels; no allocation or state. */
++static inline uint16_t airboat_listen_over_rgb565(uint16_t background, uint16_t mask)
++{
++    const unsigned r = (background >> 11) & 31U;
++    const unsigned g = (background >> 5) & 63U;
++    const unsigned b = background & 31U;
++    const unsigned out_r = r + ((31U - r) * ((mask >> 11) & 31U) + 15U) / 31U;
++    const unsigned out_g = g + ((63U - g) * ((mask >> 5) & 63U) + 31U) / 63U;
++    const unsigned out_b = b + ((31U - b) * (mask & 31U) + 15U) / 31U;
++    return (uint16_t)((out_r << 11) | (out_g << 5) | out_b);
++}
++
++#endif

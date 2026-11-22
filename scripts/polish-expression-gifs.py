@@ -29,7 +29,7 @@ def filled_holes(mask):
     return padded.crop((1,1,481,481)).point(lambda v: 0 if v == 128 else 255)
 
 
-def channels(frame, key):
+def channels(frame, key, eye_rows=(50, 394)):
     pixels = np.asarray(frame.convert("RGB"))
     white = np.min(pixels,axis=2) >= 232
     mask = Image.fromarray((white*255).astype("uint8"))
@@ -46,11 +46,12 @@ def channels(frame, key):
     dark &= allowed
     pupil = Image.fromarray((dark*255).astype("uint8"))
     pairs = []
+    top, bottom = eye_rows
     for offset in (0,240):
-        r = (offset,50,offset+240,394)
+        r = (offset,top,offset+240,bottom)
         white_piece = full.crop(r)
         pupil_piece = pupil.crop(r)
-        pairs.append((sprite(white_piece,offset,50),sprite(pupil_piece,offset,50)))
+        pairs.append((sprite(white_piece,offset,top),sprite(pupil_piece,offset,top)))
     accents = Image.new("RGBA",(480,480))
     if key == "listening":
         keep = (pixels[:,:,1]>190)&(pixels[:,:,2]>180)&(pixels[:,:,0]<100)
