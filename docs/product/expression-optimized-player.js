@@ -57,9 +57,14 @@
   class Optimized {
     constructor(asset) {
       this.asset=asset; this.clip=pack.clips[asset.semantic];
-      this.output=canvas(); this.layer=canvas(); this.cache=new Map();
-      if (pack.clip_pupils) this.eyeMask=canvas();
       if (!this.clip) throw Error("高清表情不存在");
+      this.cache=new Map();
+      if (asset.mirrorOf) {
+        this.mirrorSource=new Optimized(asset.mirrorOf);
+      } else {
+        this.output=canvas(); this.layer=canvas();
+        if (pack.clip_pupils) this.eyeMask=canvas();
+      }
     }
     static decodeSprite(index) { return sprite(index); }
     static get statistics() { return {...pack.sharing,totalBytes:bytes.length+pack.catalog_bytes,decodedSpriteCache:cache.size}; }
@@ -103,6 +108,14 @@
     frame(number) {
       number=Math.max(0,Math.min(this.asset.frames-1,number));
       if (this.cache.has(number)) return this.cache.get(number);
+      if (this.mirrorSource) {
+        // Reflect the finished frame so fractional sampling on each platform
+        // cannot round reflected edges differently during a transition.
+        const out=canvas(),ctx=out.getContext("2d");
+        ctx.setTransform(-1,0,0,1,480,0);
+        ctx.drawImage(this.mirrorSource.frame(number),0,0);
+        return this.remember(number,out);
+      }
       const p=this.pose(number),ctx=this.output.getContext("2d");
       const bg=p.transition ? hue(p.from,p.to,ease((p.u-.08)/.92)) : p.to;
       ctx.fillStyle=bg;ctx.fillRect(0,0,480,480);
@@ -131,6 +144,9 @@
       }
       ctx.putImageData(image,0,0);
       const out=canvas();out.getContext("2d").drawImage(this.output,0,0);
+      return this.remember(number,out);
+    }
+    remember(number,out) {
       this.cache.set(number,out);if(this.cache.size>3)this.cache.delete(this.cache.keys().next().value);
       return out;
     }

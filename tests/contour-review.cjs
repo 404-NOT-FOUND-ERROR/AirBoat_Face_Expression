@@ -15,6 +15,17 @@ const {pathToFileURL}=require("node:url"),{chromium}=require(process.argv[2]||"p
       assert(manifest.sprites[id]&&x>=0&&y>=0&&x<r&&y<b&&r<=480&&b<=480&&(flip===0||flip===1),`${key}: ${ref}`);
     }
   }
+  const left=manifest.clips.look_left,right=manifest.clips.look_right;
+  const mirrorRef=ref=>{
+    if(!ref)return null;
+    const [id,x,y,r,b,flip]=ref;
+    return [id,480-r,y,480-x,b,flip^1];
+  };
+  assert.equal(left.color,right.color);
+  assert.equal(left.body_frames,right.body_frames);
+  assert.deepEqual(right.keyframes,left.keyframes.map(({layers,accent})=>({
+    layers:[layers[2],layers[3],layers[0],layers[1]].map(mirrorRef),accent:mirrorRef(accent)
+  })));
   const browser=await chromium.launch({executablePath:process.argv[3],headless:true});
   const out=path.resolve(__dirname,"../.test-output/contour-review");await fs.mkdir(out,{recursive:true});
   try{

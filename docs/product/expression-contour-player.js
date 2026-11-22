@@ -13,4 +13,5 @@
     data.contour[key]={file,fps:pack.fps,loop:true,range:[n,n+c.body_frames],fill:true,semantic:key,beats:pack.beats[actual],
       segments:{entry:[0,n],performance:[n,n+c.body_frames],exit:[n+c.body_frames,frames]}};
   }
+  data.assets[data.contour.look_right.file].mirrorOf=data.assets[data.contour.look_left.file];
 })();
