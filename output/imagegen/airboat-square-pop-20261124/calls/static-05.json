@@ -1,0 +1,22 @@
+{
+  "endpoint": "https://api.openai.com/v1/images/edits",
+  "proxy": "http://127.0.0.1:7897",
+  "fields": {
+    "model": "gpt-image-2.5-sunburst",
+    "size": "1024x1024",
+    "quality": "medium",
+    "output_format": "png",
+    "n": 1
+  },
+  "prompt": "prompts/static-05.txt",
+  "inputs": [
+    {
+      "path": "inputs/style-reference.png",
+      "sha256": "cd4f49045f8b078a887a3f5369c9dc3f109b23ee3be7537b7d1883caa38642a4"
+    }
+  ],
+  "status": "ok",
+  "duration_s": 22.83,
+  "output": "raw/static-05.png",
+  "output_sha256": "a1cd6c088e89f40bc67f8baa5515ca376a97857c1221ceacb13fbbea9d69bb45"
+}

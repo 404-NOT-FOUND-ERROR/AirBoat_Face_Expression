@@ -1,0 +1,319 @@
+{
+  "pack_sha256": "1b835f35bd1cb71d08590f3027fba25d2892a8ec5bb7f56a5145e3be16ea359b",
+  "source": "AFM decoder",
+  "performances": 21,
+  "semanticPreviews": 28,
+  "fps": 25,
+  "files": [
+    {
+      "file": "preview-sheet.png",
+      "bytes": 100137,
+      "sha256": "0430a4a2b0d3f5b70db31960011ac01a0d26ecddb1de6fc90a820b8deefde8e9"
+    },
+    {
+      "file": "transition-sheet.png",
+      "bytes": 169887,
+      "sha256": "249f7d111ebd8cafe993ae99e487f70491668f5d3a7e1cc7c9788e06dbdac7d1"
+    },
+    {
+      "file": "collection-review-desktop.png",
+      "bytes": 243913,
+      "sha256": "5cdcdf84160fe6568c9e42270de2cf0334e1c4fbb84efa915ab2b7bfcc0a2215"
+    },
+    {
+      "file": "node-workbench-library.png",
+      "bytes": 148937,
+      "sha256": "dff7ea20369ae3b47646b33bc7f2724d610831d8df66c75a138f3dcba88767c2"
+    },
+    {
+      "file": "node-workbench-airboat.png",
+      "bytes": 149268,
+      "sha256": "9c49819c97eabe222fe8213abe0a815eaa37dab20bfe4dced2b6dc6c069c23a9"
+    },
+    {
+      "file": "preview/collection.gif",
+      "bytes": 1903118,
+      "sha256": "fddc5d309ca32295b3f09d2fbdb0bd9af3e29868c3d4456a1a7ee3a9b2017248"
+    },
+    {
+      "file": "preview/idle.gif",
+      "bytes": 431500,
+      "sha256": "edcbaec5679add24c45b676e86fc75dd8ae8405ff8eb0f5ef017d7bb634b8d2a"
+    },
+    {
+      "file": "thumbnails/idle.png",
+      "bytes": 14949,
+      "sha256": "471006c8f534f0dc83a5bdeb3b9f13293c306fbc080ce0e52884c37c15274266"
+    },
+    {
+      "file": "preview/listening.gif",
+      "bytes": 352485,
+      "sha256": "ba4566afa552fa02b2226c196bd689bee064db64d31743e911776560eb7dd50f"
+    },
+    {
+      "file": "thumbnails/listening.png",
+      "bytes": 8268,
+      "sha256": "1e2dbf293a98b560815e233a580a06e0a9d2830e1ce36b904272fd484acfc91f"
+    },
+    {
+      "file": "preview/thinking.gif",
+      "bytes": 390849,
+      "sha256": "f7afe54ece4a9e7c9c80d24a295f27c877f8695faade0696a2c0aec9771891ae"
+    },
+    {
+      "file": "thumbnails/thinking.png",
+      "bytes": 8663,
+      "sha256": "a38b6c4087565ff3d8962ecf2c4290e13312f608a379d9e82c7cc428448cd97a"
+    },
+    {
+      "file": "preview/happy.gif",
+      "bytes": 426527,
+      "sha256": "5312d652d11bd10181da7aece908e2bde1de18f17c2049125985754c80013fb2"
+    },
+    {
+      "file": "thumbnails/happy.png",
+      "bytes": 9173,
+      "sha256": "1327b60ca1ce55058a33ec11bba7e9084c710f42432939d667a45479c8bd26fc"
+    },
+    {
+      "file": "preview/surprised.gif",
+      "bytes": 470220,
+      "sha256": "642ac8d99e3b7fa62f004d8bcd59ef3a291754ba98c27b4d26d2b77f5dcbd4bf"
+    },
+    {
+      "file": "thumbnails/surprised.png",
+      "bytes": 8895,
+      "sha256": "b18599211d9adb7b0b864b47fdfcc7f057a8bddcf9a4b3070fd32af7565e33d7"
+    },
+    {
+      "file": "preview/shocked.gif",
+      "bytes": 420382,
+      "sha256": "7e5395061c49bb3aca6476ab95c71e31ee6b7183392f85950c9ac5e5b0003319"
+    },
+    {
+      "file": "thumbnails/shocked.png",
+      "bytes": 9222,
+      "sha256": "4e01286b2c1299f62ec8c0588c6c2c7e513b496dac7230525644e9391366c932"
+    },
+    {
+      "file": "preview/question.gif",
+      "bytes": 357751,
+      "sha256": "4716bed16ca8814ebbf8de7344bddb29528ab2b07a5344135616cb118c45ea08"
+    },
+    {
+      "file": "thumbnails/question.png",
+      "bytes": 9531,
+      "sha256": "95c2ddf7cc20ac52dc265da3de6ba2d1f390d25ced2741f8b8c77d04959f7f13"
+    },
+    {
+      "file": "preview/look_around.gif",
+      "bytes": 353013,
+      "sha256": "3eb83efa7390a3359e33c44dc0f8012b0ac24c223552c4e12c3332fb234d4891"
+    },
+    {
+      "file": "thumbnails/look_around.png",
+      "bytes": 8890,
+      "sha256": "00e6beb985355b46de013595997505342a0cb22f6f7e7581b5e7b6165debdd2c"
+    },
+    {
+      "file": "preview/winking.gif",
+      "bytes": 367294,
+      "sha256": "319452b8460fef2aeb5766b5c263458213c2829430cc152305c2cde235416604"
+    },
+    {
+      "file": "thumbnails/winking.png",
+      "bytes": 9285,
+      "sha256": "1571693f938681224c630b9d40da7d122cf8c638e5e9b168932fe451a8084efc"
+    },
+    {
+      "file": "preview/beat_swing.gif",
+      "bytes": 407607,
+      "sha256": "cc611432b86b2843646518999623ff4d665d5c6eeb3662e9432a1ab80aec9247"
+    },
+    {
+      "file": "thumbnails/beat_swing.png",
+      "bytes": 9638,
+      "sha256": "05a87477b74bdd72b9a79b559b164cf38158b0cf0dd5020931a9d02a61f9e67f"
+    },
+    {
+      "file": "preview/confused.gif",
+      "bytes": 630915,
+      "sha256": "c18a0991f07cb415460710e9888c5e8d53969371b92e90ddc8d27813f331021d"
+    },
+    {
+      "file": "thumbnails/confused.png",
+      "bytes": 14271,
+      "sha256": "0e31a4b653fa1ee96a70c3dc1244f240b7704ab4e1ee5956ede62fe8d58bba20"
+    },
+    {
+      "file": "preview/relaxed.gif",
+      "bytes": 267696,
+      "sha256": "8589ef6d212842d1dfe6b6f061f1f82c806cc53087492061e3a43a6f431589a3"
+    },
+    {
+      "file": "thumbnails/relaxed.png",
+      "bytes": 9507,
+      "sha256": "616b26dc486849b1c637fa5b3b645ddeca03b54da6865fdb501492318ccf182b"
+    },
+    {
+      "file": "preview/laughing.gif",
+      "bytes": 426527,
+      "sha256": "5312d652d11bd10181da7aece908e2bde1de18f17c2049125985754c80013fb2"
+    },
+    {
+      "file": "thumbnails/laughing.png",
+      "bytes": 9173,
+      "sha256": "1327b60ca1ce55058a33ec11bba7e9084c710f42432939d667a45479c8bd26fc"
+    },
+    {
+      "file": "preview/funny.gif",
+      "bytes": 388647,
+      "sha256": "cc9753f5a7ca1fafc78649771c215598c96c480513c20bf69911ad8d5e30eb24"
+    },
+    {
+      "file": "thumbnails/funny.png",
+      "bytes": 10123,
+      "sha256": "0ea7bca82ccf4dbabb1d9e1d94a0c524916ab4731734df4875e88a697c63ce83"
+    },
+    {
+      "file": "preview/loving.gif",
+      "bytes": 536989,
+      "sha256": "598c9885d8bc3101d25f476b626c232c9919b5f67903eef0e0ef1357572ede00"
+    },
+    {
+      "file": "thumbnails/loving.png",
+      "bytes": 11866,
+      "sha256": "760161a6678cb3eb9f727baad3d66cb7058c8ea1022efff0e343b4402514dd04"
+    },
+    {
+      "file": "preview/embarrassed.gif",
+      "bytes": 446018,
+      "sha256": "4f03a0cf645c4e4babba981a01e9013664dd176cba79e502c80f0a0feef4da32"
+    },
+    {
+      "file": "thumbnails/embarrassed.png",
+      "bytes": 9649,
+      "sha256": "cbb95643d4c091a50128b9d6c1728d5fe74b82fed097038a762cc5bf7765e7bf"
+    },
+    {
+      "file": "preview/confident.gif",
+      "bytes": 430123,
+      "sha256": "1d6fe836ae42b56f930968b126a209a2fc196a997afde91f47ab3cbec004e549"
+    },
+    {
+      "file": "thumbnails/confident.png",
+      "bytes": 10055,
+      "sha256": "ccbc8923c18697ed6bdc06890d384683611f6aa4e18163b8f0af14eb939b2aee"
+    },
+    {
+      "file": "preview/delicious.gif",
+      "bytes": 388647,
+      "sha256": "cc9753f5a7ca1fafc78649771c215598c96c480513c20bf69911ad8d5e30eb24"
+    },
+    {
+      "file": "thumbnails/delicious.png",
+      "bytes": 10123,
+      "sha256": "0ea7bca82ccf4dbabb1d9e1d94a0c524916ab4731734df4875e88a697c63ce83"
+    },
+    {
+      "file": "preview/sad.gif",
+      "bytes": 428137,
+      "sha256": "45d61b86507389b474cfa0eba950623c11ae8dfcb63dd3d8401a9e864aaf10f3"
+    },
+    {
+      "file": "thumbnails/sad.png",
+      "bytes": 15450,
+      "sha256": "469ecaabd60130dae05d515048be2d7a8c386f8ff11ef4c7a713252a647976d0"
+    },
+    {
+      "file": "preview/crying.gif",
+      "bytes": 428137,
+      "sha256": "45d61b86507389b474cfa0eba950623c11ae8dfcb63dd3d8401a9e864aaf10f3"
+    },
+    {
+      "file": "thumbnails/crying.png",
+      "bytes": 15450,
+      "sha256": "469ecaabd60130dae05d515048be2d7a8c386f8ff11ef4c7a713252a647976d0"
+    },
+    {
+      "file": "preview/silly.gif",
+      "bytes": 357751,
+      "sha256": "4716bed16ca8814ebbf8de7344bddb29528ab2b07a5344135616cb118c45ea08"
+    },
+    {
+      "file": "thumbnails/silly.png",
+      "bytes": 9531,
+      "sha256": "95c2ddf7cc20ac52dc265da3de6ba2d1f390d25ced2741f8b8c77d04959f7f13"
+    },
+    {
+      "file": "preview/angry.gif",
+      "bytes": 310933,
+      "sha256": "f73866eb7bdad0619bdffa26ee4bf3090de08f719e6feab9161f983d83ae89d3"
+    },
+    {
+      "file": "thumbnails/angry.png",
+      "bytes": 9292,
+      "sha256": "fea2bcb3fed50e11a83406c3c5d7b108a3b87fdb3f46b9bdf10cdc4821e46d94"
+    },
+    {
+      "file": "preview/insert.gif",
+      "bytes": 357751,
+      "sha256": "4716bed16ca8814ebbf8de7344bddb29528ab2b07a5344135616cb118c45ea08"
+    },
+    {
+      "file": "thumbnails/insert.png",
+      "bytes": 9531,
+      "sha256": "95c2ddf7cc20ac52dc265da3de6ba2d1f390d25ced2741f8b8c77d04959f7f13"
+    },
+    {
+      "file": "preview/look_left.gif",
+      "bytes": 341044,
+      "sha256": "1260b2d765aa7f4ac2c7416bcf41af9d1f4c8f7a88bbef443a3897a66e11e8db"
+    },
+    {
+      "file": "thumbnails/look_left.png",
+      "bytes": 8650,
+      "sha256": "9063c30a5d983e5739cbf5291265620e2496a8e4108a36e8d462bdbddd6a893d"
+    },
+    {
+      "file": "preview/look_right.gif",
+      "bytes": 358124,
+      "sha256": "ff8efd09e07e0ce960ec6d51507f7b760e51964ac515b22d535dd64d68fca4c0"
+    },
+    {
+      "file": "thumbnails/look_right.png",
+      "bytes": 8744,
+      "sha256": "5bff3d03676e5539489aef0b1119d399bd520a375a3dffeb15087831e881e833"
+    },
+    {
+      "file": "preview/eat.gif",
+      "bytes": 388647,
+      "sha256": "cc9753f5a7ca1fafc78649771c215598c96c480513c20bf69911ad8d5e30eb24"
+    },
+    {
+      "file": "thumbnails/eat.png",
+      "bytes": 10123,
+      "sha256": "0ea7bca82ccf4dbabb1d9e1d94a0c524916ab4731734df4875e88a697c63ce83"
+    },
+    {
+      "file": "preview/sleepy.gif",
+      "bytes": 296690,
+      "sha256": "6cdf277b144badbc26fa1c46de7bba5c1dfc46914313bb82243b77fc89d42590"
+    },
+    {
+      "file": "thumbnails/sleepy.png",
+      "bytes": 11207,
+      "sha256": "9fc5fcf6eb73e26b47ee02598ffa4ec48e9790d393875f7ef76e21475d0b5873"
+    },
+    {
+      "file": "preview/tried.gif",
+      "bytes": 296690,
+      "sha256": "6cdf277b144badbc26fa1c46de7bba5c1dfc46914313bb82243b77fc89d42590"
+    },
+    {
+      "file": "thumbnails/tried.png",
+      "bytes": 11207,
+      "sha256": "9fc5fcf6eb73e26b47ee02598ffa4ec48e9790d393875f7ef76e21475d0b5873"
+    }
+  ]
+}

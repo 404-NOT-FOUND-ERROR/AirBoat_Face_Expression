@@ -106,6 +106,9 @@ def main():
     for file in ROOT.rglob("*"):
         if file.suffix not in {".html",".md"} or ".git" in file.parts:
             continue
+        relative = file.relative_to(ROOT)
+        if "output" in relative.parts and "imagegen" in relative.parts and "calls" in relative.parts:
+            continue  # Provider documentation snapshots may use site-root URLs.
         text = file.read_text(encoding="utf-8")
         urls = re.findall(r'(?:href|src)="([^"]+)"',text) if file.suffix == ".html" else [
             x.strip("<>") for x in re.findall(r'\]\(([^)]+)\)',text)]

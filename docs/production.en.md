@@ -2,6 +2,8 @@
 
 [简体中文](production.zh-CN.md) · [README](../README.md)
 
+For the current AFM workflow, use the [reusable methods](reusable-methods.zh-CN.md) and [project skill](../skills/airboat-expression-workflow/SKILL.md). The EAF layout, frame rates, and 1.29.0 partition numbers below describe an earlier snapshot; check the [current integration guide](product/expression-micro-motion.zh-CN.md) and manifest for new work.
+
 ## From an idea to the display
 
 1. **Choose the response.** Select a semantic in the workbench. Trace its trigger and shared asset group.

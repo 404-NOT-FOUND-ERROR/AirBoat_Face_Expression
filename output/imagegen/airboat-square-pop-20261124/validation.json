@@ -1,0 +1,216 @@
+{
+  "status": "passed",
+  "frames": 1954,
+  "changed": 21,
+  "anchors": 21,
+  "blackPupilFrames": 1143,
+  "minWhitePixels": 1188,
+  "clipStats": {
+    "idle": {
+      "minWhite": 1188,
+      "maxWhite": 39576,
+      "maxBlack": 8772
+    },
+    "listening": {
+      "minWhite": 22927,
+      "maxWhite": 72297,
+      "maxBlack": 9333
+    },
+    "thinking": {
+      "minWhite": 67279,
+      "maxWhite": 79382,
+      "maxBlack": 5278
+    },
+    "happy": {
+      "minWhite": 43266,
+      "maxWhite": 95252,
+      "maxBlack": 7754
+    },
+    "surprised": {
+      "minWhite": 48840,
+      "maxWhite": 136045,
+      "maxBlack": 4466
+    },
+    "shocked": {
+      "minWhite": 66957,
+      "maxWhite": 111060,
+      "maxBlack": 2910
+    },
+    "look_around": {
+      "minWhite": 47178,
+      "maxWhite": 60126,
+      "maxBlack": 4604
+    },
+    "winking": {
+      "minWhite": 43044,
+      "maxWhite": 59359,
+      "maxBlack": 7191
+    },
+    "beat_swing": {
+      "minWhite": 44511,
+      "maxWhite": 52874,
+      "maxBlack": 5487
+    },
+    "confused": {
+      "minWhite": 48329,
+      "maxWhite": 65924,
+      "maxBlack": 10924
+    },
+    "relaxed": {
+      "minWhite": 22888,
+      "maxWhite": 25624,
+      "maxBlack": 3481
+    },
+    "funny": {
+      "minWhite": 41630,
+      "maxWhite": 80955,
+      "maxBlack": 8601
+    },
+    "loving": {
+      "minWhite": 56475,
+      "maxWhite": 74291,
+      "maxBlack": 27906
+    },
+    "embarrassed": {
+      "minWhite": 41453,
+      "maxWhite": 48162,
+      "maxBlack": 7137
+    },
+    "confident": {
+      "minWhite": 68377,
+      "maxWhite": 73473,
+      "maxBlack": 8834
+    },
+    "sad": {
+      "minWhite": 49029,
+      "maxWhite": 66737,
+      "maxBlack": 7960
+    },
+    "silly": {
+      "minWhite": 54609,
+      "maxWhite": 79787,
+      "maxBlack": 6424
+    },
+    "angry": {
+      "minWhite": 16365,
+      "maxWhite": 30255,
+      "maxBlack": 4626
+    },
+    "look_left": {
+      "minWhite": 46621,
+      "maxWhite": 55195,
+      "maxBlack": 8080
+    },
+    "look_right": {
+      "minWhite": 39649,
+      "maxWhite": 54870,
+      "maxBlack": 6120
+    },
+    "tried": {
+      "minWhite": 3143,
+      "maxWhite": 19515,
+      "maxBlack": 2976
+    }
+  },
+  "transitionSteps": {
+    "idle": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0
+    },
+    "listening": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.1164
+    },
+    "thinking": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.1334
+    },
+    "happy": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.2326
+    },
+    "surprised": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.0998
+    },
+    "shocked": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.1391
+    },
+    "look_around": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.1145
+    },
+    "winking": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.1103
+    },
+    "beat_swing": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.1374
+    },
+    "confused": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.1142
+    },
+    "relaxed": {
+      "minWhitePixels": 23499,
+      "maxWhiteChange": 0.1284
+    },
+    "funny": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.1084
+    },
+    "loving": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.0783
+    },
+    "embarrassed": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.1288
+    },
+    "confident": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.1305
+    },
+    "sad": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.091
+    },
+    "silly": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.0773
+    },
+    "angry": {
+      "minWhitePixels": 24683,
+      "maxWhiteChange": 0.1451
+    },
+    "look_left": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.0834
+    },
+    "look_right": {
+      "minWhitePixels": 37132,
+      "maxWhiteChange": 0.1084
+    },
+    "tried": {
+      "minWhitePixels": 14781,
+      "maxWhiteChange": 0.2058
+    }
+  },
+  "performances": 21,
+  "compatibleSemantics": 29,
+  "approvedDefaultFrames": 160,
+  "approvedDefaultLayerPixels": 73728000,
+  "approvedDefaultSha256": "cbbe2b3c889936012820ecec563118dcc555cfa86d3125a6bcb2d4659f3c78ba",
+  "offline": true,
+  "desktop": true,
+  "mobile": true,
+  "playback": true,
+  "workbenches": [
+    "library",
+    "airboat"
+  ],
+  "sha256": "1b835f35bd1cb71d08590f3027fba25d2892a8ec5bb7f56a5145e3be16ea359b",
+  "totalBytes": 5328324
+}

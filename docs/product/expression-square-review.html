@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+  <title>Square Pop · 方圆怪趣</title>
+  <link rel="stylesheet" href="expression-square-review.css">
+  <script defer src="expression-workbench-data.js"></script><script defer src="expression-optimized-data.js"></script>
+  <script defer src="expression-optimized-player.js"></script><script defer src="expression-contour-data.js"></script>
+  <script defer src="expression-contour-player.js"></script><script defer src="expression-square-data.js"></script>
+  <script defer src="expression-square-player.js"></script><script defer src="expression-workbench-player.js"></script>
+  <script defer src="expression-square-review.js"></script>
+</head>
+<body>
+  <header><a href="expression-workbench.html?square=funny">← 节点工作台</a><span>AIRBOAT / CHARACTER MOTION LAB</span><a href="expression-square-idle.html">已确认的待机 ↗</a><a href="expression-contour-review.html">上一版 ↗</a></header>
+  <main>
+    <section class="hero"><p class="eyebrow"><i></i> VOL. 02 / SQUARE POP</p><h1>方圆之间，<br>怪可爱的。</h1><p class="intro">安静时，是对称的软方双眼。<br>开心时鼓起来，好奇时伸过去，闹腾过后再回到你身边。</p><div class="hero-meta"><span>21 段独立表演</span><span>29 个语义入口</span><span>统一软方待机</span><span>瞳孔错拍</span></div></section>
+    <section class="stage" aria-label="表情新旧对比">
+      <article class="reference"><div class="label"><strong>上一版</strong><span>微动作 · 480</span></div><canvas id="old-face" width="480" height="480" aria-label="上一版表情"></canvas></article>
+      <article class="candidate"><div class="label"><strong id="new-label">搞怪</strong><span>SQUARE POP · 480</span></div><canvas id="new-face" width="480" height="480" aria-label="方圆怪趣新版表情"></canvas></article>
+    </section>
+    <section class="controls" aria-label="播放控制"><button id="play" aria-label="播放或暂停">Ⅱ</button><button id="restart" aria-label="从头播放">↺</button><input id="time" type="range" min="0" max="100" step="1" value="0" aria-label="播放进度"><output id="clock">0.00 s</output><select id="speed" aria-label="速度"><option value="1">1×</option><option value=".5">0.5×</option></select><select id="mode" aria-label="播放范围"><option value="complete">完整一遍</option><option value="loop">持续表演</option></select></section>
+    <div class="details"><p id="motion-note"></p><a id="native-link" href="../../output/imagegen/airboat-square-pop-20261124/preview/funny.gif" target="_blank">完整动画 GIF ↗</a></div>
+    <div id="beats" class="beats" aria-label="动作节点"></div>
+    <section class="collection"><div class="collection-head"><div><p class="eyebrow">THE EXPRESSIONS</p><h2>每一只，都有自己的节拍。</h2></div><select id="repertoire" aria-label="选择表情"></select></div><div id="cards" class="cards"></div></section>
+    <footer><span>软方待机 → 情绪进入 → 完整表演 → 回到待机 · 25 fps</span><span id="pack-size"></span></footer>
+  </main>
+</body>
+</html>

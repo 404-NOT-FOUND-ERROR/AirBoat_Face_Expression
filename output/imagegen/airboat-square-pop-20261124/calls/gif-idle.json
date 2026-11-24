@@ -1,0 +1,48 @@
+{
+  "endpoint": "https://api.openai.com/v1/images/edits",
+  "proxy": "http://127.0.0.1:7897",
+  "fields": {
+    "model": "gpt-image-2.6-sunburst",
+    "size": "480x480",
+    "quality": "medium",
+    "complexity": "medium",
+    "output_format": "gif",
+    "frame_count": 16,
+    "frame_duration_ms": 120,
+    "n": 1
+  },
+  "prompt": "prompts/gif-idle.txt",
+  "inputs": [
+    {
+      "path": "png/idle.png",
+      "sha256": "f51ae0be8c0b3db657304a2666bdb130934ea7e53529523b38b3a4fd2bc404fc"
+    }
+  ],
+  "width": 480,
+  "height": 480,
+  "frames": 16,
+  "loop": 0,
+  "delays_ms": [
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120
+  ],
+  "status": "ok",
+  "duration_s": 19.55,
+  "request_id": "req_8982f63ea38840a598f44c87b74a4feb",
+  "output": "gif/idle.gif",
+  "output_sha256": "b8748b92db936a566b67a82bd692ff3f00c33f40d13d84a2a4793865a3d406e8"
+}

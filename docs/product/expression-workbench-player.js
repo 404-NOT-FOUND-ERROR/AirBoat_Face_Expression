@@ -2,6 +2,7 @@
 "use strict";
 window.AirboatEaf = class {
   constructor(asset) {
+    if (asset.kind === "square") return new window.AirboatSquare(asset);
     if (asset.kind === "contour") return new window.AirboatContour(asset);
     if (asset.kind === "optimized") return new window.AirboatOptimized(asset);
     this.asset = asset;

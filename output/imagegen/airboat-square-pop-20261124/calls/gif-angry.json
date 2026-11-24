@@ -1,0 +1,48 @@
+{
+  "endpoint": "https://api.openai.com/v1/images/edits",
+  "proxy": "http://127.0.0.1:7897",
+  "fields": {
+    "model": "gpt-image-2.6-sunburst",
+    "size": "480x480",
+    "quality": "medium",
+    "complexity": "medium",
+    "output_format": "gif",
+    "frame_count": 16,
+    "frame_duration_ms": 90,
+    "n": 1
+  },
+  "prompt": "prompts/gif-angry.txt",
+  "inputs": [
+    {
+      "path": "png/angry.png",
+      "sha256": "52749c4481b4db34d67e13837eaa2c8035c402c56619e48d5569dbc581bc8a48"
+    }
+  ],
+  "width": 480,
+  "height": 480,
+  "frames": 16,
+  "loop": 0,
+  "delays_ms": [
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90
+  ],
+  "status": "ok",
+  "duration_s": 19.06,
+  "request_id": "req_fdbf5a5981904f4eb32ef3373b0772e9",
+  "output": "gif/angry.gif",
+  "output_sha256": "ecb38a36ca125d01c37d9f833f1c4a3a5a1a0e3f37a81c5356fa3127afcfaf1b"
+}

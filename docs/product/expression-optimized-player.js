@@ -70,6 +70,12 @@
     static get statistics() { return {...pack.sharing,totalBytes:bytes.length+pack.catalog_bytes,decodedSpriteCache:cache.size}; }
     pose(frame) {
       const c=this.clip, n=pack.transition_frames, body=c.body_frames, base=pack.clips.idle;
+      if (pack.authored_transitions && (frame<n || frame>=n+body)) {
+        const entering=frame<n,index=entering?frame:frame-n-body;
+        const pose=(entering?c.entry_keyframes:c.exit_keyframes)[index];
+        return {a:pose,b:pose,u:index/(n-1),from:entering?base.color:c.color,
+          to:entering?c.color:base.color,transition:true,authored:true};
+      }
       if (frame<n) return {a:base.keyframes[0],b:c.keyframes[0],u:frame/(n-1),from:base.color,to:c.color,transition:true};
       if (frame>=n+body) return {a:c.keyframes[pack.exit_from_last ? c.keyframes.length-1 : 0],b:base.keyframes[0],u:(frame-n-body)/(n-1),from:c.color,to:base.color,transition:true};
       const t=pack.exit_from_last ? (frame-n)*(c.keyframes.length-1)/Math.max(1,body-1) : (frame-n)*c.keyframes.length/body;
@@ -119,7 +125,7 @@
       const p=this.pose(number),ctx=this.output.getContext("2d");
       const bg=p.transition ? hue(p.from,p.to,ease((p.u-.08)/.92)) : p.to;
       ctx.fillStyle=bg;ctx.fillRect(0,0,480,480);
-      const accentU=p.transition ? ease((p.u-.12)/.8) : p.u;
+      const accentU=p.authored ? 0 : p.transition ? ease((p.u-.12)/.8) : p.u;
       const lc=this.layer.getContext("2d");lc.clearRect(0,0,480,480);lc.globalCompositeOperation="source-over";
       for (const [ref,alpha] of [[p.a.accent,1-accentU],[p.b.accent,accentU]]) {
         if (ref) this.drawSprite(lc,ref,ref[1],ref[2],ref[3]-ref[1],ref[4]-ref[2],alpha);
@@ -132,7 +138,7 @@
         const stagger=pack.clip_pupils && (this.asset.semantic === "look_left" || this.asset.semantic === "look_right") ? 0 : eye;
         const delay=pupil ? stagger*35/360 : .12+stagger*25/360;
         const span=pupil ? .75 : .8;
-        const u=p.transition ? ease((p.u-delay)/(pack.exit_from_last ? Math.min(span,1-delay) : span)) : p.u;
+        const u=p.authored ? 0 : p.transition ? ease((p.u-delay)/(pack.exit_from_last ? Math.min(span,1-delay) : span)) : p.u;
         this.layerBetween(ctx,p.a.layers[i],p.b.layers[i],u,pupil ? "#000" : "#fff");
       }
       // Compare both encodings through the same RGB565 display precision.

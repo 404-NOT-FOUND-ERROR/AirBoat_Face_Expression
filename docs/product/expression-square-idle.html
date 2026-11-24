@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Square Pop · 软方对称待机</title>
+  <link rel="stylesheet" href="expression-square-idle.css">
+  <script defer src="expression-workbench-data.js"></script>
+  <script defer src="expression-optimized-data.js"></script>
+  <script defer src="expression-optimized-player.js"></script>
+  <script defer src="expression-contour-data.js"></script>
+  <script defer src="expression-contour-player.js"></script>
+  <script defer src="expression-workbench-player.js"></script>
+  <script defer src="expression-square-idle.js"></script>
+</head>
+<body>
+  <header><a href="expression-square-review.html">← 方圆怪趣全套</a><span>AIRBOAT / IDLE SHAPE STUDY</span><a href="expression-contour-review.html#idle">当前待机 ↗</a></header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">SQUARE POP · IDLE</p>
+      <h1>安静时，仍然是<br><em>对称的。</em></h1>
+      <p class="lead">两只眼睛大小一致，轮廓只轻轻带一点矩形感。保留呼吸、慢眨和双眨，首尾回到同一个绿色姿态。</p>
+      <div class="tags"><span>左右镜像</span><span>大圆角 · 软方椭圆</span><span>6.4 s 循环</span></div>
+    </section>
+    <section class="compare" aria-label="默认待机对比">
+      <article>
+        <div class="label"><strong>上一版待机</strong><span>绿色 · 对照</span></div>
+        <canvas id="accepted" width="480" height="480" aria-label="当前已确认的对称待机"></canvas>
+      </article>
+      <div class="arrow" aria-hidden="true">→</div>
+      <article class="candidate">
+        <div class="label"><strong>已确认的软方待机</strong><span>全套共同首尾</span></div>
+        <canvas id="candidate" width="480" height="480" aria-label="双眼对称的大圆角软方待机候选"></canvas>
+      </article>
+    </section>
+    <section class="controls" aria-label="播放控制">
+      <button id="play" type="button" aria-label="暂停">Ⅱ</button>
+      <button id="restart" type="button" aria-label="从头播放">↺</button>
+      <input id="time" type="range" min="0" max="6400" step="10" value="0" aria-label="播放进度">
+      <output id="clock">0.00 s</output>
+      <select id="speed" aria-label="播放速度"><option value="1">1×</option><option value=".5">0.5×</option></select>
+    </section>
+    <div class="beats"><span>0.56s 小瞥</span><span>1.56s 慢眨</span><span>2.64s 回看</span><span>4.08s / 4.56s 双眨</span></div>
+    <p class="note">这组已确认的待机已用于全套共同首尾。两眼形状逐帧镜像；开心、思考、好奇、摇摆和搞怪等情绪保留各自的方圆变化。</p>
+    <footer><span>慢速选择 0.5× 查看眼皮；切回 1× 感受待机节奏。</span><a href="expression-square-review.html">查看已采用这组待机的完整表情库 ↗</a></footer>
+  </main>
+</body>
+</html>

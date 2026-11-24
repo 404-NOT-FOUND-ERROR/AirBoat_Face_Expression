@@ -2,19 +2,23 @@
 import hashlib
 import importlib.util
 import json
-import math
 from pathlib import Path
 import struct
 import base64
 
 import numpy as np
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageSequence
-from expression_beat_study import PERFORMANCES, frames as performance_frames
-from expression_repertoire import SCORES, compose, laughing, one_look
+from expression_beat_study import PERFORMANCES, frames as performance_frames, track
+from expression_lid_study import STUDIES, continuous_clip
+from expression_source_repair import REPAIRED_SOURCE, repair_clip
+from expression_repertoire import SCORES, DELAYS, compose, laughing, one_look
 
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / 'assets/contour-review'
 SIDE, SCALE, FPS = 480, 4, 25
+ALIASES = {'neutral': 'idle', 'sleepy': 'tried'}
+IDLE_BEATS = [(560, '瞳孔先转'), (1560, '慢眨一下'), (1880, '睁眼回弹'),
+              (2640, '看另一侧'), (4080, '双眨·第一下'), (4560, '双眨·第二下'), (5360, '呼吸回稳')]
 
 
 def load(name, filename):
@@ -31,27 +35,35 @@ def ellipse(box):
 
 
 def idle_pose(t, polish):
-    """Symmetric contours; a clipped round pupil, never a squashed pupil."""
-    # 1.36 s quiet -> 120 ms close -> 40 ms closed -> 200 ms reopen.
-    # Short settling and independent pupil movement keep the face alive.
-    close = polish.ease((t - 1.36) / .12)
-    reopen = polish.ease((t - 1.52) / .20)
-    openness = 1 - close + reopen
-    settle = 1.2 * math.exp(-max(0, t - 1.72) * 18) * math.sin(max(0, t - 1.72) * 36)
-    cy = 234 + .65 * math.sin(2 * math.pi * t / 3.6) + settle
-    h = 3.0 + 85 * openness
+    """A single unhurried blink and a lighter double blink on separate beats."""
+    t = round(t, 3)
+    sample = lambda keys: track(t, keys, polish.ease)
+    openness = sample(((1.44, 1), (1.56, 0), (1.60, 0), (1.80, 1), (1.88, 1.045), (2, .985),
+                       (2.12, 1), (3.96, 1), (4.08, 0), (4.12, 0), (4.28, 1),
+                       (4.48, 1), (4.56, .06), (4.72, 1), (4.80, 1.025), (4.96, 1)))
+    breath = sample(((0, 0), (.68, 0), (1.12, 1.8), (1.40, .8), (1.76, .8), (2.20, 0),
+                     (2.76, 0), (3.24, 1.5), (3.72, 0), (4.96, 0), (5.36, 2.2), (6.12, 0)))
+    dx = sample(((.40, 0), (.56, 13), (.68, 10), (1.20, 10), (1.44, 0), (2.48, 0),
+                 (2.64, -12), (2.76, -9), (3.40, -9), (3.72, 0)))
+    dy = sample(((.40, 0), (.56, -5), (1.20, -4), (1.44, 0), (2.48, 0), (2.64, -3),
+                 (3.40, -3), (3.72, 0)))
+    cy = 234 - breath
+    h = 3 + (85 + breath) * openness
     lid_cy = cy + 16 * (1 - openness)
     white = ellipse((68, lid_cy - h, 232, lid_cy + h))
-    # Gaze anticipates the lid slightly; the pupil stays circular while occluded.
-    saccade = 2 * (polish.ease((t - .55) / .08) - polish.ease((t - .84) / .13))
-    pupil = ellipse((108 + saccade, cy - 9, 192 + saccade, cy + 69))
-    pupil = ImageChops.multiply(pupil, white)
-    pupil = pupil.point(lambda v: round(v * polish.ease((openness - .10) / .25)))
-    # Generate the right side by exact reflection. Positions and masks agree.
+    py = cy + 30 + dy + 37 * max(0, 1 - openness) ** 2
+
+    def pupil(offset):
+        dot = ellipse((108 + offset, py - 39, 192 + offset, py + 39))
+        return ImageChops.multiply(dot, white)
+
+    left = pupil(dx)
+    # Reflect the lids exactly. Both pupils point the same way during a glance.
+    right = left if not dx else pupil(-dx)
     return [
-        (polish.sprite(white, 0, 0), polish.sprite(pupil, 0, 0)),
+        (polish.sprite(white, 0, 0), polish.sprite(left, 0, 0)),
         (polish.sprite(white.transpose(Image.Transpose.FLIP_LEFT_RIGHT), 0, 0),
-         polish.sprite(pupil.transpose(Image.Transpose.FLIP_LEFT_RIGHT), 0, 0)),
+         polish.sprite(right.transpose(Image.Transpose.FLIP_LEFT_RIGHT), 0, 0)),
     ], Image.new('RGBA', (SIDE, SIDE))
 
 
@@ -73,7 +85,7 @@ def build():
     optimized = load('optimized_review', 'build-optimized-expressions.py')
     polish = load('polish_review', 'polish-expression-gifs.py')
     pool, clips = optimized.Sprites(), {}
-    idle = [idle_pose(i / FPS, polish) for i in range(89)]
+    idle = [idle_pose(i / FPS, polish) for i in range(159)]
     idle.append(idle[0])
     source = ROOT / 'output/imagegen/airboat-expression-study-20261120/gif/shocked.gif'
     with Image.open(source) as gif:
@@ -81,8 +93,8 @@ def build():
         frames = [f.convert('RGB') for f in ImageSequence.Iterator(gif)]
     shocked = [shocked_pose(f, polish) for f in frames]
     shocked.append(shocked[0])
-    inputs = [('idle', idle, 90), ('shocked', shocked, round(len(frames) * delay / 40))]
-    beats = {}
+    inputs = [('idle', idle, len(idle)), ('shocked', shocked, round(len(frames) * delay / 40))]
+    beats = {'idle': IDLE_BEATS}
     art_sources = {}
     for key, (_, count, marks) in PERFORMANCES.items():
         art = None
@@ -107,22 +119,30 @@ def build():
                         refs.append(None)
             timeline.append({'layers': refs, 'accent': pool.add_accent(accent)})
         clips[key] = {'color': polish.COLORS[key], 'keyframes': timeline, 'body_frames': count}
-    for key, (_, score) in SCORES.items():
+    for key, (duration, score) in SCORES.items():
+        if key in STUDIES or key in ALIASES:
+            continue
         path = source.with_name(key + '.gif')
-        timeline = compose(key, path, pool, polish, ellipse, FPS)
+        if key in REPAIRED_SOURCE:
+            timeline = repair_clip(key, path, pool, polish, FPS, clips['idle']['keyframes'][0]['layers'], score, duration, DELAYS[key])
+        else:
+            timeline = compose(key, path, pool, polish, ellipse, FPS)
         clips[key] = {'color': polish.COLORS[key], 'keyframes': timeline, 'body_frames': len(timeline)}
         beats[key] = [(row[0], row[1]) for row in score if row[1]]
         art_sources[key] = hashlib.sha256(path.read_bytes()).hexdigest()
-    timeline, beats['laughing'] = laughing(pool, polish, FPS)
+    for key in STUDIES:
+        timeline, beats[key] = continuous_clip(key, pool, polish, FPS, clips['idle']['keyframes'][0]['layers'])
+        clips[key] = {'color': polish.COLORS[key], 'keyframes': timeline, 'body_frames': len(timeline)}
+    timeline, beats['laughing'] = laughing(pool, polish, FPS, clips['idle']['keyframes'][0]['layers'])
     clips['laughing'] = {'color': polish.COLORS['laughing'], 'keyframes': timeline, 'body_frames': len(timeline)}
     for key, direction in [('look_left', -1), ('look_right', 1)]:
         timeline, marks = one_look(direction, pool, polish, ellipse, FPS)
         clips[key] = {'color': polish.COLORS[key], 'keyframes': timeline, 'body_frames': len(timeline)}
         beats[key] = marks
-    assert set(clips) == set(polish.COLORS) - {'neutral'}
+    assert set(clips) == set(polish.COLORS) - ALIASES.keys()
     payload = b'AFM1' + struct.pack('<III', 1, len(pool.rows), len(pool.payload)) + pool.payload
     pack = {'format': 'airboat.layered-face.v1', 'canvas': SIDE, 'fps': FPS, 'alpha_levels': 16,
-            'transition_frames': 9, 'base': 'idle', 'sprites': pool.rows, 'clips': clips,
+            'transition_frames': 9, 'base': 'idle', 'sprites': pool.rows, 'clips': clips, 'aliases': ALIASES,
             'binary': 'contour-review.afm', 'binary_bytes': len(payload),
             'binary_sha256': hashlib.sha256(payload).hexdigest(), 'catalog_bytes': 0,
             'review': 'complete repertoire; independent layer timing and symmetric idle anchor',

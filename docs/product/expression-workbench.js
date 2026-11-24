@@ -86,16 +86,17 @@
     $("edges").append(path); edges.push({a,b,path});
   }
   function buildGraph() {
+    const displayMenu = menu;
     nodes = new Map(); edges = [];
     thumbnails.disconnect(); visibleThumbs.clear();
     $("nodes").replaceChildren(); $("edges").replaceChildren();
-    const assets = [...new Set(menu.flatMap(k => [profile(k).file, profile(k).overlay].filter(Boolean))),
-      ...assetKeys.filter(file => data.assets[file].kind === "assets" && !menu.some(k =>
+    const assets = [...new Set(displayMenu.flatMap(k => [profile(k).file, profile(k).overlay].filter(Boolean))),
+      ...assetKeys.filter(file => data.assets[file].kind === "assets" && !displayMenu.some(k =>
         profile(k).file === file || profile(k).overlay === file))];
     const lists = [
       lanes.map(([k,label,,detail,,p]) => [k,label,p ? `优先级 ${p}` : "人物检测",detail]),
       lanes.map(([k,,label,detail,outputs]) => [k,label,`${outputs.length} 项输出`,detail]),
-      menu.map(k => [k,names[k],profile(k).overlay ? "neutral + listen" : k,""]),
+      displayMenu.map(k => [k,names[k],profile(k).overlay ? "neutral + listen" : k,""]),
       assets.map(file => {
         const a = data.assets[file], linked = references(file);
         return [file,file,`${a.width} × ${a.height} · ${a.frames} 帧`,linked.length ? "" : "此版本无直接绑定。"];
@@ -123,7 +124,7 @@
       addEdge(id("trigger",key),id("recipe",key));
       for (const semantic of outputs) addEdge(id("recipe",key),id("semantic",semantic));
     }
-    for (const key of menu) {
+    for (const key of displayMenu) {
       addEdge(id("semantic",key),id("asset",profile(key).file));
       if (profile(key).overlay) addEdge(id("semantic",key),id("asset","listen.eaf"));
     }
@@ -213,10 +214,10 @@
     const loop = p.loop ? p.range ? `循环 [${p.range.join(", ")})` : "整段循环" : "播一遍 · 保持最后帧";
     for (const label of [p.file,`${a.width}×${a.height}`,`${a.frames} 帧 · ${p.fps} fps`,size(a.bytes),layout,loop])
       box.append(el("span",null,label));
-    if (a.kind === "optimized" || a.kind === "contour") {
+    if (a.kind === "optimized" || a.kind === "contour" || a.kind === "square") {
       box.append(el("span",null,"图层按需镜像 · 16 级边缘覆盖"),
         el("span",null,`本片段引用精灵 ${size(a.bytes)} · 可跨表情共享`),
-        el("span",null,`整库含目录 ${size((a.kind === "contour" ? AirboatContour : AirboatOptimized).statistics.totalBytes)} · 预览候选`));
+        el("span",null,`整库含目录 ${size((a.kind === "square" ? AirboatSquare : a.kind === "contour" ? AirboatContour : AirboatOptimized).statistics.totalBytes)} · 预览候选`));
     }
     if (p.beats?.length) box.append(el("span",null,"动作节拍："+p.beats.map(([ms,label]) => `${label} ${(ms/1000).toFixed(2)}s`).join(" → ")));
     if (p.segments) for (const [part,range] of Object.entries(p.segments))
@@ -513,9 +514,15 @@
   $("source-revision").textContent = "原版素材修订 "+data.revision+"。原版、早期小样与新表情使用同一语义节点；新表情展示完整交付素材，设备状态另行核对。";
   $("fw-version").textContent = data.version;
   const micro = new URLSearchParams(location.search).get("micro");
+  const square = new URLSearchParams(location.search).get("square");
   if (micro !== null) {
     version = "contour";
     if (menu.includes(micro)) selected = id("semantic",micro);
+    for (const b of $("versions").querySelectorAll("button")) b.setAttribute("aria-pressed",String(b.dataset.version === version));
+  }
+  if (square !== null && data.square) {
+    version = "square";
+    if (menu.includes(square)) selected = id("semantic",square);
     for (const b of $("versions").querySelectorAll("button")) b.setAttribute("aria-pressed",String(b.dataset.version === version));
   }
   persist(); buildGraph(); select(selected); initialView(); requestAnimationFrame(tick);

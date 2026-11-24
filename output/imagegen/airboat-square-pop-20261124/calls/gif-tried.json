@@ -1,0 +1,48 @@
+{
+  "endpoint": "https://api.openai.com/v1/images/edits",
+  "proxy": "http://127.0.0.1:7897",
+  "fields": {
+    "model": "gpt-image-2.6-sunburst",
+    "size": "480x480",
+    "quality": "medium",
+    "complexity": "medium",
+    "output_format": "gif",
+    "frame_count": 16,
+    "frame_duration_ms": 120,
+    "n": 1
+  },
+  "prompt": "prompts/gif-tried.txt",
+  "inputs": [
+    {
+      "path": "png/tried.png",
+      "sha256": "6de3cf3a61a9601ae60a0d14247d7d75f7a56e051a74131c648777999a75c33a"
+    }
+  ],
+  "width": 480,
+  "height": 480,
+  "frames": 16,
+  "loop": 0,
+  "delays_ms": [
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120
+  ],
+  "status": "ok",
+  "duration_s": 17.66,
+  "request_id": "req_872d4c07bdf24bb7a3e06e8cd4019d42",
+  "output": "gif/tried.gif",
+  "output_sha256": "dd3636cf9ec487b096ebecd58b94cf8ad565fce7ad2a160f267ef924c23b6d26"
+}

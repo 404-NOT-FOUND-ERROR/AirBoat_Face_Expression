@@ -2,6 +2,8 @@
 
 [English](production.en.md) · [README](../README.zh-CN.md)
 
+当前微动作 AFM 的制作、修补、验证和跨项目交接统一见[可复用方法与步骤](reusable-methods.zh-CN.md)及[项目技能入口](../skills/airboat-expression-workflow/SKILL.md)。下文 EAF 布局、帧率和 1.29.0 分区数字属于早期实现快照；采用当前资源时读取[最新接入卡](product/expression-micro-motion.zh-CN.md)与 manifest。
+
 ## 从想法到实屏
 
 1. **选择回应。** 在工作台选一个语义，看看触发来源以及是否与其他语义共用素材。

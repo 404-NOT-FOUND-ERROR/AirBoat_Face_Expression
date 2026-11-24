@@ -1,0 +1,4 @@
+interface:
+  display_name: "AirBoat / DeskBot 表情工作流"
+  short_description: "复用已验证的彩色表情制作、微动作修补、工作台验收与跨项目接入方法"
+  default_prompt: "请使用 $airboat-expression-workflow 处理本次表情制作或修补，保留已确认的造型与动作节拍，并给出动态对照和验证结果。"

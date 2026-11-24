@@ -1,0 +1,249 @@
+{
+  "project": "AirBoat",
+  "round": "Square Pop / 方圆怪趣",
+  "date": "2026-11-24",
+  "groups": [
+    {
+      "id": "01",
+      "roles": [
+        {
+          "key": "idle",
+          "label": "待机",
+          "pose": "two soft square whites slowly become one rectangle and one large round white, playful asymmetric gaze",
+          "motion": "quiet breath, one pupil darts first; left white extends as a rectangle while right eye inflates round; pause, blink, quick double blink and elastic return",
+          "palette": "green"
+        },
+        {
+          "key": "listening",
+          "label": "聆听",
+          "pose": "one wide square white and one round white, black pupils facing forward, three tiny cyan square pulse marks above",
+          "motion": "pupils focus first, then whites lean forward; three square pulse marks rise in staggered rhythm; one blink and settle",
+          "palette": "green"
+        },
+        {
+          "key": "thinking",
+          "label": "思考",
+          "pose": "one huge upright rectangular white and a smaller circular white, black pupils both far up-left",
+          "motion": "pupils shoot up-left first, one white telescopes into an upright rectangle while the other tilts; hold a long thought; a tiny corrective pupil glance, a one-eye blink, return",
+          "palette": "periwinkle"
+        },
+        {
+          "key": "happy",
+          "label": "开心",
+          "pose": "two inflated white rounded tiles, black crescent pupils, unequal eye sizes",
+          "motion": "squash low, spring high, freeze a beat, drop with a smaller second rebound, two tiny settling bounces, round-square corners flex elastically",
+          "palette": "lime"
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "roles": [
+        {
+          "key": "surprised",
+          "label": "突然发现",
+          "pose": "two large white square-circle hybrids, tiny centered black pupils, one small yellow pixel spark",
+          "motion": "pupils shrink before the whites pop outward into oversized square eyes, quick anticipatory flinch, hold, soft wobble back",
+          "palette": "yellow"
+        },
+        {
+          "key": "shocked",
+          "label": "受惊",
+          "pose": "extremely tall white rounded rectangles, pinpoint black pupils at different heights",
+          "motion": "both whites recoil upward and stretch tall, far eye catches up one frame later, shocked freeze, two diminishing tremors, cautiously return",
+          "palette": "coral"
+        },
+        {
+          "key": "question",
+          "label": "好奇歪头",
+          "pose": "a big round eye and a narrow horizontal rectangular white lean along one diagonal, black pupils glance sideways",
+          "motion": "pupils glance first, rectangle extends like a telescope then both whites tilt diagonally; hold and a small secondary tilt, blink, straighten with a tiny rebound",
+          "palette": "cyan"
+        },
+        {
+          "key": "look_around",
+          "label": "张望",
+          "pose": "one white rectangular telescope and one circular white, black pupils near their edges",
+          "motion": "pupils snap to left, whites follow and left rectangle telescopes out; long curious hold; pupils dart right before whites follow; small overshoot, center",
+          "palette": "lime"
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "roles": [
+        {
+          "key": "winking",
+          "label": "眨眼",
+          "pose": "one eye is a flat white rectangular shutter, the other a huge lively circle with black pupil",
+          "motion": "one square white closes decisively into a horizontal bar while the circular eye inflates, hold, spring the shutter open with a small bounce",
+          "palette": "pink"
+        },
+        {
+          "key": "beat_swing",
+          "label": "摇摆",
+          "pose": "two white eyes form a diagonal lever, one square and one circle, black pupils with opposite vertical offsets",
+          "motion": "strong left downbeat with squash, pause, lighter right upbeat with stretch, two smaller offset swings; pupils arrive late and overshoot subtly",
+          "palette": "violet"
+        },
+        {
+          "key": "confused",
+          "label": "晕乎乎",
+          "pose": "uneven square and circular whites, black square spiral pupils with small coral orbit pixels",
+          "motion": "one strong off-balance wobble followed by alternating smaller aftershocks; square spiral pupils lag and turn after the whites stop, two tiny colored squares catch up last",
+          "palette": "periwinkle"
+        },
+        {
+          "key": "relaxed",
+          "label": "放松",
+          "pose": "wide soft rectangular whites, droopy horizontal upper lids, small low black half pupils",
+          "motion": "pupils sink a little, eyelids descend, whites exhale into broad rectangles; long soft hold with a small breathing swell, reopen gently",
+          "palette": "green"
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "roles": [
+        {
+          "key": "laughing",
+          "label": "大笑",
+          "pose": "two chunky white crescent eyes with squared outer corners, two little coral square-heart accents",
+          "motion": "lower lids rise to hide solid pupils, whites curl into broad cheeky crescents; two powerful unequal laugh pulses, far eye delayed, small hearts pop late, two settling rebounds",
+          "palette": "yellow"
+        },
+        {
+          "key": "funny",
+          "label": "搞怪",
+          "pose": "a huge circular white attached visually to a narrow rectangular white with black pupils pointing in strange directions, match the reference spirit",
+          "motion": "rectangle shoots outward while the other eye balloons into a giant circle; pause in the ridiculous pose; eye sizes swap across sides, pupils react late; two sharp tiny shakes, spring back",
+          "palette": "violet"
+        },
+        {
+          "key": "loving",
+          "label": "喜欢",
+          "pose": "two bright white rounded-square eyes, black chunky pixel-heart pupils, pink square accents",
+          "motion": "pupils turn into crisp stepped hearts, whites lean together, one huge affection pulse then a smaller heart pulse, cheeks light up late and fade before return",
+          "palette": "pink"
+        },
+        {
+          "key": "embarrassed",
+          "label": "害羞",
+          "pose": "slanted white rectangular and round eyes glance down-sideways, two short pink pixel cheek blocks",
+          "motion": "pupils flee sideways, one white partly hides behind its own sliding rectangular lid; pink cheek blocks appear after a pause, one shy tiny shake, peek back slowly",
+          "palette": "pink"
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "roles": [
+        {
+          "key": "confident",
+          "label": "得意",
+          "pose": "one lifted tall square white and one half-closed round eye, black pupils slyly offset",
+          "motion": "one rectangle lifts as if raising an eyebrow but without separate brows; smug deliberate hold; pupils make one extra sideways check, subtle self-satisfied bounce and return",
+          "palette": "cyan"
+        },
+        {
+          "key": "delicious",
+          "label": "好吃",
+          "pose": "chunky delighted white arcs with squared corners and one tiny yellow pixel star",
+          "motion": "anticipatory squish, eyes spring into big pleased arcs, unequal two delight pulses; pixel star appears one beat late; hold satisfaction and settle",
+          "palette": "yellow"
+        },
+        {
+          "key": "sad",
+          "label": "难过",
+          "pose": "drooping white soft-square eyes with sagging outer corners, black pupils looking down",
+          "motion": "pupils lower first, heavy white corners sag after them; long low hold with a small inhalation rise, slow partial lift then return",
+          "palette": "blue"
+        },
+        {
+          "key": "crying",
+          "label": "哭泣",
+          "pose": "drooping white rounded tiles and black half pupils, two distinct blue chunky pixel teardrops",
+          "motion": "try to hold back, two small uneven quivers, left pixel tear slides and accelerates down, right tear falls later, trembling diminishes and eyes calm",
+          "palette": "cyan"
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "roles": [
+        {
+          "key": "silly",
+          "label": "俏皮",
+          "pose": "one squarish white and one circular white touch near center, solid black pupils cross inward comically",
+          "motion": "pupils converge one at a time, whites squeeze into a squarish cross-eyed pose, hold, suddenly pop apart, soft elastic overshoot and return",
+          "palette": "lime"
+        },
+        {
+          "key": "angry",
+          "label": "生气",
+          "pose": "bold angled rectangular white eyes narrowing toward the center, round black pupils",
+          "motion": "rectangular lids snap diagonally inward with a preparatory squeeze, hold glare, short huff expanding whites, one recoil and smaller settling contraction",
+          "palette": "coral"
+        },
+        {
+          "key": "insert",
+          "label": "插入动画",
+          "pose": "two white square-circle eyes with tiny crisp square scan highlights",
+          "motion": "rectangular scan blocks align around whites one at a time, pupils anticipate each scan, short locked hold, a final pixel spark and soft return",
+          "palette": "cyan"
+        },
+        {
+          "key": "look_left",
+          "label": "看左边",
+          "pose": "both solid black pupils at the viewers left, left eye stretched into a white rectangle while right stays round",
+          "motion": "pupils move left decisively first, left white telescopes as a rectangle, both whites follow with overshoot, long hold, pupils and whites return on separate beats",
+          "palette": "lime"
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "roles": [
+        {
+          "key": "look_right",
+          "label": "看右边",
+          "pose": "both solid black pupils at the viewers right, right eye stretched into a white rectangle while left stays round",
+          "motion": "pupils move right decisively first, right white telescopes as a rectangle, both whites follow with overshoot, long hold, pupils and whites return on separate beats",
+          "palette": "lime"
+        },
+        {
+          "key": "eat",
+          "label": "吃东西",
+          "pose": "alternating white rectangular and round squashed eyes with black oval pupils, one tiny acid pixel accent",
+          "motion": "two clear exaggerated chew beats, left squashes into horizontal rectangle then right compresses; little satisfied hold, pixel accent lags the first bite, quick rebound",
+          "palette": "yellow"
+        },
+        {
+          "key": "tried",
+          "label": "疲惫",
+          "pose": "very low drooping white pancake-rectangles, thin solid black half pupils, far eye more collapsed",
+          "motion": "whites sink dramatically and elongate sideways, hesitate at bottom, two small attempts to hold up, inhale and effortfully lift, pause, collapse down again before slowly recovering",
+          "palette": "periwinkle"
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "neutral": "idle",
+    "sleepy": "tried"
+  },
+  "palette": {
+    "green": "#28cf60",
+    "lime": "#a8f900",
+    "yellow": "#f8f600",
+    "coral": "#ff4264",
+    "cyan": "#00d4e5",
+    "pink": "#ff168c",
+    "violet": "#6e32ff",
+    "periwinkle": "#6679ff",
+    "blue": "#4031f5"
+  },
+  "style": "Make a bold, mischievous digital pet eye-expression study inspired by the reference image. The reference is a STYLE reference: playful absurd proportions, a large round white eye contrasted with a crisp rectangular or square white eye, solid black pupils, vivid flat green. Develop a consistent family with playful graphic geometry. Only TWO white eye forms and their own solid black pupils, with small optional colored pixel accents. Use creative rectangle-to-circle shape changes, asymmetry, huge squash and stretch, crisp edges and clean flat color. Keep it charming and funny, not generic symmetrical emoji. No mouth, nose, body, text, outlines, texture, 3D, shadows, gradients, devices, border or screenshot UI. Full square face, eye pair centered around y=49%, use about 74% of face width, retain 7% side margins, 18% clean top and 20% clean bottom for device overlays. Different expressions must have clearly different silhouettes.",
+  "source_sha256": "a4244dc1c48eb152bac0ebda4a5272836161411791a50a42fa94289fe80b327f",
+  "coverage": "27 independent performances, 29 compatible semantics, 28 visible entries"
+}

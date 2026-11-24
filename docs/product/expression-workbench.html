@@ -11,6 +11,8 @@
   <script defer src="expression-optimized-player.js"></script>
   <script defer src="expression-contour-data.js"></script>
   <script defer src="expression-contour-player.js"></script>
+  <script defer src="expression-square-data.js"></script>
+  <script defer src="expression-square-player.js"></script>
   <script defer src="expression-workbench-player.js"></script>
   <script defer src="expression-workbench.js"></script>
   <script defer src="expression-complete-preview.js"></script>
@@ -22,6 +24,8 @@
       <a href="expression-transition-studio.html">过渡实验室 ↗</a>
       <a href="expression-contour-review.html">表情与微动作 ↗</a>
       <a href="listen-overlay-preview.html">聆听条融合 ↗</a>
+      <a href="expression-square-review.html">方圆怪趣 ↗</a>
+      <a href="expression-square-idle.html">软方待机候选 ↗</a>
       <button id="rules-open">制作规范</button>
       <button id="plan-open">替换清单 <span class="count" id="plan-count">0</span></button>
     </div>
@@ -36,6 +40,7 @@
           <button data-version="complete" aria-pressed="false">新表情 · 240</button>
           <button data-version="optimized" aria-pressed="true">高清优化 · 480</button>
           <button data-version="contour" aria-pressed="false">微动作 · 480</button>
+          <button data-version="square" aria-pressed="false">方圆怪趣 · 新</button>
         </div>
         <div class="search-wrap">
           <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><input id="search" placeholder="搜索语义、触发或素材" aria-label="搜索节点" autocomplete="off" aria-controls="search-results" aria-expanded="false"></label>
@@ -120,7 +125,7 @@
   <dialog id="compare" class="compare-dialog" aria-labelledby="compare-title">
     <div class="dialog-head"><div><small>FULL CLIP / SIDE BY SIDE</small><h2 id="compare-title">原版与新表情</h2></div><button id="compare-close" aria-label="关闭表情对比">×</button></div>
     <div class="compare-body">
-      <div class="compare-top"><label>表情 <select id="compare-semantic" aria-label="对比表情"></select></label><label>左侧<select id="compare-reference"><option value="original">原版</option><option value="complete">新表情 · 240</option><option value="optimized">高清优化 · 480</option></select></label><label>右侧<select id="compare-variant"><option value="complete">新表情 · 240</option><option value="optimized">高清优化 · 480</option><option value="contour">微动作 · 480</option></select></label><label>播放<select id="compare-mode"><option value="complete">完整一遍</option><option value="loop">持续表演</option><option value="entry">只看进入段</option></select></label></div>
+      <div class="compare-top"><label>表情 <select id="compare-semantic" aria-label="对比表情"></select></label><label>左侧<select id="compare-reference"><option value="original">原版</option><option value="complete">新表情 · 240</option><option value="optimized">高清优化 · 480</option><option value="contour">微动作 · 480</option></select></label><label>右侧<select id="compare-variant"><option value="complete">新表情 · 240</option><option value="optimized">高清优化 · 480</option><option value="contour">微动作 · 480</option><option value="square">方圆怪趣 · 480</option></select></label><label>播放<select id="compare-mode"><option value="complete">完整一遍</option><option value="loop">持续表演</option><option value="entry">只看进入段</option></select></label></div>
       <div class="compare-faces">
         <article><div class="compare-card-head"><strong id="compare-left-title">原版</strong><span>各自原速</span></div><canvas id="compare-original" width="480" height="480" aria-label="左侧完整动画"></canvas><p id="compare-original-status" class="micro"></p><p id="compare-original-meta" class="micro"></p></article>
         <article><div class="compare-card-head"><strong id="compare-right-title">新表情</strong><span id="compare-right-caption">交付 EAF · 逐帧播放</span></div><canvas id="compare-complete" width="480" height="480" aria-label="右侧完整动画"></canvas><p id="compare-complete-status" class="micro"></p><div id="compare-stages" class="compare-stages"></div><p id="compare-complete-meta" class="micro"></p></article>

@@ -1,0 +1,19 @@
+{
+  "frames": 160,
+  "fps": 25,
+  "exponent": 2.65,
+  "whiteSize": [
+    164,
+    168
+  ],
+  "green": "#28cf60",
+  "canvas": 480,
+  "layers": [
+    "white",
+    "pupil"
+  ],
+  "format": "airboat.mask-coverage.a4-u8.gzip.v1",
+  "binary": "soft-square-idle.a4.gz",
+  "sha256": "cbbe2b3c889936012820ecec563118dcc555cfa86d3125a6bcb2d4659f3c78ba",
+  "renderer_sha256": "a084d7dc5eda0fd8f33123ad3a2c80f8121f0d6e6d047893848797a11d00b9dc"
+}

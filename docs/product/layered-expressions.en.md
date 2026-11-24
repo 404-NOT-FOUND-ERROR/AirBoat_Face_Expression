@@ -25,3 +25,5 @@ The binary header is `AFM1` followed by three little-endian uint32 values: versi
 For `a4rle`, the token's high nibble is coverage 0–15; the low nibble plus one is run length. A run field of 16 reads a following byte and uses length `16+byte` (maximum 271). Expand coverage to alpha with `value*17`. Indexed accents use `i8rle` count/index pairs with RGBA palettes in the catalog. All decoders must produce exactly `width*height` pixels and reject truncated/overflowing runs.
 
 Layer references are `[sprite,x0,y0,x1,y1,flip]`, with exclusive right/bottom coordinates. Blend normalized coverage inside the moving layer box, then compose white eyes and black pupils over the generated background and accent layer. See the [Chinese specification](layered-expressions.zh-CN.md) for the review procedure and integration order.
+
+The micro-motion catalog may include `aliases`. Resolve an event semantic to its clip key before loading assets: `neutral → idle` and `sleepy → tried`. The original event keeps its interaction priority; aliases affect only visual lookup. The review interface preserves separate Sleepy and Tired semantics; both reference the same Tired animation.

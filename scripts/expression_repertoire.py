@@ -124,12 +124,17 @@ SCORES = {
         cue(760, '第二口', .53, (0, 4, .77), accent=.85),
         cue(1000, '小回弹', .65, (0, -5, 1.03), accent=.5),
         cue(1320, '嚼完停一拍', .80, accent=0), cue(2240, '', 0, accent=0)]),
-    'tried': (3200, [
-        cue(0, '', 0), cue(450, '眼皮先垂', .22, (0, 4, .77)),
-        cue(960, '慢慢塌下去', .44, (0, 16, .68), (0, 4)),
-        cue(1560, '', .44, (0, 16, .68), (0, 4)),
-        cue(1880, '费力抬一下', .66, (0, 3, .96), (0, -3)),
-        cue(2120, '又落一点', .75, (0, 9, .82)), cue(3160, '', 0)]),
+    'tried': (4040, [
+        cue(0, '', 0), cue(440, '眼皮先垂', .20, (0, 6, .88)),
+        cue(1120, '沉下去', .45, (0, 26, .79), (0, 3)),
+        cue(1360, '撑了一下', .44, (-1, 22, .82), (0, -2)),
+        cue(1480, '', .46, (1, 28, .77), (0, 2)),
+        cue(1600, '', .45, (0, 26, .80)),
+        cue(1840, '憋一口气', .44, (0, 25, .80), (0, -4)),
+        cue(2160, '费力抬眼', .78, (0, -11, 1.04), (0, -7)),
+        cue(2320, '', .81, (0, -9, 1.01), (0, -5)),
+        cue(2760, '又垂下来', .38, (0, 15, .86), (0, 2)),
+        cue(3040, '', .34, (0, 12, .89)), cue(4000, '', 0)]),
 }
 
 # Right eye, pupil, and accent have their own phase offsets.
@@ -243,19 +248,53 @@ def compose(key, source, pool, polish, ellipse, fps):
     return frames
 
 
-def laugh_arc():
-    """A rounded crescent reused by both eyes, rendered above native resolution."""
+def laugh_lid(closure, pupil_lift, pool, polish):
+    """Raise the lower lid into a crescent and let its coverage hide the pupil."""
     scale = 4
-    mask = Image.new('L', (150 * scale, 80 * scale))
-    draw = ImageDraw.Draw(mask)
-    for step in range(181):
-        angle = math.pi * step / 180
-        x = 74.875 - 60 * math.cos(angle)
-        y = 66 - 50 * math.sin(angle)
-        radius = 9 + 4 * math.sin(angle)
-        box = (x - radius, y - radius, x + radius, y + radius)
-        draw.ellipse(tuple(round(value * scale) for value in box), fill=255)
-    return mask.resize((150, 80), Image.Resampling.LANCZOS)
+    origin_x, origin_y = 48, 128
+    size = (192, 206)
+    canvas_size = tuple(dimension * scale for dimension in size)
+    center_x = 150 - 16 * closure
+    corner_y = 234 + 20 * closure
+    half_width = 82 - 12 * closure
+    arch = 46 * closure ** 1.55
+    upper = 13 + 75 * (1 - closure ** 1.5)
+    lower = 13 + 75 * (1 - closure) ** 1.65
+
+    def point(x, y):
+        return (round((x - origin_x) * scale), round((y - origin_y) * scale))
+
+    lid = Image.new('L', canvas_size)
+    if closure == 0:
+        ImageDraw.Draw(lid).ellipse([point(68, 146), point(232, 322)], fill=255)
+    else:
+        outline = []
+        for step in range(240):
+            angle = math.tau * step / 240
+            s = math.sin(angle)
+            x = center_x + half_width * math.cos(angle)
+            y = corner_y - arch * s * s + s * (lower if s >= 0 else upper)
+            outline.append(point(x, y))
+        ImageDraw.Draw(lid).polygon(outline, fill=255)
+    white = lid.resize(size, Image.Resampling.LANCZOS)
+
+    def ref(mask):
+        piece = polish.sprite(mask, origin_x, origin_y)
+        if not piece:
+            return None
+        cropped, box = piece
+        alpha = ((np.asarray(cropped, dtype=np.uint16) * 15 + 127) // 255).astype(np.uint8)
+        return pool.add(alpha, box, None)
+
+    pupil_ref = None
+    if closure < 1:
+        pupil_y = 264 - 7 * pupil_lift + 19 * closure
+        pupil = Image.new('L', canvas_size)
+        ImageDraw.Draw(pupil).ellipse([point(center_x - 42, pupil_y - 39),
+                                      point(center_x + 42, pupil_y + 39)], fill=255)
+        clipped = ImageChops.multiply(pupil, lid).resize(size, Image.Resampling.LANCZOS)
+        pupil_ref = ref(clipped)
+    return ref(white), pupil_ref
 
 
 def laugh_heart():
@@ -272,35 +311,47 @@ def laugh_heart():
     return mask.resize((38, 38), Image.Resampling.LANCZOS)
 
 
-def laughing(pool, polish, fps):
-    marks = [(160, '第一下笑'), (360, '弹起来'), (560, '第二下笑'),
-             (760, '短回弹'), (1200, '笑着停住')]
-    lift = ((0, 0), (.16, 7), (.36, -25), (.48, -12), (.56, 5), (.76, -14),
-            (.92, 1), (1.04, -3), (1.20, 0))
-    height = ((0, 1), (.16, .72), (.36, 1.10), (.56, .81), (.76, 1.05), (.96, .94), (1.20, 1))
-    left = mask_ref(pool, polish.sprite(laugh_arc(), 59, 191))
-    index, x, y, right_edge, bottom, flip = left
-    right = [index, 480 - right_edge, y, 480 - x, bottom, flip ^ 1]
+def laughing(pool, polish, fps, idle_layers):
+    marks = [(80, '瞳孔先抬'), (240, '眯起成弧'), (400, '月牙成形'),
+             (640, '笑着弹起'), (1040, '轻轻再弹'), (1840, '慢慢睁开')]
+    lift = ((.40, 0), (.48, 5), (.64, -23), (.76, -10), (.84, 4), (1.04, -12),
+            (1.16, 2), (1.28, -3), (1.40, 0))
+    height = ((.40, 1), (.48, .84), (.64, 1.10), (.84, .88), (1.04, 1.05), (1.40, 1))
+    arc, _ = laugh_lid(1, 0, pool, polish)
     heart = laugh_heart()
     pulse = ((0, 0), (.12, 1), (.20, .86), (.46, 0))
+    ease = polish.ease
     frames = []
     for i in range(round(2.08 * fps)):
         t = i / fps
         layers = []
         accent = Image.new('RGBA', (480, 480))
-        for eye, arc_ref in enumerate((left, right)):
-            # The far eye catches up one frame after each compression and rebound.
-            local = t - eye * .04 * polish.ease(t / .16)
-            dy = track(local, lift, polish.ease)
-            sy = track(local, height, polish.ease)
+        for eye in range(2):
+            # The right eye follows one frame later, then both meet the idle pose.
+            local = round(t - eye / fps, 6)
             outward = -1 if eye == 0 else 1
-            layers += [shift(arc_ref, outward * max(0, -dy) * .12, dy, sy), None]
-            pulse_time = t - (.18 + eye * .08)
+            closure = ease((local - .08) / .32) * ease((2 - local) / .36)
+            pupil_lift = ease((local - .02) / .08) - ease((local - .16) / .12)
+            if closure == 0 and pupil_lift == 0:
+                layers.extend(idle_layers[eye * 2:eye * 2 + 2])
+            else:
+                if closure == 1:
+                    dy = track(local, lift, ease)
+                    sy = track(local, height, ease)
+                    refs = (shift(arc, -max(0, -dy) * .12, dy, sy), None)
+                else:
+                    refs = laugh_lid(closure, pupil_lift, pool, polish)
+                for ref in refs:
+                    if eye and ref:
+                        index, x, y, right, bottom, flip = ref
+                        ref = [index, 480 - right, y, 480 - x, bottom, flip ^ 1]
+                    layers.append(ref)
+            pulse_time = t - (.52 + eye * .08)
             size = 1
             if pulse_time >= .48:
                 pulse_time -= .48
                 size = .77
-            level = track(pulse_time, pulse, polish.ease)
+            level = track(pulse_time, pulse, ease)
             if level > 0:
                 width = round((14 + 18 * level) * size)
                 alpha = heart.resize((width, width), Image.Resampling.LANCZOS)

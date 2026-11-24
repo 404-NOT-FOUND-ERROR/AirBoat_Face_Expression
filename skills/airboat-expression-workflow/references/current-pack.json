@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "validation_layer": "host-pack",
+  "binary_sha256": "f97deb06407f1549c142e81da1455a9380c9649f7fda74eff31ac21ea565aa7e",
+  "binary_bytes": 1357763,
+  "catalog_bytes": 526526,
+  "total_bytes": 1884289,
+  "canvas": 480,
+  "fps": 25,
+  "alpha_levels": 16,
+  "clip_count": 27,
+  "semantic_count": 29,
+  "aliases": {
+    "neutral": "idle",
+    "sleepy": "tried"
+  },
+  "sprite_count": 1473,
+  "decoded_sprite_pixels": 26067234,
+  "body_frames": 1846,
+  "stored_keyframes": 1827,
+  "frames_with_entry_exit": 2332,
+  "device_validation": "not assessed by this tool"
+}

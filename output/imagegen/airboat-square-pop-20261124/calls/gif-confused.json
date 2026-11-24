@@ -1,0 +1,48 @@
+{
+  "endpoint": "https://api.openai.com/v1/images/edits",
+  "proxy": "http://127.0.0.1:7897",
+  "fields": {
+    "model": "gpt-image-2.6-sunburst",
+    "size": "480x480",
+    "quality": "medium",
+    "complexity": "medium",
+    "output_format": "gif",
+    "frame_count": 16,
+    "frame_duration_ms": 90,
+    "n": 1
+  },
+  "prompt": "prompts/gif-confused.txt",
+  "inputs": [
+    {
+      "path": "png/confused.png",
+      "sha256": "ceb3adf7ca73409e57fcb56205ea7aeead1ae14dfc393f6aefa3c80c2a592b27"
+    }
+  ],
+  "width": 480,
+  "height": 480,
+  "frames": 16,
+  "loop": 0,
+  "delays_ms": [
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90
+  ],
+  "status": "ok",
+  "duration_s": 22.59,
+  "request_id": "req_ca40fab3b4274e35bb8787b4329aec16",
+  "output": "gif/confused.gif",
+  "output_sha256": "42d71108805aeaa746d48a0f789709f3c33a8ac1a94f8f03c47cb75e5ff4d5e1"
+}

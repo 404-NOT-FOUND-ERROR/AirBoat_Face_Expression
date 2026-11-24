@@ -1,0 +1,48 @@
+{
+  "endpoint": "https://api.openai.com/v1/images/edits",
+  "proxy": "http://127.0.0.1:7897",
+  "fields": {
+    "model": "gpt-image-2.6-sunburst",
+    "size": "480x480",
+    "quality": "medium",
+    "complexity": "medium",
+    "output_format": "gif",
+    "frame_count": 16,
+    "frame_duration_ms": 120,
+    "n": 1
+  },
+  "prompt": "prompts/gif-crying.txt",
+  "inputs": [
+    {
+      "path": "png/crying.png",
+      "sha256": "d857915585035be97229a5e1535a8b604268b82deb8c054cade87c66ff239557"
+    }
+  ],
+  "width": 480,
+  "height": 480,
+  "frames": 16,
+  "loop": 0,
+  "delays_ms": [
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120,
+    120
+  ],
+  "status": "ok",
+  "duration_s": 24.16,
+  "request_id": "req_1cf25c7f722d4703b219bf58c7de4713",
+  "output": "gif/crying.gif",
+  "output_sha256": "80eeb490bb594eb92e61cd881af37a5c17a02eecda120f58d26fb65f720c2945"
+}

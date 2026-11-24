@@ -8,6 +8,7 @@ Colorful animated eyes for a playful floating companion. Explore expressive timi
 
 ## Explore
 
+- [Square Pop collection](docs/product/expression-square-review.html): 21 shared performances preserve 29 AirBoat semantics around the approved symmetric soft-square idle; full entry, performance, return, half-speed playback and [integration map](docs/product/expression-square-pop.zh-CN.md).
 - [Animated gallery](output/imagegen/airboat-expression-study-20261120/gallery.html): original animation, reference art, and new GIFs side by side.
 - [Expression workbench](docs/product/expression-workbench.html): pan, zoom, play, mirror, trace triggers, and export replacement drafts.
 - [Full clip comparison](docs/product/expression-workbench.html?compare=happy): original and delivered EAF animations side by side, with entry, complete performance, and return markers.
@@ -17,6 +18,7 @@ Colorful animated eyes for a playful floating companion. Explore expressive timi
 - [Listening overlay preview](docs/product/listen-overlay-preview.html): compare the original black matte with the transparent waveform on both 360 and 480 displays.
 - [Motion keyframes](output/imagegen/airboat-expression-study-20261120/motion-frames.png): anticipation, gaze shifts, rebounds, and settling.
 - [Asset manifest](output/imagegen/airboat-expression-study-20261120/manifest.json): models, inputs, prompts, and generation records.
+- [Reusable workflow](docs/reusable-methods.zh-CN.md): production methods, repair cases, validation commands, local handoffs, and the project skill.
 
 <table>
 <tr><td align="center"><img src="output/imagegen/airboat-expression-study-20261120/preview/happy.gif" width="180" alt="Happy"><br>Happy · rebound</td><td align="center"><img src="output/imagegen/airboat-expression-study-20261120/preview/confused.gif" width="180" alt="Dizzy"><br>Dizzy · settling</td><td align="center"><img src="output/imagegen/airboat-expression-study-20261120/preview/look_around.gif" width="180" alt="Looking around"><br>Curious · gaze first</td></tr>
@@ -30,6 +32,7 @@ Colorful animated eyes for a playful floating companion. Explore expressive timi
 | Refined motion previews | 29 looping GIFs sampled at 25 fps, with fixed backgrounds and separate eye/pupil interpolation |
 | Transition delivery | 29 review EAF candidates; the firmware adapter uses 28 EAF files for 29 semantics, sharing idle and neutral |
 | Native layered candidate | 480×480, 29 semantics, procedural backgrounds/transitions and exact reflected-sprite sharing; 1.99 MiB including catalog |
+| Square Pop | 480×480, 21 shared performances, the approved symmetric soft-square idle, authored entry/return and 29 compatible AirBoat semantics; 5.08 MiB including catalog |
 | Original library | 18 EAF assets and their decoded previews |
 | Current firmware trials | Three EAF animations used in the AirBoat 1.29.0 baseline |
 | Original artwork pack | Nine 480 × 480 source GIFs, EAF files, and conversion metadata |

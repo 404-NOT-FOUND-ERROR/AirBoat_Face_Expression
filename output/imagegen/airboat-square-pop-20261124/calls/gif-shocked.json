@@ -1,0 +1,48 @@
+{
+  "endpoint": "https://api.openai.com/v1/images/edits",
+  "proxy": "http://127.0.0.1:7897",
+  "fields": {
+    "model": "gpt-image-2.6-sunburst",
+    "size": "480x480",
+    "quality": "medium",
+    "complexity": "medium",
+    "output_format": "gif",
+    "frame_count": 16,
+    "frame_duration_ms": 90,
+    "n": 1
+  },
+  "prompt": "prompts/gif-shocked.txt",
+  "inputs": [
+    {
+      "path": "png/shocked.png",
+      "sha256": "e3ee141732b192a2a3dd2aa130af4a28a7a390bdb1e42575625f9ed780a1ca68"
+    }
+  ],
+  "width": 480,
+  "height": 480,
+  "frames": 16,
+  "loop": 0,
+  "delays_ms": [
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90
+  ],
+  "status": "ok",
+  "duration_s": 20.38,
+  "request_id": "req_b7c91100d9bd46dfa717130c61b061c0",
+  "output": "gif/shocked.gif",
+  "output_sha256": "cc6c04498b230d8ee6bc1da7917dc328f30e5894412e6cfe0be1eaf4124a995a"
+}

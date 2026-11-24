@@ -4,8 +4,9 @@
   const data=window.AIRBOAT_EXPRESSIONS, pack=window.AIRBOAT_CONTOUR_PACK;
   window.AirboatContour=window.AirboatLayeredPlayer(pack);
   data.contour={};
-  for(const key of [...Object.keys(pack.clips),"neutral"]) {
-    const actual=key==="neutral" ? "idle" : key,c=pack.clips[actual],n=pack.transition_frames;
+  const aliases=pack.aliases || {neutral:"idle"};
+  for(const key of [...Object.keys(pack.clips),...Object.keys(aliases)]) {
+    const actual=aliases[key] || key,c=pack.clips[actual],n=pack.transition_frames;
     const file=`review-${actual}.afm`,frames=n*2+c.body_frames;
     const refs=new Set(c.keyframes.flatMap(f=>[...f.layers,f.accent].filter(Boolean).map(r=>r[0])));
     data.assets[file]={width:480,height:480,frames,kind:"contour",semantic:actual,

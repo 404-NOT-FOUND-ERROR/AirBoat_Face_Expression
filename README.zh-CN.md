@@ -8,6 +8,7 @@
 
 ## 开始浏览
 
+- [方圆怪趣全套](docs/product/expression-square-review.html)：21 份表演素材覆盖 AirBoat 原有29个语义入口，均使用已确认的软方对称待机；完整进入、表演和回归，支持半速及[本地接入](docs/product/expression-square-pop.zh-CN.md)。
 - [表情动效库](output/imagegen/airboat-expression-study-20261120/gallery.html)：原版动画、参考图与新 GIF 并排看。
 - [表情工作台](docs/product/expression-workbench.html)：平移、缩放、播放、镜像、追踪触发链路并导出替换清单。
 - [完整动画对比](docs/product/expression-workbench.html?compare=happy)：原版与新交付 EAF 并排播放，标出进入、完整表演和收尾，支持暂停与拖帧。
@@ -17,8 +18,11 @@
 - [聆听条融合预览](docs/product/listen-overlay-preview.html)：对比旧黑底与透明波形，并预览 360 / 480 屏幕。
 - [动作关键帧](output/imagegen/airboat-expression-study-20261120/motion-frames.png)：查看预动、视线、回弹与回稳。
 - [素材清单](output/imagegen/airboat-expression-study-20261120/manifest.json)：查看模型、输入、提示词与生成记录。
+- [可复用方法与步骤](docs/reusable-methods.zh-CN.md)：成功案例、修补方法、验证命令、两项目交接及项目内技能入口。
 
 旧聆听素材是 100×46 的灰度动画，黑色背景原本也会被绘制。新的[透明聆听条预览](docs/product/listen-overlay-preview.html)与[本地接入说明](integrations/listen-overlay/README.zh-CN.md)展示了在 RGB565 合成阶段去掉黑底、保留波形的做法。
+
+Square Pop AirBoat 整合包为 480×480、21 份独立动画、29 个语义入口，含已确认的对称软方待机与19帧进入/回归。大笑复用开心、哭泣复用难过、好奇歪头/插入动画复用俏皮、好吃/吃东西复用搞怪；困倦与疲惫仍保留独立语义入口，共用疲惫动画。
 
 <table>
 <tr><td align="center"><img src="output/imagegen/airboat-expression-study-20261120/preview/happy.gif" width="180" alt="开心"><br>开心 · 回弹</td><td align="center"><img src="output/imagegen/airboat-expression-study-20261120/preview/confused.gif" width="180" alt="晕乎乎"><br>晕乎乎 · 余震</td><td align="center"><img src="output/imagegen/airboat-expression-study-20261120/preview/look_around.gif" width="180" alt="张望"><br>张望 · 瞳孔先动</td></tr>

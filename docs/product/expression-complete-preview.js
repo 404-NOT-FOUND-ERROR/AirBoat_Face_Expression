@@ -57,15 +57,15 @@
   function reset(play = true) {
     selected = $("compare-semantic").value;
     clock = 0; last = null; running = play; stamps.clear();
-    const a = original(selected), b = candidate(selected), asset = data.assets[b.file], optimized = asset.kind === "optimized" || asset.kind === "contour", micro = asset.kind === "contour";
+    const a = original(selected), b = candidate(selected), asset = data.assets[b.file], optimized = ["optimized","contour","square"].includes(asset.kind), micro = asset.kind === "contour", square = asset.kind === "square";
     $("compare-title").textContent = names[selected]+" · 画质与动作对比";
-    $("compare-left-title").textContent = {complete:"新表情 · 240",optimized:"高清优化 · 480",original:"原版"}[$("compare-reference").value];
-    $("compare-right-title").textContent = micro ? "微动作 · 480" : optimized ? "高清优化 · 480" : "新表情 · 240";
-    $("compare-right-caption").textContent = micro ? "独立节拍 · 统一待机轮廓" : optimized ? "分层绘制 · 按轮廓复用" : "交付 EAF · 逐帧播放";
+    $("compare-left-title").textContent = {complete:"新表情 · 240",optimized:"高清优化 · 480",contour:"微动作 · 480",original:"原版"}[$("compare-reference").value];
+    $("compare-right-title").textContent = square ? "方圆怪趣 · 480" : micro ? "微动作 · 480" : optimized ? "高清优化 · 480" : "新表情 · 240";
+    $("compare-right-caption").textContent = square ? "方圆形变 · 原生 GIF · 独立节拍" : micro ? "独立节拍 · 统一待机轮廓" : optimized ? "分层绘制 · 按轮廓复用" : "交付 EAF · 逐帧播放";
     $("compare-align-label").hidden=!a.segments;
     $("compare-original-meta").textContent = `${a.file} · ${a.fps} fps · ${a.loop ? "整段循环" : "播一遍后保持末帧"}`+(a.overlay ? " · 独立聆听条" : "");
     $("compare-complete-meta").textContent = `${asset.width}×${asset.height} · ${b.fps} fps · ${(asset.frames/b.fps).toFixed(2)} s`+
-      (optimized ? ` · 整库含目录 ${((micro ? AirboatContour : AirboatOptimized).statistics.totalBytes/1048576).toFixed(2)} MiB` : ` · ${(asset.bytes/1024).toFixed(1)} KiB`);
+      (optimized ? ` · 整库含目录 ${((square ? AirboatSquare : micro ? AirboatContour : AirboatOptimized).statistics.totalBytes/1048576).toFixed(2)} MiB` : ` · ${(asset.bytes/1024).toFixed(1)} KiB`);
     const stages = $("compare-stages"); stages.replaceChildren();
     for (const [part,range] of Object.entries(b.segments)) {
       const button = document.createElement("button");
@@ -86,7 +86,9 @@
   for (const key of Object.keys(data.complete)) $("compare-semantic").append(new Option(names[key]+" · "+key,key));
   $("compare-semantic").value = selected;
   $("compare-open").onclick = () => {
-    if (document.querySelector('[data-version="contour"]').getAttribute("aria-pressed") === "true") {
+    if (document.querySelector('[data-version="square"]')?.getAttribute("aria-pressed") === "true") {
+      $("compare-reference").value="contour";$("compare-variant").value="square";
+    } else if (document.querySelector('[data-version="contour"]').getAttribute("aria-pressed") === "true") {
       $("compare-reference").value="original";$("compare-variant").value="contour";
     } else if (document.querySelector('[data-version="optimized"]').getAttribute("aria-pressed") === "true") {
       $("compare-reference").value="complete";$("compare-variant").value="optimized";
@@ -128,8 +130,9 @@
   }
   requestAnimationFrame(tick);
   window.AirboatCompletePreview = {open};
-  const params = new URLSearchParams(location.search), requested = params.get("micro") || params.get("quality") || params.get("compare");
+  const params = new URLSearchParams(location.search), requested = params.get("square") || params.get("micro") || params.get("quality") || params.get("compare");
   if (params.has("quality")) { $("compare-reference").value="complete";$("compare-variant").value="optimized"; }
   if (params.has("micro")) { $("compare-reference").value="original";$("compare-variant").value="contour"; }
+  if (params.has("square")) { $("compare-reference").value="contour";$("compare-variant").value="square"; }
   if (requested) open(requested);
 })();
