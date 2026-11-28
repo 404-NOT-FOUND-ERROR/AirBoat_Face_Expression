@@ -19,7 +19,7 @@
 | 原表情瑕疵局部修补 | 以源眼弧和独立黑瞳孔为对象插值，保留原动作谱 | `20261123-expression-continuity` | 原时长/节拍、大小眼交换、疲惫幅度、未改表情对照 |
 | 困倦/疲惫合并 | 旧语义经别名兼容，素材共用，UI只留一个疲惫 | 同上；`expression-contour-player.js` 与两个工作台 | 27 clip、29 兼容语义、28 可见入口，已软件核对 |
 | 聆听条透明合成 | 指定灰度 mask 与当前 RGB565 底图混合 | `20261122-listen-overlay-transparency` | 全 RGB565 底色、500 组浏览器组合、实际播放器源码副本；设备黑框解决另验 |
-| AirBoat/DeskBot 本机交接 | 配对 AFM+JSON、当前哈希、实际显示链接入和各自验收 | `20261123-expression-continuity/AIRBOAT.md`、`DESKBOT.md` | 交接卡和路径核对；各固件接入状态由各主线记录 |
+| AirBoat / Mosaico 本机交接 | 配对 AFM+manifest、当前哈希、GSP 显示链接入和实屏验收 | `20261123-expression-continuity/AIRBOAT.md` | 交接卡和路径核对；固件接入状态由 AirBoat 主线记录 |
 | GitHub 代理发布 | Clash 推送、远端提交一致、CI、英文 description/双语 README | `20261122-expression-release`；历史提交 `5a70ba7` | 该发布版远端与 CI 已核过；后续本机候选未因此发布 |
 | 对话产物清理 | 只列本任务具体候选，区分重复测试与源码/当前资源/证据 | `research/maintenance/20261121-expression-cleanup`（父项目路径） | 对应轮次范围与哈希核对；新清理先现场枚举 |
 

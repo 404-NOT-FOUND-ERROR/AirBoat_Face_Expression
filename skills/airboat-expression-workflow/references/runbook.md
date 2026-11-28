@@ -57,18 +57,11 @@ git diff --check
 
 若修改的是波形合成，补跑 `tests/listen-overlay.c` 的原生 C 检查和 `tests/listen-overlay-browser.cjs`。只有接入实际 AirBoat 播放器时，按 `integrations/listen-overlay/README.zh-CN.md` 执行实际源码副本回归。新问题引发的失败要定位；已经通过且资源未变化，不反复扩大测试。
 
-## 5. 交给两个主项目
+## 5. 接入 AirBoat / Mosaico
 
-| 项目 | 接入位置与适配 | 设备验收重点 |
-| --- | --- | --- |
-| AirBoat / Mosaico | 核对当前 `app_response → app_expression_view / app_expression_player → GSP`；母版 480，全脸只绘一次 | 语音、字幕、相机和控制页共存，离页/取消/返回 |
-| DeskBot | 核对活动 `SetEmotion/SetStatus`、Emote/GFX 后端和实际屏幕；若 360 圆屏则等比派生 | 小智对话、触摸、休眠恢复、C61 身体动作只由事件触发 |
+核对当前 `app_response → app_expression_view / app_expression_player → GSP` 链路和活动架构文档。母版为 480，全脸只绘制一次；按当前 AFM 播放规则区分进入、完整表演、循环和收尾。字幕更新与逐帧绘制不能重复触发语音或身体动作。
 
-两边都先解析 `aliases`，逐眼清遮罩，正确使用目标矩形与 flip。AFM 由独立后端读取，既有 EAF 解码契约保持明确。字幕更新和每帧绘制不重发语音或身体动作。
-
-交接卡写：本机资源路径、AFM+JSON 配对、哈希、语义别名、完整播放规则、关键变化、适配目标、构建/内存/耗时要求和用户操作卡。两项目同机时直接给本地路径，采用后各自纳入工程；GitHub commit 用于追溯，不替代工作树哈希。
-
-本机最新交接样例：AirBoat `research/experience/20261123-expression-continuity/AIRBOAT.md` 与 `DESKBOT.md`。这两个路径相对父 AirBoat 项目，独立克隆的表情库可能没有它们。
+交接卡记录：AFM+manifest 路径与哈希、语义映射、播放区间、资源和内存变化、构建目标、安装回执、实时设备身份、屏幕/触摸/语音/相机共存测试，以及待补的实屏验收。设备操作遵循 `firmware/mosaico-vibe/AGENTS.md` 和当前项目的设备工具链。
 
 ## 6. 每层结果怎么记
 
@@ -103,5 +96,5 @@ git -c http.proxy=http://127.0.0.1:7897 ls-remote origin refs/heads/main
 方法：改哪一层，为什么能消除现象
 产物：配对资源、工作台入口、GIF/同帧对照
 验证：实际运行命令、结果文件、软件/构建/安装/实屏分别状态
-交接：AirBoat/DeskBot 各自下一步与完成信号
+交接：AirBoat / Mosaico 下一步与完成信号
 ```
